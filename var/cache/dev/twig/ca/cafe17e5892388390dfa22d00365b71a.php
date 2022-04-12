@@ -105,7 +105,12 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getDescription", [], "any", false, false, false, 20), "html", null, true);
             echo "
                         </p>
-
+                        <a href=\"";
+            // line 22
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product", ["brand_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source,             // line 23
+$context["product"], "brand", [], "any", false, false, false, 23), "id", [], "any", false, false, false, 23), "product_id" => twig_get_attribute($this->env, $this->source, $context["product"], "id", [], "any", false, false, false, 23)]), "html", null, true);
+            echo "\" class=\"btn btn-primary btn-sm\">Détail</a>
+                        <a href=\"#\" class=\"btn btn-success btn-sm\">Ajouter</a>
 
                     </div>
                 </div>
@@ -115,7 +120,7 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 30
         echo "
     </div>
 
@@ -138,7 +143,7 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
 
     public function getDebugInfo()
     {
-        return array (  119 => 28,  105 => 20,  99 => 17,  92 => 15,  87 => 13,  83 => 11,  79 => 10,  75 => 8,  68 => 7,  60 => 3,  53 => 2,  36 => 1,);
+        return array (  124 => 30,  111 => 23,  110 => 22,  105 => 20,  99 => 17,  92 => 15,  87 => 13,  83 => 11,  79 => 10,  75 => 8,  68 => 7,  60 => 3,  53 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -164,7 +169,9 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
                         <p class=\"card-text\">
                             {{ product.getDescription }}
                         </p>
-
+                        <a href=\"{{ path('app_product', {'brand_id':
+                            product.brand.id, 'product_id': product.id}) }}\" class=\"btn btn-primary btn-sm\">Détail</a>
+                        <a href=\"#\" class=\"btn btn-success btn-sm\">Ajouter</a>
 
                     </div>
                 </div>
