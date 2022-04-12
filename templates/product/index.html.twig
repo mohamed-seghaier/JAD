@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    Page produit : {{ product.name }}
+{% endblock %}
+
+{% block body %}
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+        <li class="breadcrumb-item active">{{ product.name }}</li>
+    </ol>
+    <h1>
+        {{ product.name }}
+        ({{ product.price }}€)
+    </h1>
+    <div class="row">
+        <div class="col-4">
+            <img class="img-fluid" src="{{ product.Picture }}" alt="Image du produit {{ product.name }}">
+        </div>
+        <div class="col">
+            <span class="badge badge-primary">{{ product.brand.name }}</span>
+            <p>
+                {{ product.Description }}
+            </p>
+            <a href="#" class="btn btn-success btn-lg">
+                <i class="fas fa-shopping-cart"></i>
+                Ajouter au panier</a>
+        </div>
+    </div>
+
+{% endblock %}
