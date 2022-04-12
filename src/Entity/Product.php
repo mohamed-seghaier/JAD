@@ -28,7 +28,7 @@ class Product
     #[ORM\Column(type: 'string', length: 255)]
     private $picture;
 
-    #[ORM\Column(type: 'integer')]
+    #[ORM\Column(type: 'float')]
     private $price;
 
     #[ORM\Column(type: 'integer')]

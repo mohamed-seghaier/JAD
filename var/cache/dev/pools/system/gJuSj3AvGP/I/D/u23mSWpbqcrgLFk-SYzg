@@ -10,11 +10,12 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
             'properties' => [
                 [
                     'id',
-                    'user',
+                    'user_id',
                     'creationDate',
                     'status',
                     'trackingNumber',
                     'orderDetails',
+                    'userId',
                 ],
             ],
         ],
