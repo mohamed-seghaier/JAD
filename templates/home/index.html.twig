@@ -19,7 +19,9 @@
                         <p class="card-text">
                             {{ product.getDescription }}
                         </p>
-
+                        <a href="{{ path('app_product', {'brand_id':
+                            product.brand.id, 'product_id': product.id}) }}" class="btn btn-primary btn-sm">Détail</a>
+                        <a href="#" class="btn btn-success btn-sm">Ajouter</a>
 
                     </div>
                 </div>
