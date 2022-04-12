@@ -20,9 +20,6 @@ class Ips
     #[ORM\Column(type: 'string', length: 100)]
     private $address;
 
-    #[ORM\Column(type: 'string', length: 255)]
-    private $rela;
-
     #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'ips')]
     private $user;
 
@@ -47,18 +44,6 @@ class Ips
     public function setAddress(string $address): self
     {
         $this->address = $address;
-
-        return $this;
-    }
-
-    public function getRela(): ?string
-    {
-        return $this->rela;
-    }
-
-    public function setRela(string $rela): self
-    {
-        $this->rela = $rela;
 
         return $this;
     }

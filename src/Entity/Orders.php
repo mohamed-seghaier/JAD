@@ -7,6 +7,7 @@ use App\Repository\OrdersRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use JetBrains\PhpStorm\Pure;
 
 #[ApiResource]
 #[ORM\Entity(repositoryClass: OrdersRepository::class)]
@@ -17,23 +18,22 @@ class Orders
     #[ORM\Column(type: 'integer')]
     private $id;
 
-    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'orders')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $user;
+    #[ORM\Column(type: 'integer')]
+    private ?int $user_id;
 
     #[ORM\Column(type: 'date')]
-    private $creationDate;
+    private ?\DateTimeInterface $creationDate;
 
     #[ORM\Column(type: 'string', length: 150)]
-    private $status;
+    private ?string $status;
 
     #[ORM\Column(type: 'string', length: 50)]
-    private $trackingNumber;
+    private ?string $trackingNumber;
 
     #[ORM\OneToMany(mappedBy: 'orders', targetEntity: OrderDetails::class)]
-    private $orderDetails;
+    private ArrayCollection $orderDetails;
 
-    public function __construct()
+    #[Pure] public function __construct()
     {
         $this->orderDetails = new ArrayCollection();
     }
@@ -43,14 +43,14 @@ class Orders
         return $this->id;
     }
 
-    public function getUser(): ?User
+    public function getUserId(): ?int
     {
-        return $this->user;
+        return $this->user_id;
     }
 
-    public function setUser(?User $user): self
+    public function setUserId(int $user): self
     {
-        $this->user = $user;
+        $this->user_id = $user;
 
         return $this;
     }

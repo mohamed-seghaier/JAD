@@ -48,16 +48,12 @@ class User
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Address::class)]
     private $addresses;
 
-    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Orders::class)]
-    private $orders;
-
     #[ORM\ManyToMany(targetEntity: Ips::class, mappedBy: 'user')]
     private $ips;
 
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
-        $this->orders = new ArrayCollection();
         $this->ips = new ArrayCollection();
     }
 
@@ -198,36 +194,6 @@ class User
             // set the owning side to null (unless already changed)
             if ($address->getUser() === $this) {
                 $address->setUser(null);
-            }
-        }
-
-        return $this;
-    }
-
-    /**
-     * @return Collection<int, Orders>
-     */
-    public function getOrders(): Collection
-    {
-        return $this->orders;
-    }
-
-    public function addOrder(Orders $order): self
-    {
-        if (!$this->orders->contains($order)) {
-            $this->orders[] = $order;
-            $order->setUser($this);
-        }
-
-        return $this;
-    }
-
-    public function removeOrder(Orders $order): self
-    {
-        if ($this->orders->removeElement($order)) {
-            // set the owning side to null (unless already changed)
-            if ($order->getUser() === $this) {
-                $order->setUser(null);
             }
         }
 

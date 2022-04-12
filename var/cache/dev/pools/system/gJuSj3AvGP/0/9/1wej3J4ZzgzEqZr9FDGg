@@ -20,7 +20,6 @@ return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\
                     'creationDate',
                     'active',
                     'addresses',
-                    'orders',
                     'ips',
                 ],
             ],

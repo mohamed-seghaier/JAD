@@ -98,6 +98,7 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         ),
         'L' => 
         array (
+            'Liior\\Faker\\' => 12,
             'Laminas\\Code\\' => 13,
         ),
         'F' => 
@@ -116,12 +117,19 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
             'Doctrine\\Deprecations\\' => 22,
             'Doctrine\\DBAL\\' => 14,
             'Doctrine\\Common\\Lexer\\' => 22,
+            'Doctrine\\Common\\DataFixtures\\' => 29,
             'Doctrine\\Common\\Collections\\' => 28,
             'Doctrine\\Common\\Cache\\' => 22,
             'Doctrine\\Common\\Annotations\\' => 28,
             'Doctrine\\Common\\' => 16,
             'Doctrine\\Bundle\\MigrationsBundle\\' => 33,
+            'Doctrine\\Bundle\\FixturesBundle\\' => 31,
             'Doctrine\\Bundle\\DoctrineBundle\\' => 31,
+        ),
+        'B' => 
+        array (
+            'Bluemmb\\Faker\\' => 14,
+            'Bezhanov\\Faker\\' => 15,
         ),
         'A' => 
         array (
@@ -374,6 +382,10 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         array (
             0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
         ),
+        'Liior\\Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/liorchamla/faker-prices/src/Faker',
+        ),
         'Laminas\\Code\\' => 
         array (
             0 => __DIR__ . '/..' . '/laminas/laminas-code/src',
@@ -422,6 +434,10 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         array (
             0 => __DIR__ . '/..' . '/doctrine/lexer/lib/Doctrine/Common/Lexer',
         ),
+        'Doctrine\\Common\\DataFixtures\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures',
+        ),
         'Doctrine\\Common\\Collections\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections',
@@ -444,9 +460,21 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle',
         ),
+        'Doctrine\\Bundle\\FixturesBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle',
+        ),
         'Doctrine\\Bundle\\DoctrineBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/doctrine/doctrine-bundle',
+        ),
+        'Bluemmb\\Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/bluemmb/faker-picsum-photos-provider',
+        ),
+        'Bezhanov\\Faker\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker',
         ),
         'App\\Tests\\' => 
         array (
@@ -965,6 +993,7 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         'ApiPlatform\\Core\\Validator\\Exception\\ValidationException' => __DIR__ . '/..' . '/api-platform/core/src/Validator/Exception/ValidationException.php',
         'ApiPlatform\\Core\\Validator\\ValidatorInterface' => __DIR__ . '/..' . '/api-platform/core/src/Validator/ValidatorInterface.php',
         'App\\Controller\\HomeController' => __DIR__ . '/../..' . '/src/Controller/HomeController.php',
+        'App\\DataFixtures\\AppFixtures' => __DIR__ . '/../..' . '/src/DataFixtures/AppFixtures.php',
         'App\\Entity\\Address' => __DIR__ . '/../..' . '/src/Entity/Address.php',
         'App\\Entity\\Brand' => __DIR__ . '/../..' . '/src/Entity/Brand.php',
         'App\\Entity\\Ips' => __DIR__ . '/../..' . '/src/Entity/Ips.php',
@@ -973,6 +1002,7 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         'App\\Entity\\Product' => __DIR__ . '/../..' . '/src/Entity/Product.php',
         'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Entity\\UserType' => __DIR__ . '/../..' . '/src/Entity/UserType.php',
+        'App\\Fixtures\\FakerFactory' => __DIR__ . '/../..' . '/src/Fixtures/FakerFactory.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
         'App\\Repository\\AddressRepository' => __DIR__ . '/../..' . '/src/Repository/AddressRepository.php',
         'App\\Repository\\BrandRepository' => __DIR__ . '/../..' . '/src/Repository/BrandRepository.php',
@@ -982,6 +1012,23 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         'App\\Repository\\ProductRepository' => __DIR__ . '/../..' . '/src/Repository/ProductRepository.php',
         'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
         'App\\Repository\\UserTypeRepository' => __DIR__ . '/../..' . '/src/Repository/UserTypeRepository.php',
+        'Bezhanov\\Faker\\ProviderCollectionHelper' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/ProviderCollectionHelper.php',
+        'Bezhanov\\Faker\\Provider\\Avatar' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Avatar.php',
+        'Bezhanov\\Faker\\Provider\\Commerce' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Commerce.php',
+        'Bezhanov\\Faker\\Provider\\Demographic' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Demographic.php',
+        'Bezhanov\\Faker\\Provider\\Device' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Device.php',
+        'Bezhanov\\Faker\\Provider\\Educator' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Educator.php',
+        'Bezhanov\\Faker\\Provider\\Food' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Food.php',
+        'Bezhanov\\Faker\\Provider\\Medicine' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Medicine.php',
+        'Bezhanov\\Faker\\Provider\\Placeholder' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Placeholder.php',
+        'Bezhanov\\Faker\\Provider\\Science' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Science.php',
+        'Bezhanov\\Faker\\Provider\\Space' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Space.php',
+        'Bezhanov\\Faker\\Provider\\Species' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Species.php',
+        'Bezhanov\\Faker\\Provider\\Team' => __DIR__ . '/..' . '/mbezhanov/faker-provider-collection/src/Faker/Provider/Team.php',
+        'Bluemmb\\Faker\\PicsumPhotosProvider' => __DIR__ . '/..' . '/bluemmb/faker-picsum-photos-provider/PicsumPhotosProvider.php',
+        'Bluemmb\\Faker\\Tests\\ImageUrlTest' => __DIR__ . '/..' . '/bluemmb/faker-picsum-photos-provider/Tests/ImageUrlTest.php',
+        'Bluemmb\\Faker\\Tests\\SpecificAsIdTest' => __DIR__ . '/..' . '/bluemmb/faker-picsum-photos-provider/Tests/SpecificAsIdTest.php',
+        'Bluemmb\\Faker\\Tests\\SpecificAsSeedTest' => __DIR__ . '/..' . '/bluemmb/faker-picsum-photos-provider/Tests/SpecificAsSeedTest.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Attribute\\AsEntityListener' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Attribute/AsEntityListener.php',
         'Doctrine\\Bundle\\DoctrineBundle\\CacheWarmer\\DoctrineMetadataCacheWarmer' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/CacheWarmer/DoctrineMetadataCacheWarmer.php',
@@ -1039,6 +1086,17 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         'Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Repository/ServiceEntityRepository.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepositoryInterface' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Repository/ServiceEntityRepositoryInterface.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Twig\\DoctrineExtension' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Twig/DoctrineExtension.php',
+        'Doctrine\\Bundle\\FixturesBundle\\Command\\LoadDataFixturesDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Command/LoadDataFixturesDoctrineCommand.php',
+        'Doctrine\\Bundle\\FixturesBundle\\DependencyInjection\\CompilerPass\\FixturesCompilerPass' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/DependencyInjection/CompilerPass/FixturesCompilerPass.php',
+        'Doctrine\\Bundle\\FixturesBundle\\DependencyInjection\\CompilerPass\\PurgerFactoryCompilerPass' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/DependencyInjection/CompilerPass/PurgerFactoryCompilerPass.php',
+        'Doctrine\\Bundle\\FixturesBundle\\DependencyInjection\\DoctrineFixturesExtension' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/DependencyInjection/DoctrineFixturesExtension.php',
+        'Doctrine\\Bundle\\FixturesBundle\\DoctrineFixturesBundle' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/DoctrineFixturesBundle.php',
+        'Doctrine\\Bundle\\FixturesBundle\\Fixture' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Fixture.php',
+        'Doctrine\\Bundle\\FixturesBundle\\FixtureGroupInterface' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/FixtureGroupInterface.php',
+        'Doctrine\\Bundle\\FixturesBundle\\Loader\\SymfonyFixturesLoader' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Loader/SymfonyFixturesLoader.php',
+        'Doctrine\\Bundle\\FixturesBundle\\ORMFixtureInterface' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/ORMFixtureInterface.php',
+        'Doctrine\\Bundle\\FixturesBundle\\Purger\\ORMPurgerFactory' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Purger/ORMPurgerFactory.php',
+        'Doctrine\\Bundle\\FixturesBundle\\Purger\\PurgerFactory' => __DIR__ . '/..' . '/doctrine/doctrine-fixtures-bundle/Purger/PurgerFactory.php',
         'Doctrine\\Bundle\\MigrationsBundle\\Collector\\MigrationsCollector' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/Collector/MigrationsCollector.php',
         'Doctrine\\Bundle\\MigrationsBundle\\Collector\\MigrationsFlattener' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/Collector/MigrationsFlattener.php',
         'Doctrine\\Bundle\\MigrationsBundle\\DependencyInjection\\CompilerPass\\ConfigureDependencyFactoryPass' => __DIR__ . '/..' . '/doctrine/doctrine-migrations-bundle/DependencyInjection/CompilerPass/ConfigureDependencyFactoryPass.php',
@@ -1097,6 +1155,28 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         'Doctrine\\Common\\Collections\\Selectable' => __DIR__ . '/..' . '/doctrine/collections/lib/Doctrine/Common/Collections/Selectable.php',
         'Doctrine\\Common\\CommonException' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/CommonException.php',
         'Doctrine\\Common\\Comparable' => __DIR__ . '/..' . '/doctrine/common/lib/Doctrine/Common/Comparable.php',
+        'Doctrine\\Common\\DataFixtures\\AbstractFixture' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/AbstractFixture.php',
+        'Doctrine\\Common\\DataFixtures\\DependentFixtureInterface' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/DependentFixtureInterface.php',
+        'Doctrine\\Common\\DataFixtures\\Event\\Listener\\MongoDBReferenceListener' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Event/Listener/MongoDBReferenceListener.php',
+        'Doctrine\\Common\\DataFixtures\\Event\\Listener\\ORMReferenceListener' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Event/Listener/ORMReferenceListener.php',
+        'Doctrine\\Common\\DataFixtures\\Exception\\CircularReferenceException' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Exception/CircularReferenceException.php',
+        'Doctrine\\Common\\DataFixtures\\Executor\\AbstractExecutor' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/AbstractExecutor.php',
+        'Doctrine\\Common\\DataFixtures\\Executor\\MongoDBExecutor' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/MongoDBExecutor.php',
+        'Doctrine\\Common\\DataFixtures\\Executor\\ORMExecutor' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/ORMExecutor.php',
+        'Doctrine\\Common\\DataFixtures\\Executor\\PHPCRExecutor' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Executor/PHPCRExecutor.php',
+        'Doctrine\\Common\\DataFixtures\\FixtureInterface' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/FixtureInterface.php',
+        'Doctrine\\Common\\DataFixtures\\Loader' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Loader.php',
+        'Doctrine\\Common\\DataFixtures\\OrderedFixtureInterface' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/OrderedFixtureInterface.php',
+        'Doctrine\\Common\\DataFixtures\\ProxyReferenceRepository' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/ProxyReferenceRepository.php',
+        'Doctrine\\Common\\DataFixtures\\Purger\\MongoDBPurger' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/MongoDBPurger.php',
+        'Doctrine\\Common\\DataFixtures\\Purger\\ORMPurger' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/ORMPurger.php',
+        'Doctrine\\Common\\DataFixtures\\Purger\\ORMPurgerInterface' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/ORMPurgerInterface.php',
+        'Doctrine\\Common\\DataFixtures\\Purger\\PHPCRPurger' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/PHPCRPurger.php',
+        'Doctrine\\Common\\DataFixtures\\Purger\\PurgerInterface' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Purger/PurgerInterface.php',
+        'Doctrine\\Common\\DataFixtures\\ReferenceRepository' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/ReferenceRepository.php',
+        'Doctrine\\Common\\DataFixtures\\SharedFixtureInterface' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/SharedFixtureInterface.php',
+        'Doctrine\\Common\\DataFixtures\\Sorter\\TopologicalSorter' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Sorter/TopologicalSorter.php',
+        'Doctrine\\Common\\DataFixtures\\Sorter\\Vertex' => __DIR__ . '/..' . '/doctrine/data-fixtures/lib/Doctrine/Common/DataFixtures/Sorter/Vertex.php',
         'Doctrine\\Common\\EventArgs' => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common/EventArgs.php',
         'Doctrine\\Common\\EventManager' => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common/EventManager.php',
         'Doctrine\\Common\\EventSubscriber' => __DIR__ . '/..' . '/doctrine/event-manager/lib/Doctrine/Common/EventSubscriber.php',
@@ -2665,6 +2745,7 @@ class ComposerStaticInit6e6d08f7cfb999543be1433f8dfff076
         'Laminas\\Code\\Reflection\\PropertyReflection' => __DIR__ . '/..' . '/laminas/laminas-code/src/Reflection/PropertyReflection.php',
         'Laminas\\Code\\Reflection\\ReflectionInterface' => __DIR__ . '/..' . '/laminas/laminas-code/src/Reflection/ReflectionInterface.php',
         'Laminas\\Code\\Scanner\\DocBlockScanner' => __DIR__ . '/..' . '/laminas/laminas-code/src/Scanner/DocBlockScanner.php',
+        'Liior\\Faker\\Prices' => __DIR__ . '/..' . '/liorchamla/faker-prices/src/Faker/Prices.php',
         'Negotiation\\AbstractNegotiator' => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation/AbstractNegotiator.php',
         'Negotiation\\Accept' => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation/Accept.php',
         'Negotiation\\AcceptCharset' => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation/AcceptCharset.php',
