@@ -105,7 +105,7 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getDescription", [], "any", false, false, false, 20), "html", null, true);
             echo "
                         </p>
-                        
+
 
                     </div>
                 </div>
@@ -164,7 +164,7 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
                         <p class=\"card-text\">
                             {{ product.getDescription }}
                         </p>
-                        
+
 
                     </div>
                 </div>
