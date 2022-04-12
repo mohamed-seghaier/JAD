@@ -25,7 +25,6 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -49,77 +48,33 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
 
     }
 
-    // line 2
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        // line 3
-        echo "    Accueil
-";
-        
-        $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
-
-    }
-
-    // line 7
+    // line 3
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 8
-        echo "    <h1>Nos produits phares</h1>
-    <div class=\"row\">
-        ";
-        // line 10
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["products"]) || array_key_exists("products", $context) ? $context["products"] : (function () { throw new RuntimeError('Variable "products" does not exist.', 10, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 11
-            echo "            <div class=\"col\">
-                <div class=\"card\">
-                    <img class=\"img-fluid\" src=\"";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getPicture", [], "any", false, false, false, 13), "html", null, true);
-            echo "\" alt=\"Image du produit\">
-                    <div class=\"card-body\">
-                        <h4 class=\"card-title\">";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getName", [], "any", false, false, false, 15), "html", null, true);
-            echo " (";
-            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["product"], "getPrice", [], "any", false, false, false, 15) / 100), "html", null, true);
-            echo " &euro;)</h4>
-                        <span class=\"badge badge-info\">
-                            ";
-            // line 17
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, $context["product"], "brand", [], "any", false, false, false, 17), "getName", [], "any", false, false, false, 17), "html", null, true);
-            echo "
-                        </span>
-                        <p class=\"card-text\">
-                            ";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "getDescription", [], "any", false, false, false, 20), "html", null, true);
-            echo "
-                        </p>
-                        
-
-                    </div>
-                </div>
-            </div>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 28
+        // line 4
         echo "
-    </div>
+<div class=\"example-wrapper\">
+    <h1>Hello ";
+        // line 6
+        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 6, $this->source); })()), "html", null, true);
+        echo "! ✅</h1>
 
-
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href=\"";
+        // line 10
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/dali/PhpstormProjects/JAD_Shopping/jad_shopping/src/Controller/HomeController.php", 0), "html", null, true);
+        echo "\">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href=\"";
+        // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("/Users/dali/PhpstormProjects/JAD_Shopping/jad_shopping/templates/home/index.html.twig", 0), "html", null, true);
+        echo "\">templates/home/index.html.twig</a></code></li>
+    </ul>
+</div>
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -138,42 +93,25 @@ class __TwigTemplate_b012eab909731f35ade6d2a822f5d383 extends Template
 
     public function getDebugInfo()
     {
-        return array (  119 => 28,  105 => 20,  99 => 17,  92 => 15,  87 => 13,  83 => 11,  79 => 10,  75 => 8,  68 => 7,  60 => 3,  53 => 2,  36 => 1,);
+        return array (  74 => 11,  70 => 10,  63 => 6,  59 => 4,  52 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{% extends \"base.html.twig\" %}
-{% block title %}
-    Accueil
-{% endblock %}
-
+        return new Source("{% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Nos produits phares</h1>
-    <div class=\"row\">
-        {% for product in products %}
-            <div class=\"col\">
-                <div class=\"card\">
-                    <img class=\"img-fluid\" src=\"{{ product.getPicture }}\" alt=\"Image du produit\">
-                    <div class=\"card-body\">
-                        <h4 class=\"card-title\">{{ product.getName }} ({{ product.getPrice / 100 }} &euro;)</h4>
-                        <span class=\"badge badge-info\">
-                            {{ product.brand.getName }}
-                        </span>
-                        <p class=\"card-text\">
-                            {{ product.getDescription }}
-                        </p>
-                        
 
-                    </div>
-                </div>
-            </div>
-        {% endfor %}
+<div class=\"example-wrapper\">
+    <h1>Hello {{ controller_name }}! ✅</h1>
 
-    </div>
-
-
-{% endblock %}", "home/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/home/index.html.twig");
+    This friendly message is coming from:
+    <ul>
+        <li>Your controller at <code><a href=\"{{ '/Users/dali/PhpstormProjects/JAD_Shopping/jad_shopping/src/Controller/HomeController.php'|file_link(0) }}\">src/Controller/HomeController.php</a></code></li>
+        <li>Your template at <code><a href=\"{{ '/Users/dali/PhpstormProjects/JAD_Shopping/jad_shopping/templates/home/index.html.twig'|file_link(0) }}\">templates/home/index.html.twig</a></code></li>
+    </ul>
+</div>
+{% endblock %}
+", "home/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/home/index.html.twig");
     }
 }
