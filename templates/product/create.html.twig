@@ -1,0 +1,37 @@
+{% extends "base.html.twig" %}
+
+{% form_theme formView 'bootstrap_4_layout.html.twig' %}
+
+{% block title%}
+    Création d'un produit
+{% endblock %}
+
+{% block body %}
+    <h1>Nouveau produit</h1>
+
+    {#{{ Form(formView) }}#}
+    {{ form_start(formView, {"attr": {"novalidate":"novalidate"}})}}
+    {{ form_errors(formView)}}
+
+    <div class="row">
+        <div class="col content-center">
+            <p>{{ form_row(formView.name) }}</p>
+            <p>{{ form_row(formView.price) }}</p>
+            <p>{{ form_row(formView.stock) }}</p>
+        </div>
+
+
+        <div class="col text-align:center">
+            <p>{{ form_row(formView.brand) }}</p>
+            <p>{{ form_row(formView.Description) }}</p>
+            <p>{{ form_row(formView.Picture) }}</p>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"></i> Créer
+    </button>
+    {{ form_end(formView)}}
+{% endblock %}
+

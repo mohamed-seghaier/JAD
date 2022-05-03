@@ -59,6 +59,11 @@ class Product
         return $this->name;
     }
 
+    public function increment_stock() :self {
+        $this->stock += 1;
+
+        return $this;
+    }
     public function setName(string $name): self
     {
         $this->name = $name;

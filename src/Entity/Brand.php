@@ -29,6 +29,9 @@ class Brand
     #[ORM\OneToMany(mappedBy: 'brand', targetEntity: Product::class)]
     private $products;
 
+    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'brands')]
+    private $user;
+
     public function __construct()
     {
         $this->products = new ArrayCollection();
@@ -101,6 +104,18 @@ class Brand
                 $product->setBrand(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
 
         return $this;
     }

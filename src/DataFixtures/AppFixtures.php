@@ -21,6 +21,23 @@ class AppFixtures extends Fixture
         $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
 
         $usertype = new UserType();
+        $usertype->setName("Client");
+        $user = new User();
+        $user->setFirstName($faker->firstName())
+            ->setLastName($faker->lastName())
+            ->setPhone($faker->phoneNumber())
+            ->setMail($faker->email())
+            ->setPassword($faker->password())
+            ->setToken($faker->linuxPlatformToken())
+            ->setCreationDate(new \DateTime())
+            ->setActive(true)
+            ->setUserType($usertype);
+        $usertype->addUsers($user);
+        $manager->persist($usertype);
+        $manager->persist($user);
+
+
+        $usertype = new UserType();
         $usertype->setName("Vendeur");
 
         for ($i = 0; $i < 100; $i += 1) {
@@ -43,6 +60,7 @@ class AppFixtures extends Fixture
             $brand = new Brand();
             $brand->setName($faker->company())
                 ->setActive(true)
+                ->setUser($user)
                 ->setDescription($faker->paragraph());
             for ($p = 0; $p < 5; $p += 1) {
                 $product = new Product();
