@@ -18,7 +18,7 @@ class User
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    private $mail;
+    private ?string $mail;
 
     #[ORM\Column(type: 'string', length: 100)]
     private $lastName;
@@ -51,10 +51,14 @@ class User
     #[ORM\ManyToMany(targetEntity: Ips::class, mappedBy: 'user')]
     private $ips;
 
+    #[ORM\OneToMany(mappedBy: 'user', targetEntity: Brand::class)]
+    private $brands;
+
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
         $this->ips = new ArrayCollection();
+        $this->brands = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -222,6 +226,36 @@ class User
     {
         if ($this->ips->removeElement($ip)) {
             $ip->removeUser($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Brand>
+     */
+    public function getBrands(): Collection
+    {
+        return $this->brands;
+    }
+
+    public function addBrand(Brand $brand): self
+    {
+        if (!$this->brands->contains($brand)) {
+            $this->brands[] = $brand;
+            $brand->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBrand(Brand $brand): self
+    {
+        if ($this->brands->removeElement($brand)) {
+            // set the owning side to null (unless already changed)
+            if ($brand->getUser() === $this) {
+                $brand->setUser(null);
+            }
         }
 
         return $this;

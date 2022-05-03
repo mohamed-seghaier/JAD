@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title%}
+    Edition d'une marque
+{% endblock %}
+
+{% block body %}
+    <h1> {{ brand.name }}</h1>
+    {#{{ form(formView) }}#}
+    {{ form_start(formView, {"attr": {"novalidate":"novalidate"}})}}
+    {{ form_errors(formView)}}
+
+    <div class="row">
+        <div class="col">
+            {{ form_row(formView.name) }}
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"></i> Editer
+    </button>
+    {{ form_end(formView)}}
+{% endblock %}

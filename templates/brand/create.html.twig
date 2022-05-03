@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block title%}
+    Création d'une marque
+{% endblock %}
+
+{% block body %}
+    <h1>Nouvelle marque</h1>
+
+    {#{{ Form(formView) }}#}
+    {{ form_start(formView, {"attr": {"novalidate":"novalidate"}})}}
+    {{ form_errors(formView)}}
+
+    <div class="row">
+        <div class="col content-center">
+            <p>{{ form_row(formView.name) }}</p>
+        </div>
+
+
+        <div class="col text-align:center">
+            <p>{{ form_row(formView.Description) }}</p>
+        </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">
+        <i class="fas fa-save"></i> Créer
+    </button>
+    {{ form_end(formView)}}
+{% endblock %}
+

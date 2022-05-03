@@ -1,21 +1,25 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{{ path('app_home') }}">JAD</a>
+        <a class="navbar-brand" href="{{ path('app_home') }}"><img src="{{ asset('jad.png')}}"width="50" height="50" alt="JAD Logo"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Features</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Marques</a>
+                    <div class="dropdown-menu">
+                        {% for brand in brands.findAll %}
+                            <a class="nav-link" href="{{ path('app_brand',{'brand_id': brand.id })}}">{{brand.name}}</a>
+                        {% endfor %}
+                    </div>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Pricing</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a href="#" class="nav-link">Inscription</a></li>
+                <li class="nav-item"><a href="#" class="btn btn-success">Connection</a></li>
+                <li class="nav-item"><a href="#" class="btn btn-danger">Deconnection</a></li>
             </ul>
         </div>
     </div>
