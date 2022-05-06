@@ -37,13 +37,13 @@ class UserController extends AbstractController
     }
 
 
-    #[Route('/client/connect', name:'client_connect')]
-    public function clientConnect(ClientRepository $userRepository, Session $session) : Response {
+    #[Route('/user/{id}', name:'app_client_index')]
+    public function client_index($id, ClientRepository $userRepository, Session $session) : Response {
         $user = $userRepository->findOneBy([
-            'id' => 501
+            'id' => $id
         ]);
         if (!$user)
-            throw $this->createNotFoundException("Ce client n'existe pas.");
+            throw $this->createNotFoundException("Cet utilisateur n'existe pas.");
 
         return $this->render('user/client.html.twig', [
             'client' => $user,
@@ -51,8 +51,8 @@ class UserController extends AbstractController
         ]);
     }
 
-    #[Route('/vendeur/connect', name:'vendeur_connect')]
-    public function vendeurConnect(ClientRepository $userRepository, Session $session) : Response {
+    #[Route('/vendeur/{id}/index', name:'app_vendeur_index')]
+    public function vendeur_index(ClientRepository $userRepository, Session $session) : Response {
         $user = $userRepository->findOneBy([
             'id' => 502
         ]);

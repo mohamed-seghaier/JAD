@@ -41,13 +41,6 @@ class ProductType extends AbstractType
             ->add('Picture', UrlType::class, [
                 'label'=>'Photo du produit',
                 'attr'=> ['placeholder'=> 'Téléchargez '],
-            ])
-
-            ->add('brand', EntityType::class, [
-                'label'=> 'Marque : ',
-                'placeholder'=>'-- Sélectionnez une marque --',
-                'class' => Brand::class,
-                'choice_label' => 'name'
             ]);
         //$builder->get('price')->addModelTransformer(new CentimesTansformer());
         /*        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {

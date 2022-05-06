@@ -6601,6 +6601,13 @@
         <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
       </argument>
     </service>
+    <service id=".service_locator._fMjCXz" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="brandRepository" type="service_closure" id="App\Repository\BrandRepository"/>
+        <argument key="manager" type="service_closure" id="doctrine.orm.default_entity_manager"/>
+      </argument>
+    </service>
     <service id=".service_locator.YNO4FUy" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6634,19 +6641,20 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\ClientRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.sMtbmGI" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.cIuKVtf" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BrandController::create" type="service_closure" id=".service_locator.tgVVt0z"/>
+        <argument key="App\Controller\BrandController::edit" type="service_closure" id=".service_locator._fMjCXz"/>
         <argument key="App\Controller\BrandController::index" type="service_closure" id=".service_locator.7mtYEde"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.YNO4FUy"/>
         <argument key="App\Controller\ProductController::create" type="service_closure" id=".service_locator.tgVVt0z"/>
         <argument key="App\Controller\ProductController::edit" type="service_closure" id=".service_locator.pN6ATyo"/>
         <argument key="App\Controller\ProductController::index" type="service_closure" id=".service_locator.oQjFjmO"/>
         <argument key="App\Controller\SecurityController::login" type="service_closure" id=".service_locator.KV_IRIi"/>
-        <argument key="App\Controller\UserController::clientConnect" type="service_closure" id=".service_locator.1U1z2Jh"/>
+        <argument key="App\Controller\UserController::client_index" type="service_closure" id=".service_locator.1U1z2Jh"/>
         <argument key="App\Controller\UserController::user" type="service_closure" id=".service_locator.1U1z2Jh"/>
-        <argument key="App\Controller\UserController::vendeurConnect" type="service_closure" id=".service_locator.1U1z2Jh"/>
+        <argument key="App\Controller\UserController::vendeur_index" type="service_closure" id=".service_locator.1U1z2Jh"/>
         <argument key="App\Kernel::loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="App\Kernel::terminate" type="service_closure" id=".service_locator.bRdave9"/>
@@ -6654,15 +6662,16 @@
         <argument key="kernel::registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel::terminate" type="service_closure" id=".service_locator.bRdave9"/>
         <argument key="App\Controller\BrandController:create" type="service_closure" id=".service_locator.tgVVt0z"/>
+        <argument key="App\Controller\BrandController:edit" type="service_closure" id=".service_locator._fMjCXz"/>
         <argument key="App\Controller\BrandController:index" type="service_closure" id=".service_locator.7mtYEde"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.YNO4FUy"/>
         <argument key="App\Controller\ProductController:create" type="service_closure" id=".service_locator.tgVVt0z"/>
         <argument key="App\Controller\ProductController:edit" type="service_closure" id=".service_locator.pN6ATyo"/>
         <argument key="App\Controller\ProductController:index" type="service_closure" id=".service_locator.oQjFjmO"/>
         <argument key="App\Controller\SecurityController:login" type="service_closure" id=".service_locator.KV_IRIi"/>
-        <argument key="App\Controller\UserController:clientConnect" type="service_closure" id=".service_locator.1U1z2Jh"/>
+        <argument key="App\Controller\UserController:client_index" type="service_closure" id=".service_locator.1U1z2Jh"/>
         <argument key="App\Controller\UserController:user" type="service_closure" id=".service_locator.1U1z2Jh"/>
-        <argument key="App\Controller\UserController:vendeurConnect" type="service_closure" id=".service_locator.1U1z2Jh"/>
+        <argument key="App\Controller\UserController:vendeur_index" type="service_closure" id=".service_locator.1U1z2Jh"/>
         <argument key="kernel:loadRoutes" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:registerContainerConfiguration" type="service_closure" id=".service_locator.xUrKPVU"/>
         <argument key="kernel:terminate" type="service_closure" id=".service_locator.bRdave9"/>
@@ -7040,12 +7049,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.sMtbmGI"/>
+      <argument type="service" id=".service_locator.cIuKVtf"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.sMtbmGI"/>
+      <argument type="service" id=".service_locator.cIuKVtf"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -7991,7 +8000,7 @@
     <service id="ApiPlatform\Core\Security\ResourceAccessCheckerInterface" alias="api_platform.security.resource_access_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.sMtbmGI"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.cIuKVtf"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="api_platform.doctrine.listener.mercure.publish" alias="api_platform.doctrine.orm.listener.mercure.publish">
@@ -8005,7 +8014,7 @@
     <service id=".service_locator.2_3F2_m" alias=".service_locator.oQjFjmO"/>
     <service id=".service_locator.DNmEae1" alias=".service_locator.pN6ATyo"/>
     <service id=".service_locator.9yTc0X0" alias=".service_locator.1U1z2Jh"/>
-    <service id=".service_locator.bFe2F0B" alias=".service_locator.sMtbmGI"/>
+    <service id=".service_locator.PluE0et" alias=".service_locator.cIuKVtf"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.xEs79iQ" alias=".service_locator.fr_cJ0S"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
@@ -8071,6 +8080,7 @@
     <service id=".service_locator.uo5c0SP" alias=".service_locator.xUrKPVU"/>
     <service id=".service_locator.AvdF3AG" alias=".service_locator.7mtYEde"/>
     <service id=".service_locator.2w_Chtm" alias=".service_locator.tgVVt0z"/>
+    <service id=".service_locator.Dh6Rimo" alias=".service_locator._fMjCXz"/>
     <service id=".service_locator.igPJvRU" alias=".service_locator.YNO4FUy"/>
     <service id=".service_locator.apeBzKU" alias=".service_locator.oQjFjmO"/>
     <service id=".service_locator.YiVOyn2" alias=".service_locator.pN6ATyo"/>

@@ -13,14 +13,10 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
-        '/admin/brand/create' => [[['_route' => 'app_brand_create', '_controller' => 'App\\Controller\\BrandController::create'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
-        '/admin/product/create' => [[['_route' => 'app_product_create', '_controller' => 'App\\Controller\\ProductController::create'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/user' => [[['_route' => 'app_user', '_controller' => 'App\\Controller\\UserController::index'], null, null, null, false, false, null]],
-        '/client/connect' => [[['_route' => 'client_connect', '_controller' => 'App\\Controller\\UserController::clientConnect'], null, null, null, false, false, null]],
-        '/vendeur/connect' => [[['_route' => 'vendeur_connect', '_controller' => 'App\\Controller\\UserController::vendeurConnect'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -90,28 +86,37 @@ return [
                             .')'
                         .')'
                     .')'
-                    .'|dmin/([^/]++)/edit(*:675)'
+                    .'|dmin/(?'
+                        .'|user/([^/]++)/brand/create(*:691)'
+                        .'|([^/]++)/edit(*:712)'
+                        .'|brand/([^/]++)/product/create(*:749)'
+                        .'|product/([^/]++)/edit(*:778)'
+                    .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:715)'
-                    .'|wdt/([^/]++)(*:735)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:819)'
+                    .'|wdt/([^/]++)(*:839)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:781)'
-                            .'|router(*:795)'
+                            .'|search/results(*:885)'
+                            .'|router(*:899)'
                             .'|exception(?'
-                                .'|(*:815)'
-                                .'|\\.css(*:828)'
+                                .'|(*:919)'
+                                .'|\\.css(*:932)'
                             .')'
                         .')'
-                        .'|(*:838)'
+                        .'|(*:942)'
                     .')'
                 .')'
                 .'|/brand/([^/]++)(?'
-                    .'|(*:866)'
-                    .'|/product/([^/]++)(*:891)'
+                    .'|(*:970)'
+                    .'|/product/([^/]++)(*:995)'
                 .')'
-                .'|/user/([^/]++)(*:914)'
+                .'|/user/([^/]++)(?'
+                    .'|(*:1021)'
+                    .'|(*:1030)'
+                .')'
+                .'|/vendeur/([^/]++)/index(*:1063)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -188,18 +193,23 @@ return [
             [['_route' => 'api_ips_put_item', '_controller' => 'api_platform.action.put_item', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Ips', '_api_identifiers' => ['id'], '_api_has_composite_identifier' => false, '_api_item_operation_name' => 'put'], ['id', '_format'], ['PUT' => 0], null, false, true, null],
             [['_route' => 'api_ips_patch_item', '_controller' => 'api_platform.action.patch_item', '_format' => null, '_stateless' => null, '_api_resource_class' => 'App\\Entity\\Ips', '_api_identifiers' => ['id'], '_api_has_composite_identifier' => false, '_api_item_operation_name' => 'patch'], ['id', '_format'], ['PATCH' => 0], null, false, true, null],
         ],
-        675 => [[['_route' => 'app_product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['product_id'], null, null, false, false, null]],
-        715 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        735 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        781 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        795 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        815 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        828 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        838 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        866 => [[['_route' => 'app_brand', '_controller' => 'App\\Controller\\BrandController::index'], ['brand_id'], null, null, false, true, null]],
-        891 => [[['_route' => 'app_product', '_controller' => 'App\\Controller\\ProductController::index'], ['brand_id', 'product_id'], null, null, false, true, null]],
-        914 => [
-            [['_route' => 'app_seller', '_controller' => 'App\\Controller\\UserController::user'], ['seller_id'], null, null, false, true, null],
+        691 => [[['_route' => 'app_brand_create', '_controller' => 'App\\Controller\\BrandController::create'], ['id'], null, null, false, false, null]],
+        712 => [[['_route' => 'app_brand_edit', '_controller' => 'App\\Controller\\BrandController::edit'], ['brand_id'], null, null, false, false, null]],
+        749 => [[['_route' => 'app_product_create', '_controller' => 'App\\Controller\\ProductController::create'], ['id'], null, null, false, false, null]],
+        778 => [[['_route' => 'app_product_edit', '_controller' => 'App\\Controller\\ProductController::edit'], ['product_id'], null, null, false, false, null]],
+        819 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        839 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        885 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        899 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        919 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        932 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        942 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
+        970 => [[['_route' => 'app_brand', '_controller' => 'App\\Controller\\BrandController::index'], ['brand_id'], null, null, false, true, null]],
+        995 => [[['_route' => 'app_product', '_controller' => 'App\\Controller\\ProductController::index'], ['brand_id', 'product_id'], null, null, false, true, null]],
+        1021 => [[['_route' => 'app_seller', '_controller' => 'App\\Controller\\UserController::user'], ['seller_id'], null, null, false, true, null]],
+        1030 => [[['_route' => 'app_client_index', '_controller' => 'App\\Controller\\UserController::client_index'], ['id'], null, null, false, true, null]],
+        1063 => [
+            [['_route' => 'app_vendeur_index', '_controller' => 'App\\Controller\\UserController::vendeur_index'], ['id'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

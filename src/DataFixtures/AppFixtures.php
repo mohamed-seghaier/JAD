@@ -30,6 +30,7 @@ class AppFixtures extends Fixture
         $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
 
         $usertype = new UserType();
+        $usertype->setName('USER_CLIENT');
 
         for ($us = 0; $us <= 5; $us += 1) {
             $usertype->setName("Client");
@@ -42,7 +43,8 @@ class AppFixtures extends Fixture
                 ->setToken($faker->linuxPlatformToken())
                 ->setCreationDate(new \DateTime())
                 ->setActive(true)
-                ->setUserType($usertype);
+                ->setUserType($usertype)
+                ->setRoles(['ROLE_CLIENT']);
             $usertype->addClient($user);
             $manager->persist($usertype);
             $manager->persist($user);

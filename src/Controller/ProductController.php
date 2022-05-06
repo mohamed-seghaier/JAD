@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Brand;
 use App\Entity\Product;
 use App\Form\ProductType;
 use App\Repository\BrandRepository;
@@ -25,8 +26,8 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/product/create', name:'app_product_create')]
-    public function create(EntityManagerInterface $manager, Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|Response
+    #[Route('/admin/brand/{id}/product/create', name:'app_product_create')]
+    public function create($id, EntityManagerInterface $manager, Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|Response
     {
         $product = new Product();
         $form = $this->createForm(ProductType::class, $product);
@@ -34,12 +35,16 @@ class ProductController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted()&& $form->isValid()) {
+            $brand = $manager->getRepository(Brand::class)->findOneBy(['id'=>$id]);
+            $brand->addProduct($product);
             $product->setActive(true);
+            $product->setBrand($brand);
             $manager->persist($product);
             $manager->flush();
             return $this->redirectToRoute('app_product', [
                 'product_id' => $product->getId(),
-                'brand_id'=>$product->getBrand()->getId()
+                'brand_id'=>$product->getBrand()->getId(),
+                'product' => $product
             ]);
         }
         $data = $form->getData();
@@ -49,7 +54,7 @@ class ProductController extends AbstractController
         ]);
     }
 
-    #[Route('/admin/{product_id}/edit', name:'app_product_edit')]
+    #[Route('/admin/product/{product_id}/edit', name:'app_product_edit')]
     public function edit($product_id,ProductRepository $productRepository, EntityManagerInterface $manager, Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|Response
     {
         $product = $productRepository->findOneBy(['id'=>$product_id]);

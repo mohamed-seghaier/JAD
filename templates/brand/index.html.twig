@@ -9,6 +9,9 @@
          <li class="breadcrumb-item active">{{ brand.name }}</li>
      </ol>
      <h1> Marque : {{ brand.name }}</h1>
+     <a href=" {{ path('app_product_create', {'id':brand.id})}}" class="btn btn-light ">Ajouter un produit</a>
+     <a href=" {{ path('app_brand_edit', {'brand_id':brand.id})}}" class="btn btn-light ">Éditer cette marque</a>
+
 
      <div class="row">
          {% for product in brand.products %}
@@ -37,7 +40,6 @@
 
          {% endfor %}
          <div class="col-3">
-             <a href=" {{ path('app_product_create')}}" class="btn btn-grey ">Ajouter un produit</a>
          </div>
      </div>
  {% endblock %}
