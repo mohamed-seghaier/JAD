@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '007766cddd6b190ba38e904a1c21ae0f60c52bbc',
+        'reference' => '4403c5572e6f6ccb2624ffcd67631048927a5b7e',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '007766cddd6b190ba38e904a1c21ae0f60c52bbc',
+            'reference' => '4403c5572e6f6ccb2624ffcd67631048927a5b7e',
             'dev_requirement' => false,
         ),
         'api-platform/core' => array(
@@ -741,12 +741,12 @@
             'dev_requirement' => false,
         ),
         'symfony/security-bundle' => array(
-            'pretty_version' => 'v6.0.5',
-            'version' => '6.0.5.0',
+            'pretty_version' => 'v6.0.8',
+            'version' => '6.0.8.0',
             'type' => 'symfony-bundle',
             'install_path' => __DIR__ . '/../symfony/security-bundle',
             'aliases' => array(),
-            'reference' => '069c2c94600253891e9ba3cb1e098ba6a8bcddd1',
+            'reference' => '56a9b0991479bef39bac12c69efe8c0fada91809',
             'dev_requirement' => false,
         ),
         'symfony/security-core' => array(
@@ -818,6 +818,15 @@
             'reference' => '522144f0c4c004c80d56fa47e40e17028e2eefc2',
             'dev_requirement' => false,
         ),
+        'symfony/translation' => array(
+            'pretty_version' => 'v6.0.8',
+            'version' => '6.0.8.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/translation',
+            'aliases' => array(),
+            'reference' => '3d38cf8f8834148c4457681d539bc204de701501',
+            'dev_requirement' => false,
+        ),
         'symfony/translation-contracts' => array(
             'pretty_version' => 'v3.0.0',
             'version' => '3.0.0.0',
@@ -826,6 +835,12 @@
             'aliases' => array(),
             'reference' => '1b6ea5a7442af5a12dba3dbd6d71034b5b234e77',
             'dev_requirement' => false,
+        ),
+        'symfony/translation-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '2.3|3.0',
+            ),
         ),
         'symfony/twig-bridge' => array(
             'pretty_version' => 'v6.0.5',
@@ -880,6 +895,15 @@
             'aliases' => array(),
             'reference' => '52d6af6c4476c8ebdef968cb39030826253eb5e4',
             'dev_requirement' => false,
+        ),
+        'symfony/web-profiler-bundle' => array(
+            'pretty_version' => 'v6.0.8',
+            'version' => '6.0.8.0',
+            'type' => 'symfony-bundle',
+            'install_path' => __DIR__ . '/../symfony/web-profiler-bundle',
+            'aliases' => array(),
+            'reference' => '72c103c3aa0aad379bcd1c78b0ab8793496f668a',
+            'dev_requirement' => true,
         ),
         'symfony/yaml' => array(
             'pretty_version' => 'v6.0.3',

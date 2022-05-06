@@ -67,10 +67,10 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'user'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'client'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'user'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'client'];
     }
 
     /**
@@ -294,23 +294,23 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getUser(): ?\App\Entity\User
+    public function getClient(): ?\App\Entity\Client
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getClient', []);
 
-        return parent::getUser();
+        return parent::getClient();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setUser(?\App\Entity\User $user): \App\Entity\Brand
+    public function setClient(?\App\Entity\Client $client): \App\Entity\Brand
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', [$user]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setClient', [$client]);
 
-        return parent::setUser($user);
+        return parent::setClient($client);
     }
 
 }

@@ -16,10 +16,16 @@
                     </div>
                 </li>
             </ul>
+            {% if app.user %}
+                <div>{{ app.user.firstName}} {{app.user.lastname}} &nbsp;</div>
+            {% endif %}
             <ul class="navbar-nav">
-                <li class="nav-item"><a href="#" class="nav-link">Inscription</a></li>
-                <li class="nav-item"><a href="#" class="btn btn-success">Connection</a></li>
-                <li class="nav-item"><a href="#" class="btn btn-danger">Deconnection</a></li>
+                {% if app.user %}
+                    <li class="nav-item"><a href="{{ path('app_logout')}}" class="btn btn-danger">Deconnexion</a></li>
+                {% else %}
+                    <li class="nav-item"><a href="#" class="nav-link">Inscription</a></li>
+                    <li class="nav-item"><a href="{{ path('app_login')}}" class="btn btn-success">Connexion</a></li>
+                {% endif %}
             </ul>
         </div>
     </div>

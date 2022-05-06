@@ -20,15 +20,15 @@ class Ips
     #[ORM\Column(type: 'string', length: 100)]
     private $address;
 
-    #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'ips')]
-    private $user;
+    #[ORM\ManyToMany(targetEntity: Client::class, inversedBy: 'ips')]
+    private $client;
 
     #[ORM\Column(type: 'smallint')]
     private $blackList;
 
     public function __construct()
     {
-        $this->user = new ArrayCollection();
+        $this->client = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -49,25 +49,25 @@ class Ips
     }
 
     /**
-     * @return Collection<int, User>
+     * @return Collection<int, Client>
      */
-    public function getUser(): Collection
+    public function getClient(): Collection
     {
-        return $this->user;
+        return $this->client;
     }
 
-    public function addUser(User $user): self
+    public function addClient(Client $client): self
     {
-        if (!$this->user->contains($user)) {
-            $this->user[] = $user;
+        if (!$this->client->contains($client)) {
+            $this->client[] = $client;
         }
 
         return $this;
     }
 
-    public function removeUser(User $user): self
+    public function removeClient(Client $client): self
     {
-        $this->user->removeElement($user);
+        $this->client->removeElement($client);
 
         return $this;
     }

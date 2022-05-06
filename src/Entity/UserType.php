@@ -20,12 +20,14 @@ class UserType
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\OneToMany(mappedBy: 'userType', targetEntity: User::class)]
-    private $users;
+
+    #[ORM\OneToMany(mappedBy: 'userType', targetEntity: Client::class)]
+    private $clients;
 
     public function __construct()
     {
         $this->users = new ArrayCollection();
+        $this->clients = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -46,29 +48,29 @@ class UserType
     }
 
     /**
-     * @return Collection<int, User>
+     * @return Collection<int, Client>
      */
-    public function getUsers(): Collection
+    public function getClients(): Collection
     {
-        return $this->users;
+        return $this->clients;
     }
 
-    public function addUsers(User $users): self
+    public function addClient(Client $client): self
     {
-        if (!$this->users->contains($users)) {
-            $this->users[] = $users;
-            $users->setUserType($this);
+        if (!$this->clients->contains($client)) {
+            $this->clients[] = $client;
+            $client->setUserType($this);
         }
 
         return $this;
     }
 
-    public function removeUsers(User $users): self
+    public function removeClient(Client $client): self
     {
-        if ($this->users->removeElement($users)) {
+        if ($this->clients->removeElement($client)) {
             // set the owning side to null (unless already changed)
-            if ($users->getUserType() === $this) {
-                $users->setUserType(null);
+            if ($client->getUserType() === $this) {
+                $client->setUserType(null);
             }
         }
 

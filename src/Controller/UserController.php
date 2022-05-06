@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Entity\Client;
+use App\Repository\ClientRepository;
 use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,7 +21,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/user/{seller_id}', name: 'app_seller')]
-    public function user($seller_id ,UserRepository $userRepository, Session $session): Response
+    public function user($seller_id ,ClientRepository $userRepository, Session $session): Response
     {
 
         $user = $userRepository->findOneBy([
@@ -36,7 +38,7 @@ class UserController extends AbstractController
 
 
     #[Route('/client/connect', name:'client_connect')]
-    public function clientConnect(UserRepository $userRepository, Session $session) : Response {
+    public function clientConnect(ClientRepository $userRepository, Session $session) : Response {
         $user = $userRepository->findOneBy([
             'id' => 501
         ]);
@@ -50,7 +52,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/vendeur/connect', name:'vendeur_connect')]
-    public function vendeurConnect(UserRepository $userRepository, Session $session) : Response {
+    public function vendeurConnect(ClientRepository $userRepository, Session $session) : Response {
         $user = $userRepository->findOneBy([
             'id' => 502
         ]);

@@ -3,6 +3,7 @@
 namespace App\DataFixtures;
 
 use App\Entity\Brand;
+use App\Entity\Client;
 use App\Entity\Ips;
 use App\Entity\Product;
 use App\Entity\User;
@@ -10,9 +11,17 @@ use App\Entity\UserType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
+use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
 class AppFixtures extends Fixture
 {
+    protected UserPasswordHasherInterface $encoder;
+
+    public function __construct(UserPasswordHasherInterface $encoder)
+    {
+        $this->encoder = $encoder;
+    }
+
     public function load(ObjectManager $manager): void
     {
         $faker = Factory::create('fr_FR');
@@ -21,46 +30,64 @@ class AppFixtures extends Fixture
         $faker->addProvider(new \Bezhanov\Faker\Provider\Commerce($faker));
 
         $usertype = new UserType();
-        $usertype->setName("Client");
-        $user = new User();
+
+        for ($us = 0; $us <= 5; $us += 1) {
+            $usertype->setName("Client");
+            $user = new Client();
+            $user->setFirstName($faker->firstName())
+                ->setLastName($faker->lastName())
+                ->setPhone($faker->phoneNumber())
+                ->setEmail($faker->email())
+                ->setPassword($this->encoder->hashPassword($user, $faker->password()))
+                ->setToken($faker->linuxPlatformToken())
+                ->setCreationDate(new \DateTime())
+                ->setActive(true)
+                ->setUserType($usertype);
+            $usertype->addClient($user);
+            $manager->persist($usertype);
+            $manager->persist($user);
+        }
+        $usertype = new UserType();
+        $usertype->setName("Admin");
+        $user = new Client();
         $user->setFirstName($faker->firstName())
             ->setLastName($faker->lastName())
             ->setPhone($faker->phoneNumber())
-            ->setMail($faker->email())
-            ->setPassword($faker->password())
+            ->setEmail($faker->email())
+            ->setPassword($this->encoder->hashPassword($user, "password"))
             ->setToken($faker->linuxPlatformToken())
             ->setCreationDate(new \DateTime())
             ->setActive(true)
-            ->setUserType($usertype);
-        $usertype->addUsers($user);
+            ->setUserType($usertype)
+            ->setRoles(['ROLE_ADMIN']);
+        $usertype->addClient($user);
         $manager->persist($usertype);
         $manager->persist($user);
-
 
         $usertype = new UserType();
         $usertype->setName("Vendeur");
 
         for ($i = 0; $i < 100; $i += 1) {
-            $user = new User();
+            $user = new Client();
             $user->setFirstName($faker->firstName())
                 ->setLastName($faker->lastName())
                 ->setPhone($faker->phoneNumber())
-                ->setMail($faker->email())
+                ->setEmail($faker->email())
                 ->setPassword($faker->password())
                 ->setToken($faker->linuxPlatformToken())
                 ->setCreationDate(new \DateTime())
                 ->setActive(true)
                 ->setUserType($usertype);
-            $usertype->addUsers($user);
+            $usertype->addClient($user);
             $ip = new Ips();
-            $ip->addUser($user)
+            $ip->addClient($user)
                 ->setAddress($faker->ipv6())
                 ->setBlackList(false);
             $user->addIp($ip);
             $brand = new Brand();
             $brand->setName($faker->company())
                 ->setActive(true)
-                ->setUser($user)
+                ->setClient($user)
                 ->setDescription($faker->paragraph());
             for ($p = 0; $p < 5; $p += 1) {
                 $product = new Product();
