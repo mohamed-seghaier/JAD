@@ -26,7 +26,15 @@
             <p>
                 Constructeur : {{ product.brand.client.firstName }} {{ product.brand.client.lastName }}
             </p>
-            <a href="#" class="btn btn-success btn-lg">
+
+            <p>
+                {% if product.stock > 5 %}
+                    Quantité : {{ product.stock }}
+                    {% else %}
+                    <b> {{ product.stock }} Produits restants !</b>
+                {% endif %}
+            </p>
+            <a href="{{ path('app_panier_add', {'id':product.id})}}" class="btn btn-success btn-lg">
                 <i class="fas fa-shopping-cart"></i>
                 Ajouter au panier</a>
             <a href=" {{ path('app_brand',{'brand_id': product.brand.id })}}" class="btn btn-light ">Fiche Marque</a>

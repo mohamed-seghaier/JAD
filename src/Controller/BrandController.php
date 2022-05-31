@@ -10,10 +10,13 @@ use App\Form\ProductType;
 use App\Repository\BrandRepository;
 use App\Repository\ProductRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use mysql_xdevapi\Exception;
+use phpDocumentor\Reflection\Types\This;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Security;
 use Symfony\Config\TwigConfig;
@@ -62,14 +65,17 @@ class BrandController extends AbstractController
     }
 
     #[Route('/admin/{brand_id}/edit', name:'app_brand_edit')]
-    public function edit($brand_id,BrandRepository $brandRepository, EntityManagerInterface $manager,
-                         Request $request, Security $security): \Symfony\Component\HttpFoundation\RedirectResponse|Response
+    public function edit($brand_id,BrandRepository $brandRepository, EntityManagerInterface $manager, Request $request): \Symfony\Component\HttpFoundation\RedirectResponse|Response
     {
-        $user =$security->getUser();
-        if (!$user->getRoles()) {
-            throw new AccessDeniedHttpException("Tu n'as pas le droit d'être ici.");
-        }
         $brand = $brandRepository->findOneBy(['id' => $brand_id]);
+        $user = $this->getUser();
+        if (!$brand)
+            throw new NotFoundHttpException("Cette marque n'existe pas");
+
+        $this->denyAccessUnlessGranted("ROLE_ADMIN", null, "Vous n'avez pas le droit d'accès à cette ressource.");
+        $this->denyAccessUnlessGranted("CAN_EDIT", $brand, "Vous ne pouvez pas éditer cette marque.");
+
+
         $form = $this->createForm(BrandType::class, $brand);
 
         $form->handleRequest($request);

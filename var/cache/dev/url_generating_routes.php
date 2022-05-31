@@ -64,6 +64,8 @@ return [
     'app_brand_create' => [['id'], ['_controller' => 'App\\Controller\\BrandController::create'], [], [['text', '/brand/create'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/user']], [], [], []],
     'app_brand_edit' => [['brand_id'], ['_controller' => 'App\\Controller\\BrandController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'brand_id', true], ['text', '/admin']], [], [], []],
     'app_home' => [[], ['_controller' => 'App\\Controller\\HomeController::index'], [], [['text', '/']], [], [], []],
+    'app_panier_add' => [['id'], ['_controller' => 'App\\Controller\\PanierController::add'], ['id' => '\\d+'], [['variable', '/', '\\d+', 'id', true], ['text', '/panier/add']], [], [], []],
+    'app_panier' => [[], ['_controller' => 'App\\Controller\\PanierController::show'], [], [['text', '/panier/show']], [], [], []],
     'app_product' => [['brand_id', 'product_id'], ['_controller' => 'App\\Controller\\ProductController::index'], [], [['variable', '/', '[^/]++', 'product_id', true], ['text', '/product'], ['variable', '/', '[^/]++', 'brand_id', true], ['text', '/brand']], [], [], []],
     'app_product_create' => [['id'], ['_controller' => 'App\\Controller\\ProductController::create'], [], [['text', '/product/create'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/brand']], [], [], []],
     'app_product_edit' => [['product_id'], ['_controller' => 'App\\Controller\\ProductController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'product_id', true], ['text', '/admin/product']], [], [], []],

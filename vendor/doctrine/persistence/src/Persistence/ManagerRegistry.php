@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Doctrine\Persistence;
 
 /**
@@ -17,16 +19,16 @@ interface ManagerRegistry extends ConnectionRegistry
     /**
      * Gets a named object manager.
      *
-     * @param string $name The object manager name (null for the default one).
+     * @param string|null $name The object manager name (null for the default one).
      *
      * @return ObjectManager
      */
-    public function getManager($name = null);
+    public function getManager(?string $name = null);
 
     /**
      * Gets an array of all registered object managers.
      *
-     * @return ObjectManager[] An array of ObjectManager instances
+     * @return array<string, ObjectManager> An array of ObjectManager instances
      */
     public function getManagers();
 
@@ -47,20 +49,7 @@ interface ManagerRegistry extends ConnectionRegistry
      *
      * @return ObjectManager
      */
-    public function resetManager($name = null);
-
-    /**
-     * Resolves a registered namespace alias to the full namespace.
-     *
-     * This method looks for the alias in all registered object managers.
-     *
-     * @deprecated This method is deprecated along with short namespace aliases.
-     *
-     * @param string $alias The alias.
-     *
-     * @return string The full namespace.
-     */
-    public function getAliasNamespace($alias);
+    public function resetManager(?string $name = null);
 
     /**
      * Gets all object manager names and associated service IDs. A service ID
@@ -75,23 +64,26 @@ interface ManagerRegistry extends ConnectionRegistry
     /**
      * Gets the ObjectRepository for a persistent object.
      *
-     * @param string $persistentObject      The name of the persistent object.
-     * @param string $persistentManagerName The object manager name (null for the default one).
+     * @param string      $persistentObject      The name of the persistent object.
+     * @param string|null $persistentManagerName The object manager name (null for the default one).
      * @psalm-param class-string<T> $persistentObject
      *
      * @return ObjectRepository
      * @psalm-return ObjectRepository<T>
      *
-     * @template T
+     * @template T of object
      */
-    public function getRepository($persistentObject, $persistentManagerName = null);
+    public function getRepository(
+        string $persistentObject,
+        ?string $persistentManagerName = null
+    );
 
     /**
      * Gets the object manager associated with a given class.
      *
-     * @param string $class A persistent object class name.
+     * @param class-string $class A persistent object class name.
      *
      * @return ObjectManager|null
      */
-    public function getManagerForClass($class);
+    public function getManagerForClass(string $class);
 }

@@ -17,24 +17,7 @@
          {% for product in brand.products %}
 
 
-             <div class="col-3">
-                 <div class="card">
-                     <img class="img-fluid" src="{{ product.getPicture }}" alt="Image du produit">
-                     <div class="card-body">
-                         <h4 class="card-title">{{ product.getName }} ({{ product.getPrice / 100 }} &euro;)</h4>
-                         <span class="badge badge-info">
-                            {{ product.brand.getName }}
-                        </span>
-                         <p class="card-text">
-                             {{ product.getDescription }}
-                         </p>
-                         <a href="{{ path('app_product', {'brand_id':
-                             product.brand.id, 'product_id': product.id}) }}" class="btn btn-primary btn-sm">Détail</a>
-                         <a href="#" class="btn btn-success btn-sm">Ajouter</a>
-
-                     </div>
-                 </div>
-             </div>
+             {% include "product/_product_card.html.twig" %}
 
 
 

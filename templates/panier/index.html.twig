@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.product.name }}</td>
+                <td>{{ produit.product.price }}</td>
+                <td>{{ produit.qty }}</td>
+                <td>{{ produit.qty * produit.product.price }}</td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total : </td>
+            <td>{{ total }}</td>
+        </tr>
+        </tfoot>
+    </table>
+{% endblock %}
