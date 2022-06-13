@@ -95,16 +95,17 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         // line 20
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
+    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
     <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
     ";
-        // line 25
+        // line 26
         echo "
     ";
-        // line 26
+        // line 27
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 29
+        // line 30
         echo "    <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/perso.css"), "html", null, true);
         echo "\">
@@ -117,9 +118,9 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
     <!-- JSDelivr -->
     <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
         ";
-        // line 38
+        // line 39
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 41
+        // line 42
         echo "    </head>
 </html>
 ";
@@ -168,7 +169,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 26
+    // line 27
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -178,7 +179,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 27
+        // line 28
         echo "        ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_link_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
@@ -191,7 +192,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 38
+    // line 39
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -201,7 +202,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 39
+        // line 40
         echo "            ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_script_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
@@ -226,7 +227,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  205 => 39,  195 => 38,  182 => 27,  172 => 26,  153 => 20,  135 => 15,  123 => 41,  121 => 38,  108 => 29,  106 => 26,  103 => 25,  96 => 20,  90 => 16,  88 => 15,  81 => 13,  72 => 11,  68 => 10,  63 => 9,  59 => 8,  54 => 5,  52 => 4,  47 => 1,);
+        return array (  206 => 40,  196 => 39,  183 => 28,  173 => 27,  154 => 20,  136 => 15,  124 => 42,  122 => 39,  109 => 30,  107 => 27,  104 => 26,  96 => 20,  90 => 16,  88 => 15,  81 => 13,  72 => 11,  68 => 10,  63 => 9,  59 => 8,  54 => 5,  52 => 4,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -251,6 +252,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 <head>
     <meta charset=\"UTF-8\">
         <title>{% block title %}JAD{% endblock %}</title>
+    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">
     <link href=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css\" rel=\"stylesheet\" integrity=\"sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3\" crossorigin=\"anonymous\">
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
     <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">

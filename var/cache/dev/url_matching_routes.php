@@ -113,12 +113,18 @@ return [
                     .'|(*:970)'
                     .'|/product/([^/]++)(*:995)'
                 .')'
-                .'|/panier/add/(\\d+)(*:1021)'
-                .'|/user/([^/]++)(?'
-                    .'|(*:1047)'
-                    .'|(*:1056)'
+                .'|/panier/(?'
+                    .'|add/(\\d+)(*:1024)'
+                    .'|de(?'
+                        .'|lete/(\\d+)(*:1048)'
+                        .'|crement/(\\d+)(*:1070)'
+                    .')'
                 .')'
-                .'|/vendeur/([^/]++)/index(*:1089)'
+                .'|/user/([^/]++)(?'
+                    .'|(*:1098)'
+                    .'|(*:1107)'
+                .')'
+                .'|/vendeur/([^/]++)/index(*:1140)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -208,10 +214,12 @@ return [
         942 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         970 => [[['_route' => 'app_brand', '_controller' => 'App\\Controller\\BrandController::index'], ['brand_id'], null, null, false, true, null]],
         995 => [[['_route' => 'app_product', '_controller' => 'App\\Controller\\ProductController::index'], ['brand_id', 'product_id'], null, null, false, true, null]],
-        1021 => [[['_route' => 'app_panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
-        1047 => [[['_route' => 'app_seller', '_controller' => 'App\\Controller\\UserController::user'], ['seller_id'], null, null, false, true, null]],
-        1056 => [[['_route' => 'app_client_index', '_controller' => 'App\\Controller\\UserController::client_index'], ['id'], null, null, false, true, null]],
-        1089 => [
+        1024 => [[['_route' => 'app_panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
+        1048 => [[['_route' => 'app_panier_del', '_controller' => 'App\\Controller\\PanierController::delete'], ['id'], null, null, false, true, null]],
+        1070 => [[['_route' => 'app_panier_decrement', '_controller' => 'App\\Controller\\PanierController::decrement'], ['id'], null, null, false, true, null]],
+        1098 => [[['_route' => 'app_seller', '_controller' => 'App\\Controller\\UserController::user'], ['seller_id'], null, null, false, true, null]],
+        1107 => [[['_route' => 'app_client_index', '_controller' => 'App\\Controller\\UserController::client_index'], ['id'], null, null, false, true, null]],
+        1140 => [
             [['_route' => 'app_vendeur_index', '_controller' => 'App\\Controller\\UserController::vendeur_index'], ['id'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],

@@ -90,24 +90,33 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
         }
         // line 22
         echo "            <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"";
+        // line 24
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier");
+        echo "\" title=\"Panier\"><i class=\"material-icons\">shopping_cart</i></a>
+                </li>
                 ";
-        // line 23
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 23, $this->source); })()), "user", [], "any", false, false, false, 23)) {
-            // line 24
-            echo "                    <li class=\"nav-item\"><a href=\"";
+        // line 26
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26)) {
+            // line 27
+            echo "                    <li class=\"nav-item\">
+                        <a href=\"";
+            // line 28
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\" class=\"btn btn-danger\">Deconnexion</a></li>
+            echo "\" class=\"btn btn-danger\">Deconnexion</a>
+                    </li>
                 ";
         } else {
-            // line 26
+            // line 31
             echo "                    <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Inscription</a></li>
                     <li class=\"nav-item\"><a href=\"";
-            // line 27
+            // line 32
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-success\">Connexion</a></li>
                 ";
         }
-        // line 29
+        // line 34
         echo "            </ul>
         </div>
     </div>
@@ -132,7 +141,7 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
 
     public function getDebugInfo()
     {
-        return array (  111 => 29,  106 => 27,  103 => 26,  97 => 24,  95 => 23,  92 => 22,  84 => 20,  82 => 19,  77 => 16,  66 => 14,  62 => 13,  47 => 3,  43 => 1,);
+        return array (  120 => 34,  115 => 32,  112 => 31,  106 => 28,  103 => 27,  101 => 26,  96 => 24,  92 => 22,  84 => 20,  82 => 19,  77 => 16,  66 => 14,  62 => 13,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -159,8 +168,13 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
                 <div>{{ app.user.firstName}} {{app.user.lastname}} &nbsp;</div>
             {% endif %}
             <ul class=\"navbar-nav\">
+                <li class=\"nav-item\">
+                    <a class=\"nav-link\" href=\"{{ path('app_panier') }}\" title=\"Panier\"><i class=\"material-icons\">shopping_cart</i></a>
+                </li>
                 {% if app.user %}
-                    <li class=\"nav-item\"><a href=\"{{ path('app_logout')}}\" class=\"btn btn-danger\">Deconnexion</a></li>
+                    <li class=\"nav-item\">
+                        <a href=\"{{ path('app_logout')}}\" class=\"btn btn-danger\">Deconnexion</a>
+                    </li>
                 {% else %}
                     <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Inscription</a></li>
                     <li class=\"nav-item\"><a href=\"{{ path('app_login')}}\" class=\"btn btn-success\">Connexion</a></li>

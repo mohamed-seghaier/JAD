@@ -155,38 +155,43 @@ class __TwigTemplate_f845e442c5254733e2f63a44f23d5e2f extends Template
             <p>
                 ";
         // line 31
-        if ((twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 31, $this->source); })()), "stock", [], "any", false, false, false, 31) > 5)) {
+        if (((isset($context["stock"]) || array_key_exists("stock", $context) ? $context["stock"] : (function () { throw new RuntimeError('Variable "stock" does not exist.', 31, $this->source); })()) > 5)) {
             // line 32
             echo "                    Quantité : ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 32, $this->source); })()), "stock", [], "any", false, false, false, 32), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["stock"]) || array_key_exists("stock", $context) ? $context["stock"] : (function () { throw new RuntimeError('Variable "stock" does not exist.', 32, $this->source); })()), "html", null, true);
             echo "
                     ";
-        } else {
+        } elseif ((        // line 33
+(isset($context["stock"]) || array_key_exists("stock", $context) ? $context["stock"] : (function () { throw new RuntimeError('Variable "stock" does not exist.', 33, $this->source); })()) == 0)) {
             // line 34
+            echo "                        <b>Produit indisponible !</b>
+                    ";
+        } else {
+            // line 36
             echo "                    <b> ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 34, $this->source); })()), "stock", [], "any", false, false, false, 34), "html", null, true);
+            echo twig_escape_filter($this->env, (isset($context["stock"]) || array_key_exists("stock", $context) ? $context["stock"] : (function () { throw new RuntimeError('Variable "stock" does not exist.', 36, $this->source); })()), "html", null, true);
             echo " Produits restants !</b>
                 ";
         }
-        // line 36
+        // line 38
         echo "            </p>
             <a href=\"";
-        // line 37
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_add", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 37, $this->source); })()), "id", [], "any", false, false, false, 37)]), "html", null, true);
+        // line 39
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier_add", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 39, $this->source); })()), "id", [], "any", false, false, false, 39)]), "html", null, true);
         echo "\" class=\"btn btn-success btn-lg\">
                 <i class=\"fas fa-shopping-cart\"></i>
                 Ajouter au panier</a>
             <a href=\" ";
-        // line 40
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand", ["brand_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 40, $this->source); })()), "brand", [], "any", false, false, false, 40), "id", [], "any", false, false, false, 40)]), "html", null, true);
+        // line 42
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand", ["brand_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 42, $this->source); })()), "brand", [], "any", false, false, false, 42), "id", [], "any", false, false, false, 42)]), "html", null, true);
         echo "\" class=\"btn btn-light \">Fiche Marque</a>
             <a href=\" ";
-        // line 41
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_seller", ["seller_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 41, $this->source); })()), "brand", [], "any", false, false, false, 41), "client", [], "any", false, false, false, 41), "id", [], "any", false, false, false, 41)]), "html", null, true);
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_seller", ["seller_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 43, $this->source); })()), "brand", [], "any", false, false, false, 43), "client", [], "any", false, false, false, 43), "id", [], "any", false, false, false, 43)]), "html", null, true);
         echo "\" class=\"btn btn-light \">Fiche Vendeur</a>
             <a href=\" ";
-        // line 42
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["product_id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 42, $this->source); })()), "id", [], "any", false, false, false, 42)]), "html", null, true);
+        // line 44
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["product_id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 44, $this->source); })()), "id", [], "any", false, false, false, 44)]), "html", null, true);
         echo "\" class=\"btn btn-light \">Editer ce produit</a>
 
         </div>
@@ -213,7 +218,7 @@ class __TwigTemplate_f845e442c5254733e2f63a44f23d5e2f extends Template
 
     public function getDebugInfo()
     {
-        return array (  189 => 42,  185 => 41,  181 => 40,  175 => 37,  172 => 36,  166 => 34,  160 => 32,  158 => 31,  149 => 27,  143 => 24,  138 => 22,  130 => 19,  123 => 15,  119 => 14,  113 => 11,  107 => 10,  99 => 9,  95 => 8,  92 => 7,  82 => 6,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  194 => 44,  190 => 43,  186 => 42,  180 => 39,  177 => 38,  171 => 36,  167 => 34,  165 => 33,  160 => 32,  158 => 31,  149 => 27,  143 => 24,  138 => 22,  130 => 19,  123 => 15,  119 => 14,  113 => 11,  107 => 10,  99 => 9,  95 => 8,  92 => 7,  82 => 6,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -248,10 +253,12 @@ class __TwigTemplate_f845e442c5254733e2f63a44f23d5e2f extends Template
             </p>
 
             <p>
-                {% if product.stock > 5 %}
-                    Quantité : {{ product.stock }}
+                {% if stock > 5 %}
+                    Quantité : {{ stock }}
+                    {% elseif stock == 0 %}
+                        <b>Produit indisponible !</b>
                     {% else %}
-                    <b> {{ product.stock }} Produits restants !</b>
+                    <b> {{ stock }} Produits restants !</b>
                 {% endif %}
             </p>
             <a href=\"{{ path('app_panier_add', {'id':product.id})}}\" class=\"btn btn-success btn-lg\">

@@ -498,6 +498,8 @@
     <service id="App\Form\ProductType" class="App\Form\ProductType" autowire="true" autoconfigure="true">
       <tag name="form.type"/>
     </service>
+    <service id="App\Panier\PanierItem" class="App\Panier\PanierItem" autowire="true" autoconfigure="true"/>
+    <service id="App\Panier\PanierService" class="App\Panier\PanierService" autowire="true" autoconfigure="true"/>
     <service id="App\Repository\AddressRepository" class="App\Repository\AddressRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
@@ -6658,6 +6660,12 @@
         <argument key="productRepository" type="service_closure" id="App\Repository\ProductRepository"/>
       </argument>
     </service>
+    <service id=".service_locator.kveBZ8H" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="repository" type="service_closure" id="App\Repository\ProductRepository"/>
+      </argument>
+    </service>
     <service id=".service_locator.oQjFjmO" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -6685,7 +6693,7 @@
         <argument key="userRepository" type="service_closure" id="App\Repository\ClientRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.0a6hYOg" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.heUD0ox" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\BrandController::create" type="service_closure" id=".service_locator.tgVVt0z"/>
@@ -6693,6 +6701,8 @@
         <argument key="App\Controller\BrandController::index" type="service_closure" id=".service_locator.7mtYEde"/>
         <argument key="App\Controller\HomeController::index" type="service_closure" id=".service_locator.YNO4FUy"/>
         <argument key="App\Controller\PanierController::add" type="service_closure" id=".service_locator.0Fb1YCW"/>
+        <argument key="App\Controller\PanierController::decrement" type="service_closure" id=".service_locator.kveBZ8H"/>
+        <argument key="App\Controller\PanierController::delete" type="service_closure" id=".service_locator.kveBZ8H"/>
         <argument key="App\Controller\PanierController::show" type="service_closure" id=".service_locator.0Fb1YCW"/>
         <argument key="App\Controller\ProductController::create" type="service_closure" id=".service_locator.tgVVt0z"/>
         <argument key="App\Controller\ProductController::edit" type="service_closure" id=".service_locator.pN6ATyo"/>
@@ -6712,6 +6722,8 @@
         <argument key="App\Controller\BrandController:index" type="service_closure" id=".service_locator.7mtYEde"/>
         <argument key="App\Controller\HomeController:index" type="service_closure" id=".service_locator.YNO4FUy"/>
         <argument key="App\Controller\PanierController:add" type="service_closure" id=".service_locator.0Fb1YCW"/>
+        <argument key="App\Controller\PanierController:decrement" type="service_closure" id=".service_locator.kveBZ8H"/>
+        <argument key="App\Controller\PanierController:delete" type="service_closure" id=".service_locator.kveBZ8H"/>
         <argument key="App\Controller\PanierController:show" type="service_closure" id=".service_locator.0Fb1YCW"/>
         <argument key="App\Controller\ProductController:create" type="service_closure" id=".service_locator.tgVVt0z"/>
         <argument key="App\Controller\ProductController:edit" type="service_closure" id=".service_locator.pN6ATyo"/>
@@ -7100,12 +7112,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.0a6hYOg"/>
+      <argument type="service" id=".service_locator.heUD0ox"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.0a6hYOg"/>
+      <argument type="service" id=".service_locator.heUD0ox"/>
     </service>
     <service id=".doctrine.orm.default_metadata_driver.inner" class="Doctrine\Persistence\Mapping\Driver\MappingDriverChain">
       <call method="addDriver">
@@ -8060,7 +8072,7 @@
     <service id="ApiPlatform\Core\Security\ResourceAccessCheckerInterface" alias="api_platform.security.resource_access_checker"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.0a6hYOg"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.heUD0ox"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="doctrine.id_generator_locator" alias=".service_locator.KLVvNIq"/>
     <service id="api_platform.doctrine.listener.mercure.publish" alias="api_platform.doctrine.orm.listener.mercure.publish">
@@ -8074,7 +8086,7 @@
     <service id=".service_locator.2_3F2_m" alias=".service_locator.oQjFjmO"/>
     <service id=".service_locator.DNmEae1" alias=".service_locator.pN6ATyo"/>
     <service id=".service_locator.9yTc0X0" alias=".service_locator.1U1z2Jh"/>
-    <service id=".service_locator.tRcyuF7" alias=".service_locator.0a6hYOg"/>
+    <service id=".service_locator.Ahr39Q1" alias=".service_locator.heUD0ox"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.xEs79iQ" alias=".service_locator.fr_cJ0S"/>
     <service id=".service_locator.qBCHs1a" alias=".service_locator.QXcJQkF"/>
@@ -8143,6 +8155,7 @@
     <service id=".service_locator.Dh6Rimo" alias=".service_locator._fMjCXz"/>
     <service id=".service_locator.igPJvRU" alias=".service_locator.YNO4FUy"/>
     <service id=".service_locator.sa.k_vl" alias=".service_locator.0Fb1YCW"/>
+    <service id=".service_locator.xT0H681" alias=".service_locator.kveBZ8H"/>
     <service id=".service_locator.apeBzKU" alias=".service_locator.oQjFjmO"/>
     <service id=".service_locator.YiVOyn2" alias=".service_locator.pN6ATyo"/>
     <service id=".service_locator.j_.MmhI" alias=".service_locator.KV_IRIi"/>

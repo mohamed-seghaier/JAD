@@ -28,10 +28,12 @@
             </p>
 
             <p>
-                {% if product.stock > 5 %}
-                    Quantité : {{ product.stock }}
+                {% if stock > 5 %}
+                    Quantité : {{ stock }}
+                    {% elseif stock == 0 %}
+                        <b>Produit indisponible !</b>
                     {% else %}
-                    <b> {{ product.stock }} Produits restants !</b>
+                    <b> {{ stock }} Produits restants !</b>
                 {% endif %}
             </p>
             <a href="{{ path('app_panier_add', {'id':product.id})}}" class="btn btn-success btn-lg">

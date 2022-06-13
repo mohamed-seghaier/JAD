@@ -119,6 +119,11 @@ class Product
         return $this;
     }
 
+    public function removeOneStock(): self {
+        $this->stock -= 1;
+        return $this;
+    }
+
     public function getActive(): ?int
     {
         return $this->active;
