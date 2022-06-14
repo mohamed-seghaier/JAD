@@ -8,12 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class MercureConfig 
 {
     private $enabled;
     private $hubUrl;
+    private $_usedProperties = [];
     
     /**
      * @default false
@@ -22,6 +23,7 @@ class MercureConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -35,6 +37,7 @@ class MercureConfig
      */
     public function hubUrl($value): static
     {
+        $this->_usedProperties['hubUrl'] = true;
         $this->hubUrl = $value;
     
         return $this;
@@ -43,12 +46,14 @@ class MercureConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['hub_url'])) {
+        if (array_key_exists('hub_url', $value)) {
+            $this->_usedProperties['hubUrl'] = true;
             $this->hubUrl = $value['hub_url'];
             unset($value['hub_url']);
         }
@@ -61,10 +66,10 @@ class MercureConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->hubUrl) {
+        if (isset($this->_usedProperties['hubUrl'])) {
             $output['hub_url'] = $this->hubUrl;
         }
     

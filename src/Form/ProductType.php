@@ -6,6 +6,7 @@ use App\Entity\Brand;
 use App\Entity\Product;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\MoneyType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
@@ -37,16 +38,9 @@ class ProductType extends AbstractType
                 'label'=>'Quantité',
                 'attr'=> ['placeholder'=> 'Entrez une quantité'],
             ])
-            ->add('Picture', FileType::class, [
+            ->add('Picture', UrlType::class, [
                 'label'=>'Photo du produit',
                 'attr'=> ['placeholder'=> 'Téléchargez '],
-            ])
-
-            ->add('brand', EntityType::class, [
-                'label'=> 'Marque : ',
-                'placeholder'=>'-- Sélectionnez une marque --',
-                'class' => Brand::class,
-                'choice_label' => 'name'
             ]);
         //$builder->get('price')->addModelTransformer(new CentimesTansformer());
         /*        $builder->addEventListener(FormEvents::PRE_SET_DATA, function (FormEvent $event) {

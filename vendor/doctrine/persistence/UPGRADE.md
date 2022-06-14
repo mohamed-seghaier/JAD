@@ -6,14 +6,96 @@ awareness about deprecated code.
 - Use of our low-overhead runtime deprecation API, details:
   https://github.com/doctrine/deprecations/
 
+# Upgrade to 3.0
+
+## Removed `OnClearEventArgs::clearsAllEntities()` and `OnClearEventArgs::getEntityClass()`
+
+These methods only make sense when partially clearing the object manager, which
+is no longer possible.
+The second argument of the constructor of `OnClearEventArgs` is removed as well.
+
+## BC Break: removed `ObjectManagerAware`
+
+Implement active record style functionality directly in your application, by
+using a `postLoad` event.
+
+## BC Break: removed `AnnotationDriver`
+
+Use `ColocatedMappingDriver` instead.
+
+## BC Break: Removed `MappingException::pathRequired()`
+
+Use `MappingException::pathRequiredForDriver()` instead.
+
+## BC Break: removed `LifecycleEventArgs::getEntity()`
+
+Use `LifecycleEventArgs::getObject()` instead.
+
+## BC Break: removed support for short namespace aliases
+
+- `AbstractClassMetadataFactory::getFqcnFromAlias()` is removed.
+- `ClassMetadataFactory` methods now require their `$className` argument to be an
+actual FQCN.
+
+## BC Break: removed `ObjectManager::merge()`
+
+`ObjectManagerDecorator::merge()` is removed without replacement.
+
+## BC Break: removed support for `doctrine/cache`
+
+Removed support for using doctrine/cache for metadata caching. The
+`setCacheDriver` and `getCacheDriver` methods have been removed from
+`Doctrine\Persistence\Mapping\AbstractMetadata`. Please use `getCache` and
+`setCache` with a PSR-6 implementation instead.
+
+## BC Break: changed signatures
+
+`$objectName` has been dropped from the signature of `ObjectManager::clear()`.
+
+```diff
+- public function clear($objectName = null)
++ public function clear(): void
+```
+
+Also, native parameter type declarations have been added on all public APIs.
+Native return type declarations have not been added so that it is possible to
+implement types compatible with both 2.x and 3.x.
+
+## BC Break: Removed `PersistentObject`
+
+Please implement this functionality directly in your application if you want
+ActiveRecord style functionality.
+
+# Upgrade to 2.5
+
+## Deprecated `OnClearEventArgs::clearsAllEntities()` and `OnClearEventArgs::getEntityClass()`
+
+These methods only make sense when partially clearing the object manager, which
+is deprecated.
+Passing a second argument to the constructor of `OnClearEventArgs` is
+deprecated as well.
+
+## Deprecated `ObjectManagerAware`
+
+Along with deprecating `PersistentObject`, deprecating `ObjectManagerAware`
+means deprecating support for active record, which already came with a word of
+warning. Please implement this directly in your application with a `postLoad`
+event if you need active record style functionality.
+
+## Deprecated `MappingException::pathRequired()`
+
+`MappingException::pathRequiredForDriver()` should be used instead.
+
 # Upgrade to 2.4
 
 ## Deprecated `AnnotationDriver`
 
-Since attributes were introduced in PHP 8.0, annotations are deprecated. Use
-`ColocatedMappingDriver` instead. This will involve implementing
-`isTransient()` as well as `__construct()` and `getReader()` to
-retain backward compatibility.
+Since attributes were introduced in PHP 8.0, annotations are deprecated.
+`AnnotationDriver` is an abstract class that is used when implementing concrete
+annotation drivers in dependent packages. It is deprecated in favor of using
+`ColocatedMappingDriver` to implement both annotation and attribute based
+drivers. This will involve implementing `isTransient()` as well as
+`__construct()` and `getReader()` to retain backward compatibility.
 
 # Upgrade to 2.3
 

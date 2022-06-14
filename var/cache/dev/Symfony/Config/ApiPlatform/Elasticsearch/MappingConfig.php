@@ -8,12 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class MappingConfig 
 {
     private $index;
     private $type;
+    private $_usedProperties = [];
     
     /**
      * @default null
@@ -22,6 +23,7 @@ class MappingConfig
      */
     public function index($value): static
     {
+        $this->_usedProperties['index'] = true;
         $this->index = $value;
     
         return $this;
@@ -34,6 +36,7 @@ class MappingConfig
      */
     public function type($value): static
     {
+        $this->_usedProperties['type'] = true;
         $this->type = $value;
     
         return $this;
@@ -42,12 +45,14 @@ class MappingConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['index'])) {
+        if (array_key_exists('index', $value)) {
+            $this->_usedProperties['index'] = true;
             $this->index = $value['index'];
             unset($value['index']);
         }
     
-        if (isset($value['type'])) {
+        if (array_key_exists('type', $value)) {
+            $this->_usedProperties['type'] = true;
             $this->type = $value['type'];
             unset($value['type']);
         }
@@ -60,10 +65,10 @@ class MappingConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->index) {
+        if (isset($this->_usedProperties['index'])) {
             $output['index'] = $this->index;
         }
-        if (null !== $this->type) {
+        if (isset($this->_usedProperties['type'])) {
             $output['type'] = $this->type;
         }
     

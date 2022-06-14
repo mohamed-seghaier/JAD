@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class PaginationConfig 
 {
@@ -23,6 +23,7 @@ class PaginationConfig
     private $enabledParameterName;
     private $itemsPerPageParameterName;
     private $partialParameterName;
+    private $_usedProperties = [];
     
     /**
      * To enable or disable pagination for all resource collections by default.
@@ -33,6 +34,7 @@ class PaginationConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -47,6 +49,7 @@ class PaginationConfig
      */
     public function partial($value): static
     {
+        $this->_usedProperties['partial'] = true;
         $this->partial = $value;
     
         return $this;
@@ -61,6 +64,7 @@ class PaginationConfig
      */
     public function clientEnabled($value): static
     {
+        $this->_usedProperties['clientEnabled'] = true;
         $this->clientEnabled = $value;
     
         return $this;
@@ -75,6 +79,7 @@ class PaginationConfig
      */
     public function clientItemsPerPage($value): static
     {
+        $this->_usedProperties['clientItemsPerPage'] = true;
         $this->clientItemsPerPage = $value;
     
         return $this;
@@ -89,6 +94,7 @@ class PaginationConfig
      */
     public function clientPartial($value): static
     {
+        $this->_usedProperties['clientPartial'] = true;
         $this->clientPartial = $value;
     
         return $this;
@@ -103,6 +109,7 @@ class PaginationConfig
      */
     public function itemsPerPage($value): static
     {
+        $this->_usedProperties['itemsPerPage'] = true;
         $this->itemsPerPage = $value;
     
         return $this;
@@ -117,6 +124,7 @@ class PaginationConfig
      */
     public function maximumItemsPerPage($value): static
     {
+        $this->_usedProperties['maximumItemsPerPage'] = true;
         $this->maximumItemsPerPage = $value;
     
         return $this;
@@ -130,6 +138,7 @@ class PaginationConfig
      */
     public function pageParameterName($value): static
     {
+        $this->_usedProperties['pageParameterName'] = true;
         $this->pageParameterName = $value;
     
         return $this;
@@ -143,6 +152,7 @@ class PaginationConfig
      */
     public function enabledParameterName($value): static
     {
+        $this->_usedProperties['enabledParameterName'] = true;
         $this->enabledParameterName = $value;
     
         return $this;
@@ -156,6 +166,7 @@ class PaginationConfig
      */
     public function itemsPerPageParameterName($value): static
     {
+        $this->_usedProperties['itemsPerPageParameterName'] = true;
         $this->itemsPerPageParameterName = $value;
     
         return $this;
@@ -169,6 +180,7 @@ class PaginationConfig
      */
     public function partialParameterName($value): static
     {
+        $this->_usedProperties['partialParameterName'] = true;
         $this->partialParameterName = $value;
     
         return $this;
@@ -177,57 +189,68 @@ class PaginationConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['partial'])) {
+        if (array_key_exists('partial', $value)) {
+            $this->_usedProperties['partial'] = true;
             $this->partial = $value['partial'];
             unset($value['partial']);
         }
     
-        if (isset($value['client_enabled'])) {
+        if (array_key_exists('client_enabled', $value)) {
+            $this->_usedProperties['clientEnabled'] = true;
             $this->clientEnabled = $value['client_enabled'];
             unset($value['client_enabled']);
         }
     
-        if (isset($value['client_items_per_page'])) {
+        if (array_key_exists('client_items_per_page', $value)) {
+            $this->_usedProperties['clientItemsPerPage'] = true;
             $this->clientItemsPerPage = $value['client_items_per_page'];
             unset($value['client_items_per_page']);
         }
     
-        if (isset($value['client_partial'])) {
+        if (array_key_exists('client_partial', $value)) {
+            $this->_usedProperties['clientPartial'] = true;
             $this->clientPartial = $value['client_partial'];
             unset($value['client_partial']);
         }
     
-        if (isset($value['items_per_page'])) {
+        if (array_key_exists('items_per_page', $value)) {
+            $this->_usedProperties['itemsPerPage'] = true;
             $this->itemsPerPage = $value['items_per_page'];
             unset($value['items_per_page']);
         }
     
-        if (isset($value['maximum_items_per_page'])) {
+        if (array_key_exists('maximum_items_per_page', $value)) {
+            $this->_usedProperties['maximumItemsPerPage'] = true;
             $this->maximumItemsPerPage = $value['maximum_items_per_page'];
             unset($value['maximum_items_per_page']);
         }
     
-        if (isset($value['page_parameter_name'])) {
+        if (array_key_exists('page_parameter_name', $value)) {
+            $this->_usedProperties['pageParameterName'] = true;
             $this->pageParameterName = $value['page_parameter_name'];
             unset($value['page_parameter_name']);
         }
     
-        if (isset($value['enabled_parameter_name'])) {
+        if (array_key_exists('enabled_parameter_name', $value)) {
+            $this->_usedProperties['enabledParameterName'] = true;
             $this->enabledParameterName = $value['enabled_parameter_name'];
             unset($value['enabled_parameter_name']);
         }
     
-        if (isset($value['items_per_page_parameter_name'])) {
+        if (array_key_exists('items_per_page_parameter_name', $value)) {
+            $this->_usedProperties['itemsPerPageParameterName'] = true;
             $this->itemsPerPageParameterName = $value['items_per_page_parameter_name'];
             unset($value['items_per_page_parameter_name']);
         }
     
-        if (isset($value['partial_parameter_name'])) {
+        if (array_key_exists('partial_parameter_name', $value)) {
+            $this->_usedProperties['partialParameterName'] = true;
             $this->partialParameterName = $value['partial_parameter_name'];
             unset($value['partial_parameter_name']);
         }
@@ -240,37 +263,37 @@ class PaginationConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->partial) {
+        if (isset($this->_usedProperties['partial'])) {
             $output['partial'] = $this->partial;
         }
-        if (null !== $this->clientEnabled) {
+        if (isset($this->_usedProperties['clientEnabled'])) {
             $output['client_enabled'] = $this->clientEnabled;
         }
-        if (null !== $this->clientItemsPerPage) {
+        if (isset($this->_usedProperties['clientItemsPerPage'])) {
             $output['client_items_per_page'] = $this->clientItemsPerPage;
         }
-        if (null !== $this->clientPartial) {
+        if (isset($this->_usedProperties['clientPartial'])) {
             $output['client_partial'] = $this->clientPartial;
         }
-        if (null !== $this->itemsPerPage) {
+        if (isset($this->_usedProperties['itemsPerPage'])) {
             $output['items_per_page'] = $this->itemsPerPage;
         }
-        if (null !== $this->maximumItemsPerPage) {
+        if (isset($this->_usedProperties['maximumItemsPerPage'])) {
             $output['maximum_items_per_page'] = $this->maximumItemsPerPage;
         }
-        if (null !== $this->pageParameterName) {
+        if (isset($this->_usedProperties['pageParameterName'])) {
             $output['page_parameter_name'] = $this->pageParameterName;
         }
-        if (null !== $this->enabledParameterName) {
+        if (isset($this->_usedProperties['enabledParameterName'])) {
             $output['enabled_parameter_name'] = $this->enabledParameterName;
         }
-        if (null !== $this->itemsPerPageParameterName) {
+        if (isset($this->_usedProperties['itemsPerPageParameterName'])) {
             $output['items_per_page_parameter_name'] = $this->itemsPerPageParameterName;
         }
-        if (null !== $this->partialParameterName) {
+        if (isset($this->_usedProperties['partialParameterName'])) {
             $output['partial_parameter_name'] = $this->partialParameterName;
         }
     

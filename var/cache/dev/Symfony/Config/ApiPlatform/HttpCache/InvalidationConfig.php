@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class InvalidationConfig 
 {
@@ -16,6 +16,7 @@ class InvalidationConfig
     private $varnishUrls;
     private $maxHeaderLength;
     private $requestOptions;
+    private $_usedProperties = [];
     
     /**
      * @default false
@@ -24,6 +25,7 @@ class InvalidationConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -36,6 +38,7 @@ class InvalidationConfig
      */
     public function varnishUrls(ParamConfigurator|array $value): static
     {
+        $this->_usedProperties['varnishUrls'] = true;
         $this->varnishUrls = $value;
     
         return $this;
@@ -49,6 +52,7 @@ class InvalidationConfig
      */
     public function maxHeaderLength($value): static
     {
+        $this->_usedProperties['maxHeaderLength'] = true;
         $this->maxHeaderLength = $value;
     
         return $this;
@@ -65,6 +69,7 @@ class InvalidationConfig
     public function requestOptions(mixed $value = array (
     )): static
     {
+        $this->_usedProperties['requestOptions'] = true;
         $this->requestOptions = $value;
     
         return $this;
@@ -73,22 +78,26 @@ class InvalidationConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['varnish_urls'])) {
+        if (array_key_exists('varnish_urls', $value)) {
+            $this->_usedProperties['varnishUrls'] = true;
             $this->varnishUrls = $value['varnish_urls'];
             unset($value['varnish_urls']);
         }
     
-        if (isset($value['max_header_length'])) {
+        if (array_key_exists('max_header_length', $value)) {
+            $this->_usedProperties['maxHeaderLength'] = true;
             $this->maxHeaderLength = $value['max_header_length'];
             unset($value['max_header_length']);
         }
     
-        if (isset($value['request_options'])) {
+        if (array_key_exists('request_options', $value)) {
+            $this->_usedProperties['requestOptions'] = true;
             $this->requestOptions = $value['request_options'];
             unset($value['request_options']);
         }
@@ -101,16 +110,16 @@ class InvalidationConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->varnishUrls) {
+        if (isset($this->_usedProperties['varnishUrls'])) {
             $output['varnish_urls'] = $this->varnishUrls;
         }
-        if (null !== $this->maxHeaderLength) {
+        if (isset($this->_usedProperties['maxHeaderLength'])) {
             $output['max_header_length'] = $this->maxHeaderLength;
         }
-        if (null !== $this->requestOptions) {
+        if (isset($this->_usedProperties['requestOptions'])) {
             $output['request_options'] = $this->requestOptions;
         }
     

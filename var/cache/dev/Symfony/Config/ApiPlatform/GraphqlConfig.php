@@ -11,7 +11,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class GraphqlConfig 
 {
@@ -21,6 +21,7 @@ class GraphqlConfig
     private $graphqlPlayground;
     private $nestingSeparator;
     private $collection;
+    private $_usedProperties = [];
     
     /**
      * @default false
@@ -29,6 +30,7 @@ class GraphqlConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -41,6 +43,7 @@ class GraphqlConfig
      */
     public function defaultIde($value): static
     {
+        $this->_usedProperties['defaultIde'] = true;
         $this->defaultIde = $value;
     
         return $this;
@@ -49,6 +52,7 @@ class GraphqlConfig
     public function graphiql(array $value = []): \Symfony\Config\ApiPlatform\Graphql\GraphiqlConfig
     {
         if (null === $this->graphiql) {
+            $this->_usedProperties['graphiql'] = true;
             $this->graphiql = new \Symfony\Config\ApiPlatform\Graphql\GraphiqlConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "graphiql()" has already been initialized. You cannot pass values the second time you call graphiql().');
@@ -60,6 +64,7 @@ class GraphqlConfig
     public function graphqlPlayground(array $value = []): \Symfony\Config\ApiPlatform\Graphql\GraphqlPlaygroundConfig
     {
         if (null === $this->graphqlPlayground) {
+            $this->_usedProperties['graphqlPlayground'] = true;
             $this->graphqlPlayground = new \Symfony\Config\ApiPlatform\Graphql\GraphqlPlaygroundConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "graphqlPlayground()" has already been initialized. You cannot pass values the second time you call graphqlPlayground().');
@@ -76,6 +81,7 @@ class GraphqlConfig
      */
     public function nestingSeparator($value): static
     {
+        $this->_usedProperties['nestingSeparator'] = true;
         $this->nestingSeparator = $value;
     
         return $this;
@@ -84,6 +90,7 @@ class GraphqlConfig
     public function collection(array $value = []): \Symfony\Config\ApiPlatform\Graphql\CollectionConfig
     {
         if (null === $this->collection) {
+            $this->_usedProperties['collection'] = true;
             $this->collection = new \Symfony\Config\ApiPlatform\Graphql\CollectionConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "collection()" has already been initialized. You cannot pass values the second time you call collection().');
@@ -95,32 +102,38 @@ class GraphqlConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['default_ide'])) {
+        if (array_key_exists('default_ide', $value)) {
+            $this->_usedProperties['defaultIde'] = true;
             $this->defaultIde = $value['default_ide'];
             unset($value['default_ide']);
         }
     
-        if (isset($value['graphiql'])) {
+        if (array_key_exists('graphiql', $value)) {
+            $this->_usedProperties['graphiql'] = true;
             $this->graphiql = new \Symfony\Config\ApiPlatform\Graphql\GraphiqlConfig($value['graphiql']);
             unset($value['graphiql']);
         }
     
-        if (isset($value['graphql_playground'])) {
+        if (array_key_exists('graphql_playground', $value)) {
+            $this->_usedProperties['graphqlPlayground'] = true;
             $this->graphqlPlayground = new \Symfony\Config\ApiPlatform\Graphql\GraphqlPlaygroundConfig($value['graphql_playground']);
             unset($value['graphql_playground']);
         }
     
-        if (isset($value['nesting_separator'])) {
+        if (array_key_exists('nesting_separator', $value)) {
+            $this->_usedProperties['nestingSeparator'] = true;
             $this->nestingSeparator = $value['nesting_separator'];
             unset($value['nesting_separator']);
         }
     
-        if (isset($value['collection'])) {
+        if (array_key_exists('collection', $value)) {
+            $this->_usedProperties['collection'] = true;
             $this->collection = new \Symfony\Config\ApiPlatform\Graphql\CollectionConfig($value['collection']);
             unset($value['collection']);
         }
@@ -133,22 +146,22 @@ class GraphqlConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->defaultIde) {
+        if (isset($this->_usedProperties['defaultIde'])) {
             $output['default_ide'] = $this->defaultIde;
         }
-        if (null !== $this->graphiql) {
+        if (isset($this->_usedProperties['graphiql'])) {
             $output['graphiql'] = $this->graphiql->toArray();
         }
-        if (null !== $this->graphqlPlayground) {
+        if (isset($this->_usedProperties['graphqlPlayground'])) {
             $output['graphql_playground'] = $this->graphqlPlayground->toArray();
         }
-        if (null !== $this->nestingSeparator) {
+        if (isset($this->_usedProperties['nestingSeparator'])) {
             $output['nesting_separator'] = $this->nestingSeparator;
         }
-        if (null !== $this->collection) {
+        if (isset($this->_usedProperties['collection'])) {
             $output['collection'] = $this->collection->toArray();
         }
     

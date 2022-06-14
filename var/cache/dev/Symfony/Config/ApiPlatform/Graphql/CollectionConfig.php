@@ -8,15 +8,17 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class CollectionConfig 
 {
     private $pagination;
+    private $_usedProperties = [];
     
     public function pagination(array $value = []): \Symfony\Config\ApiPlatform\Graphql\Collection\PaginationConfig
     {
         if (null === $this->pagination) {
+            $this->_usedProperties['pagination'] = true;
             $this->pagination = new \Symfony\Config\ApiPlatform\Graphql\Collection\PaginationConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "pagination()" has already been initialized. You cannot pass values the second time you call pagination().');
@@ -28,7 +30,8 @@ class CollectionConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['pagination'])) {
+        if (array_key_exists('pagination', $value)) {
+            $this->_usedProperties['pagination'] = true;
             $this->pagination = new \Symfony\Config\ApiPlatform\Graphql\Collection\PaginationConfig($value['pagination']);
             unset($value['pagination']);
         }
@@ -41,7 +44,7 @@ class CollectionConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->pagination) {
+        if (isset($this->_usedProperties['pagination'])) {
             $output['pagination'] = $this->pagination->toArray();
         }
     

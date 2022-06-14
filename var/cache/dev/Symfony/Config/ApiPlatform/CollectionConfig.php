@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class CollectionConfig 
 {
@@ -17,6 +17,7 @@ class CollectionConfig
     private $order;
     private $orderParameterName;
     private $pagination;
+    private $_usedProperties = [];
     
     /**
      * The name of the query parameter to filter on nullable field values.
@@ -26,6 +27,7 @@ class CollectionConfig
      */
     public function existsParameterName($value): static
     {
+        $this->_usedProperties['existsParameterName'] = true;
         $this->existsParameterName = $value;
     
         return $this;
@@ -39,6 +41,7 @@ class CollectionConfig
      */
     public function order($value): static
     {
+        $this->_usedProperties['order'] = true;
         $this->order = $value;
     
         return $this;
@@ -52,6 +55,7 @@ class CollectionConfig
      */
     public function orderParameterName($value): static
     {
+        $this->_usedProperties['orderParameterName'] = true;
         $this->orderParameterName = $value;
     
         return $this;
@@ -60,6 +64,7 @@ class CollectionConfig
     public function pagination(array $value = []): \Symfony\Config\ApiPlatform\Collection\PaginationConfig
     {
         if (null === $this->pagination) {
+            $this->_usedProperties['pagination'] = true;
             $this->pagination = new \Symfony\Config\ApiPlatform\Collection\PaginationConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "pagination()" has already been initialized. You cannot pass values the second time you call pagination().');
@@ -71,22 +76,26 @@ class CollectionConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['exists_parameter_name'])) {
+        if (array_key_exists('exists_parameter_name', $value)) {
+            $this->_usedProperties['existsParameterName'] = true;
             $this->existsParameterName = $value['exists_parameter_name'];
             unset($value['exists_parameter_name']);
         }
     
-        if (isset($value['order'])) {
+        if (array_key_exists('order', $value)) {
+            $this->_usedProperties['order'] = true;
             $this->order = $value['order'];
             unset($value['order']);
         }
     
-        if (isset($value['order_parameter_name'])) {
+        if (array_key_exists('order_parameter_name', $value)) {
+            $this->_usedProperties['orderParameterName'] = true;
             $this->orderParameterName = $value['order_parameter_name'];
             unset($value['order_parameter_name']);
         }
     
-        if (isset($value['pagination'])) {
+        if (array_key_exists('pagination', $value)) {
+            $this->_usedProperties['pagination'] = true;
             $this->pagination = new \Symfony\Config\ApiPlatform\Collection\PaginationConfig($value['pagination']);
             unset($value['pagination']);
         }
@@ -99,16 +108,16 @@ class CollectionConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->existsParameterName) {
+        if (isset($this->_usedProperties['existsParameterName'])) {
             $output['exists_parameter_name'] = $this->existsParameterName;
         }
-        if (null !== $this->order) {
+        if (isset($this->_usedProperties['order'])) {
             $output['order'] = $this->order;
         }
-        if (null !== $this->orderParameterName) {
+        if (isset($this->_usedProperties['orderParameterName'])) {
             $output['order_parameter_name'] = $this->orderParameterName;
         }
-        if (null !== $this->pagination) {
+        if (isset($this->_usedProperties['pagination'])) {
             $output['pagination'] = $this->pagination->toArray();
         }
     

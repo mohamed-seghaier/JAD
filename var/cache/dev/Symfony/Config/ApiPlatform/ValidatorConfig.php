@@ -8,11 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class ValidatorConfig 
 {
     private $serializePayloadFields;
+    private $_usedProperties = [];
     
     /**
      * Set to null to serialize all payload fields when a validation error is thrown, or set the fields you want to include explicitly.
@@ -25,6 +26,7 @@ class ValidatorConfig
     public function serializePayloadFields(mixed $value = array (
     )): static
     {
+        $this->_usedProperties['serializePayloadFields'] = true;
         $this->serializePayloadFields = $value;
     
         return $this;
@@ -33,7 +35,8 @@ class ValidatorConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['serialize_payload_fields'])) {
+        if (array_key_exists('serialize_payload_fields', $value)) {
+            $this->_usedProperties['serializePayloadFields'] = true;
             $this->serializePayloadFields = $value['serialize_payload_fields'];
             unset($value['serialize_payload_fields']);
         }
@@ -46,7 +49,7 @@ class ValidatorConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->serializePayloadFields) {
+        if (isset($this->_usedProperties['serializePayloadFields'])) {
             $output['serialize_payload_fields'] = $this->serializePayloadFields;
         }
     

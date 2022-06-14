@@ -7,7 +7,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class DefaultsConfig 
 {
@@ -55,6 +55,7 @@ class DefaultsConfig
     private $validationGroups;
     private $urlGenerationStrategy;
     private $compositeIdentifier;
+    private $_usedProperties = [];
     private $_extraKeys;
     
     /**
@@ -65,6 +66,7 @@ class DefaultsConfig
      */
     public function collectionOperations(mixed $value): static
     {
+        $this->_usedProperties['collectionOperations'] = true;
         $this->collectionOperations = $value;
     
         return $this;
@@ -78,6 +80,7 @@ class DefaultsConfig
      */
     public function description(mixed $value): static
     {
+        $this->_usedProperties['description'] = true;
         $this->description = $value;
     
         return $this;
@@ -91,6 +94,7 @@ class DefaultsConfig
      */
     public function graphql(mixed $value): static
     {
+        $this->_usedProperties['graphql'] = true;
         $this->graphql = $value;
     
         return $this;
@@ -104,6 +108,7 @@ class DefaultsConfig
      */
     public function iri(mixed $value): static
     {
+        $this->_usedProperties['iri'] = true;
         $this->iri = $value;
     
         return $this;
@@ -117,6 +122,7 @@ class DefaultsConfig
      */
     public function itemOperations(mixed $value): static
     {
+        $this->_usedProperties['itemOperations'] = true;
         $this->itemOperations = $value;
     
         return $this;
@@ -130,6 +136,7 @@ class DefaultsConfig
      */
     public function shortName(mixed $value): static
     {
+        $this->_usedProperties['shortName'] = true;
         $this->shortName = $value;
     
         return $this;
@@ -143,6 +150,7 @@ class DefaultsConfig
      */
     public function subresourceOperations(mixed $value): static
     {
+        $this->_usedProperties['subresourceOperations'] = true;
         $this->subresourceOperations = $value;
     
         return $this;
@@ -156,6 +164,7 @@ class DefaultsConfig
      */
     public function attributes(mixed $value): static
     {
+        $this->_usedProperties['attributes'] = true;
         $this->attributes = $value;
     
         return $this;
@@ -169,6 +178,7 @@ class DefaultsConfig
      */
     public function cacheHeaders(mixed $value): static
     {
+        $this->_usedProperties['cacheHeaders'] = true;
         $this->cacheHeaders = $value;
     
         return $this;
@@ -182,6 +192,7 @@ class DefaultsConfig
      */
     public function denormalizationContext(mixed $value): static
     {
+        $this->_usedProperties['denormalizationContext'] = true;
         $this->denormalizationContext = $value;
     
         return $this;
@@ -195,6 +206,7 @@ class DefaultsConfig
      */
     public function deprecationReason(mixed $value): static
     {
+        $this->_usedProperties['deprecationReason'] = true;
         $this->deprecationReason = $value;
     
         return $this;
@@ -208,6 +220,7 @@ class DefaultsConfig
      */
     public function elasticsearch(mixed $value): static
     {
+        $this->_usedProperties['elasticsearch'] = true;
         $this->elasticsearch = $value;
     
         return $this;
@@ -221,6 +234,7 @@ class DefaultsConfig
      */
     public function fetchPartial(mixed $value): static
     {
+        $this->_usedProperties['fetchPartial'] = true;
         $this->fetchPartial = $value;
     
         return $this;
@@ -234,6 +248,7 @@ class DefaultsConfig
      */
     public function forceEager(mixed $value): static
     {
+        $this->_usedProperties['forceEager'] = true;
         $this->forceEager = $value;
     
         return $this;
@@ -247,6 +262,7 @@ class DefaultsConfig
      */
     public function formats(mixed $value): static
     {
+        $this->_usedProperties['formats'] = true;
         $this->formats = $value;
     
         return $this;
@@ -260,6 +276,7 @@ class DefaultsConfig
      */
     public function filters(mixed $value): static
     {
+        $this->_usedProperties['filters'] = true;
         $this->filters = $value;
     
         return $this;
@@ -273,6 +290,7 @@ class DefaultsConfig
      */
     public function hydraContext(mixed $value): static
     {
+        $this->_usedProperties['hydraContext'] = true;
         $this->hydraContext = $value;
     
         return $this;
@@ -286,6 +304,7 @@ class DefaultsConfig
      */
     public function input(mixed $value): static
     {
+        $this->_usedProperties['input'] = true;
         $this->input = $value;
     
         return $this;
@@ -299,6 +318,7 @@ class DefaultsConfig
      */
     public function mercure(mixed $value): static
     {
+        $this->_usedProperties['mercure'] = true;
         $this->mercure = $value;
     
         return $this;
@@ -312,6 +332,7 @@ class DefaultsConfig
      */
     public function messenger(mixed $value): static
     {
+        $this->_usedProperties['messenger'] = true;
         $this->messenger = $value;
     
         return $this;
@@ -325,6 +346,7 @@ class DefaultsConfig
      */
     public function normalizationContext(mixed $value): static
     {
+        $this->_usedProperties['normalizationContext'] = true;
         $this->normalizationContext = $value;
     
         return $this;
@@ -338,6 +360,7 @@ class DefaultsConfig
      */
     public function openapiContext(mixed $value): static
     {
+        $this->_usedProperties['openapiContext'] = true;
         $this->openapiContext = $value;
     
         return $this;
@@ -351,6 +374,7 @@ class DefaultsConfig
      */
     public function order(mixed $value): static
     {
+        $this->_usedProperties['order'] = true;
         $this->order = $value;
     
         return $this;
@@ -364,6 +388,7 @@ class DefaultsConfig
      */
     public function output(mixed $value): static
     {
+        $this->_usedProperties['output'] = true;
         $this->output = $value;
     
         return $this;
@@ -377,6 +402,7 @@ class DefaultsConfig
      */
     public function paginationClientEnabled(mixed $value): static
     {
+        $this->_usedProperties['paginationClientEnabled'] = true;
         $this->paginationClientEnabled = $value;
     
         return $this;
@@ -390,6 +416,7 @@ class DefaultsConfig
      */
     public function paginationClientItemsPerPage(mixed $value): static
     {
+        $this->_usedProperties['paginationClientItemsPerPage'] = true;
         $this->paginationClientItemsPerPage = $value;
     
         return $this;
@@ -403,6 +430,7 @@ class DefaultsConfig
      */
     public function paginationClientPartial(mixed $value): static
     {
+        $this->_usedProperties['paginationClientPartial'] = true;
         $this->paginationClientPartial = $value;
     
         return $this;
@@ -416,6 +444,7 @@ class DefaultsConfig
      */
     public function paginationViaCursor(mixed $value): static
     {
+        $this->_usedProperties['paginationViaCursor'] = true;
         $this->paginationViaCursor = $value;
     
         return $this;
@@ -429,6 +458,7 @@ class DefaultsConfig
      */
     public function paginationEnabled(mixed $value): static
     {
+        $this->_usedProperties['paginationEnabled'] = true;
         $this->paginationEnabled = $value;
     
         return $this;
@@ -442,6 +472,7 @@ class DefaultsConfig
      */
     public function paginationFetchJoinCollection(mixed $value): static
     {
+        $this->_usedProperties['paginationFetchJoinCollection'] = true;
         $this->paginationFetchJoinCollection = $value;
     
         return $this;
@@ -455,6 +486,7 @@ class DefaultsConfig
      */
     public function paginationItemsPerPage(mixed $value): static
     {
+        $this->_usedProperties['paginationItemsPerPage'] = true;
         $this->paginationItemsPerPage = $value;
     
         return $this;
@@ -468,6 +500,7 @@ class DefaultsConfig
      */
     public function paginationMaximumItemsPerPage(mixed $value): static
     {
+        $this->_usedProperties['paginationMaximumItemsPerPage'] = true;
         $this->paginationMaximumItemsPerPage = $value;
     
         return $this;
@@ -481,6 +514,7 @@ class DefaultsConfig
      */
     public function paginationPartial(mixed $value): static
     {
+        $this->_usedProperties['paginationPartial'] = true;
         $this->paginationPartial = $value;
     
         return $this;
@@ -494,6 +528,7 @@ class DefaultsConfig
      */
     public function routePrefix(mixed $value): static
     {
+        $this->_usedProperties['routePrefix'] = true;
         $this->routePrefix = $value;
     
         return $this;
@@ -507,6 +542,7 @@ class DefaultsConfig
      */
     public function security(mixed $value): static
     {
+        $this->_usedProperties['security'] = true;
         $this->security = $value;
     
         return $this;
@@ -520,6 +556,7 @@ class DefaultsConfig
      */
     public function securityMessage(mixed $value): static
     {
+        $this->_usedProperties['securityMessage'] = true;
         $this->securityMessage = $value;
     
         return $this;
@@ -533,6 +570,7 @@ class DefaultsConfig
      */
     public function securityPostDenormalize(mixed $value): static
     {
+        $this->_usedProperties['securityPostDenormalize'] = true;
         $this->securityPostDenormalize = $value;
     
         return $this;
@@ -546,6 +584,7 @@ class DefaultsConfig
      */
     public function securityPostDenormalizeMessage(mixed $value): static
     {
+        $this->_usedProperties['securityPostDenormalizeMessage'] = true;
         $this->securityPostDenormalizeMessage = $value;
     
         return $this;
@@ -559,6 +598,7 @@ class DefaultsConfig
      */
     public function stateless(mixed $value): static
     {
+        $this->_usedProperties['stateless'] = true;
         $this->stateless = $value;
     
         return $this;
@@ -572,6 +612,7 @@ class DefaultsConfig
      */
     public function sunset(mixed $value): static
     {
+        $this->_usedProperties['sunset'] = true;
         $this->sunset = $value;
     
         return $this;
@@ -585,6 +626,7 @@ class DefaultsConfig
      */
     public function swaggerContext(mixed $value): static
     {
+        $this->_usedProperties['swaggerContext'] = true;
         $this->swaggerContext = $value;
     
         return $this;
@@ -598,6 +640,7 @@ class DefaultsConfig
      */
     public function validationGroups(mixed $value): static
     {
+        $this->_usedProperties['validationGroups'] = true;
         $this->validationGroups = $value;
     
         return $this;
@@ -611,6 +654,7 @@ class DefaultsConfig
      */
     public function urlGenerationStrategy(mixed $value): static
     {
+        $this->_usedProperties['urlGenerationStrategy'] = true;
         $this->urlGenerationStrategy = $value;
     
         return $this;
@@ -624,6 +668,7 @@ class DefaultsConfig
      */
     public function compositeIdentifier(mixed $value): static
     {
+        $this->_usedProperties['compositeIdentifier'] = true;
         $this->compositeIdentifier = $value;
     
         return $this;
@@ -632,222 +677,266 @@ class DefaultsConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['collection_operations'])) {
+        if (array_key_exists('collection_operations', $value)) {
+            $this->_usedProperties['collectionOperations'] = true;
             $this->collectionOperations = $value['collection_operations'];
             unset($value['collection_operations']);
         }
     
-        if (isset($value['description'])) {
+        if (array_key_exists('description', $value)) {
+            $this->_usedProperties['description'] = true;
             $this->description = $value['description'];
             unset($value['description']);
         }
     
-        if (isset($value['graphql'])) {
+        if (array_key_exists('graphql', $value)) {
+            $this->_usedProperties['graphql'] = true;
             $this->graphql = $value['graphql'];
             unset($value['graphql']);
         }
     
-        if (isset($value['iri'])) {
+        if (array_key_exists('iri', $value)) {
+            $this->_usedProperties['iri'] = true;
             $this->iri = $value['iri'];
             unset($value['iri']);
         }
     
-        if (isset($value['item_operations'])) {
+        if (array_key_exists('item_operations', $value)) {
+            $this->_usedProperties['itemOperations'] = true;
             $this->itemOperations = $value['item_operations'];
             unset($value['item_operations']);
         }
     
-        if (isset($value['short_name'])) {
+        if (array_key_exists('short_name', $value)) {
+            $this->_usedProperties['shortName'] = true;
             $this->shortName = $value['short_name'];
             unset($value['short_name']);
         }
     
-        if (isset($value['subresource_operations'])) {
+        if (array_key_exists('subresource_operations', $value)) {
+            $this->_usedProperties['subresourceOperations'] = true;
             $this->subresourceOperations = $value['subresource_operations'];
             unset($value['subresource_operations']);
         }
     
-        if (isset($value['attributes'])) {
+        if (array_key_exists('attributes', $value)) {
+            $this->_usedProperties['attributes'] = true;
             $this->attributes = $value['attributes'];
             unset($value['attributes']);
         }
     
-        if (isset($value['cache_headers'])) {
+        if (array_key_exists('cache_headers', $value)) {
+            $this->_usedProperties['cacheHeaders'] = true;
             $this->cacheHeaders = $value['cache_headers'];
             unset($value['cache_headers']);
         }
     
-        if (isset($value['denormalization_context'])) {
+        if (array_key_exists('denormalization_context', $value)) {
+            $this->_usedProperties['denormalizationContext'] = true;
             $this->denormalizationContext = $value['denormalization_context'];
             unset($value['denormalization_context']);
         }
     
-        if (isset($value['deprecation_reason'])) {
+        if (array_key_exists('deprecation_reason', $value)) {
+            $this->_usedProperties['deprecationReason'] = true;
             $this->deprecationReason = $value['deprecation_reason'];
             unset($value['deprecation_reason']);
         }
     
-        if (isset($value['elasticsearch'])) {
+        if (array_key_exists('elasticsearch', $value)) {
+            $this->_usedProperties['elasticsearch'] = true;
             $this->elasticsearch = $value['elasticsearch'];
             unset($value['elasticsearch']);
         }
     
-        if (isset($value['fetch_partial'])) {
+        if (array_key_exists('fetch_partial', $value)) {
+            $this->_usedProperties['fetchPartial'] = true;
             $this->fetchPartial = $value['fetch_partial'];
             unset($value['fetch_partial']);
         }
     
-        if (isset($value['force_eager'])) {
+        if (array_key_exists('force_eager', $value)) {
+            $this->_usedProperties['forceEager'] = true;
             $this->forceEager = $value['force_eager'];
             unset($value['force_eager']);
         }
     
-        if (isset($value['formats'])) {
+        if (array_key_exists('formats', $value)) {
+            $this->_usedProperties['formats'] = true;
             $this->formats = $value['formats'];
             unset($value['formats']);
         }
     
-        if (isset($value['filters'])) {
+        if (array_key_exists('filters', $value)) {
+            $this->_usedProperties['filters'] = true;
             $this->filters = $value['filters'];
             unset($value['filters']);
         }
     
-        if (isset($value['hydra_context'])) {
+        if (array_key_exists('hydra_context', $value)) {
+            $this->_usedProperties['hydraContext'] = true;
             $this->hydraContext = $value['hydra_context'];
             unset($value['hydra_context']);
         }
     
-        if (isset($value['input'])) {
+        if (array_key_exists('input', $value)) {
+            $this->_usedProperties['input'] = true;
             $this->input = $value['input'];
             unset($value['input']);
         }
     
-        if (isset($value['mercure'])) {
+        if (array_key_exists('mercure', $value)) {
+            $this->_usedProperties['mercure'] = true;
             $this->mercure = $value['mercure'];
             unset($value['mercure']);
         }
     
-        if (isset($value['messenger'])) {
+        if (array_key_exists('messenger', $value)) {
+            $this->_usedProperties['messenger'] = true;
             $this->messenger = $value['messenger'];
             unset($value['messenger']);
         }
     
-        if (isset($value['normalization_context'])) {
+        if (array_key_exists('normalization_context', $value)) {
+            $this->_usedProperties['normalizationContext'] = true;
             $this->normalizationContext = $value['normalization_context'];
             unset($value['normalization_context']);
         }
     
-        if (isset($value['openapi_context'])) {
+        if (array_key_exists('openapi_context', $value)) {
+            $this->_usedProperties['openapiContext'] = true;
             $this->openapiContext = $value['openapi_context'];
             unset($value['openapi_context']);
         }
     
-        if (isset($value['order'])) {
+        if (array_key_exists('order', $value)) {
+            $this->_usedProperties['order'] = true;
             $this->order = $value['order'];
             unset($value['order']);
         }
     
-        if (isset($value['output'])) {
+        if (array_key_exists('output', $value)) {
+            $this->_usedProperties['output'] = true;
             $this->output = $value['output'];
             unset($value['output']);
         }
     
-        if (isset($value['pagination_client_enabled'])) {
+        if (array_key_exists('pagination_client_enabled', $value)) {
+            $this->_usedProperties['paginationClientEnabled'] = true;
             $this->paginationClientEnabled = $value['pagination_client_enabled'];
             unset($value['pagination_client_enabled']);
         }
     
-        if (isset($value['pagination_client_items_per_page'])) {
+        if (array_key_exists('pagination_client_items_per_page', $value)) {
+            $this->_usedProperties['paginationClientItemsPerPage'] = true;
             $this->paginationClientItemsPerPage = $value['pagination_client_items_per_page'];
             unset($value['pagination_client_items_per_page']);
         }
     
-        if (isset($value['pagination_client_partial'])) {
+        if (array_key_exists('pagination_client_partial', $value)) {
+            $this->_usedProperties['paginationClientPartial'] = true;
             $this->paginationClientPartial = $value['pagination_client_partial'];
             unset($value['pagination_client_partial']);
         }
     
-        if (isset($value['pagination_via_cursor'])) {
+        if (array_key_exists('pagination_via_cursor', $value)) {
+            $this->_usedProperties['paginationViaCursor'] = true;
             $this->paginationViaCursor = $value['pagination_via_cursor'];
             unset($value['pagination_via_cursor']);
         }
     
-        if (isset($value['pagination_enabled'])) {
+        if (array_key_exists('pagination_enabled', $value)) {
+            $this->_usedProperties['paginationEnabled'] = true;
             $this->paginationEnabled = $value['pagination_enabled'];
             unset($value['pagination_enabled']);
         }
     
-        if (isset($value['pagination_fetch_join_collection'])) {
+        if (array_key_exists('pagination_fetch_join_collection', $value)) {
+            $this->_usedProperties['paginationFetchJoinCollection'] = true;
             $this->paginationFetchJoinCollection = $value['pagination_fetch_join_collection'];
             unset($value['pagination_fetch_join_collection']);
         }
     
-        if (isset($value['pagination_items_per_page'])) {
+        if (array_key_exists('pagination_items_per_page', $value)) {
+            $this->_usedProperties['paginationItemsPerPage'] = true;
             $this->paginationItemsPerPage = $value['pagination_items_per_page'];
             unset($value['pagination_items_per_page']);
         }
     
-        if (isset($value['pagination_maximum_items_per_page'])) {
+        if (array_key_exists('pagination_maximum_items_per_page', $value)) {
+            $this->_usedProperties['paginationMaximumItemsPerPage'] = true;
             $this->paginationMaximumItemsPerPage = $value['pagination_maximum_items_per_page'];
             unset($value['pagination_maximum_items_per_page']);
         }
     
-        if (isset($value['pagination_partial'])) {
+        if (array_key_exists('pagination_partial', $value)) {
+            $this->_usedProperties['paginationPartial'] = true;
             $this->paginationPartial = $value['pagination_partial'];
             unset($value['pagination_partial']);
         }
     
-        if (isset($value['route_prefix'])) {
+        if (array_key_exists('route_prefix', $value)) {
+            $this->_usedProperties['routePrefix'] = true;
             $this->routePrefix = $value['route_prefix'];
             unset($value['route_prefix']);
         }
     
-        if (isset($value['security'])) {
+        if (array_key_exists('security', $value)) {
+            $this->_usedProperties['security'] = true;
             $this->security = $value['security'];
             unset($value['security']);
         }
     
-        if (isset($value['security_message'])) {
+        if (array_key_exists('security_message', $value)) {
+            $this->_usedProperties['securityMessage'] = true;
             $this->securityMessage = $value['security_message'];
             unset($value['security_message']);
         }
     
-        if (isset($value['security_post_denormalize'])) {
+        if (array_key_exists('security_post_denormalize', $value)) {
+            $this->_usedProperties['securityPostDenormalize'] = true;
             $this->securityPostDenormalize = $value['security_post_denormalize'];
             unset($value['security_post_denormalize']);
         }
     
-        if (isset($value['security_post_denormalize_message'])) {
+        if (array_key_exists('security_post_denormalize_message', $value)) {
+            $this->_usedProperties['securityPostDenormalizeMessage'] = true;
             $this->securityPostDenormalizeMessage = $value['security_post_denormalize_message'];
             unset($value['security_post_denormalize_message']);
         }
     
-        if (isset($value['stateless'])) {
+        if (array_key_exists('stateless', $value)) {
+            $this->_usedProperties['stateless'] = true;
             $this->stateless = $value['stateless'];
             unset($value['stateless']);
         }
     
-        if (isset($value['sunset'])) {
+        if (array_key_exists('sunset', $value)) {
+            $this->_usedProperties['sunset'] = true;
             $this->sunset = $value['sunset'];
             unset($value['sunset']);
         }
     
-        if (isset($value['swagger_context'])) {
+        if (array_key_exists('swagger_context', $value)) {
+            $this->_usedProperties['swaggerContext'] = true;
             $this->swaggerContext = $value['swagger_context'];
             unset($value['swagger_context']);
         }
     
-        if (isset($value['validation_groups'])) {
+        if (array_key_exists('validation_groups', $value)) {
+            $this->_usedProperties['validationGroups'] = true;
             $this->validationGroups = $value['validation_groups'];
             unset($value['validation_groups']);
         }
     
-        if (isset($value['url_generation_strategy'])) {
+        if (array_key_exists('url_generation_strategy', $value)) {
+            $this->_usedProperties['urlGenerationStrategy'] = true;
             $this->urlGenerationStrategy = $value['url_generation_strategy'];
             unset($value['url_generation_strategy']);
         }
     
-        if (isset($value['composite_identifier'])) {
+        if (array_key_exists('composite_identifier', $value)) {
+            $this->_usedProperties['compositeIdentifier'] = true;
             $this->compositeIdentifier = $value['composite_identifier'];
             unset($value['composite_identifier']);
         }
@@ -859,136 +948,136 @@ class DefaultsConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->collectionOperations) {
+        if (isset($this->_usedProperties['collectionOperations'])) {
             $output['collection_operations'] = $this->collectionOperations;
         }
-        if (null !== $this->description) {
+        if (isset($this->_usedProperties['description'])) {
             $output['description'] = $this->description;
         }
-        if (null !== $this->graphql) {
+        if (isset($this->_usedProperties['graphql'])) {
             $output['graphql'] = $this->graphql;
         }
-        if (null !== $this->iri) {
+        if (isset($this->_usedProperties['iri'])) {
             $output['iri'] = $this->iri;
         }
-        if (null !== $this->itemOperations) {
+        if (isset($this->_usedProperties['itemOperations'])) {
             $output['item_operations'] = $this->itemOperations;
         }
-        if (null !== $this->shortName) {
+        if (isset($this->_usedProperties['shortName'])) {
             $output['short_name'] = $this->shortName;
         }
-        if (null !== $this->subresourceOperations) {
+        if (isset($this->_usedProperties['subresourceOperations'])) {
             $output['subresource_operations'] = $this->subresourceOperations;
         }
-        if (null !== $this->attributes) {
+        if (isset($this->_usedProperties['attributes'])) {
             $output['attributes'] = $this->attributes;
         }
-        if (null !== $this->cacheHeaders) {
+        if (isset($this->_usedProperties['cacheHeaders'])) {
             $output['cache_headers'] = $this->cacheHeaders;
         }
-        if (null !== $this->denormalizationContext) {
+        if (isset($this->_usedProperties['denormalizationContext'])) {
             $output['denormalization_context'] = $this->denormalizationContext;
         }
-        if (null !== $this->deprecationReason) {
+        if (isset($this->_usedProperties['deprecationReason'])) {
             $output['deprecation_reason'] = $this->deprecationReason;
         }
-        if (null !== $this->elasticsearch) {
+        if (isset($this->_usedProperties['elasticsearch'])) {
             $output['elasticsearch'] = $this->elasticsearch;
         }
-        if (null !== $this->fetchPartial) {
+        if (isset($this->_usedProperties['fetchPartial'])) {
             $output['fetch_partial'] = $this->fetchPartial;
         }
-        if (null !== $this->forceEager) {
+        if (isset($this->_usedProperties['forceEager'])) {
             $output['force_eager'] = $this->forceEager;
         }
-        if (null !== $this->formats) {
+        if (isset($this->_usedProperties['formats'])) {
             $output['formats'] = $this->formats;
         }
-        if (null !== $this->filters) {
+        if (isset($this->_usedProperties['filters'])) {
             $output['filters'] = $this->filters;
         }
-        if (null !== $this->hydraContext) {
+        if (isset($this->_usedProperties['hydraContext'])) {
             $output['hydra_context'] = $this->hydraContext;
         }
-        if (null !== $this->input) {
+        if (isset($this->_usedProperties['input'])) {
             $output['input'] = $this->input;
         }
-        if (null !== $this->mercure) {
+        if (isset($this->_usedProperties['mercure'])) {
             $output['mercure'] = $this->mercure;
         }
-        if (null !== $this->messenger) {
+        if (isset($this->_usedProperties['messenger'])) {
             $output['messenger'] = $this->messenger;
         }
-        if (null !== $this->normalizationContext) {
+        if (isset($this->_usedProperties['normalizationContext'])) {
             $output['normalization_context'] = $this->normalizationContext;
         }
-        if (null !== $this->openapiContext) {
+        if (isset($this->_usedProperties['openapiContext'])) {
             $output['openapi_context'] = $this->openapiContext;
         }
-        if (null !== $this->order) {
+        if (isset($this->_usedProperties['order'])) {
             $output['order'] = $this->order;
         }
-        if (null !== $this->output) {
+        if (isset($this->_usedProperties['output'])) {
             $output['output'] = $this->output;
         }
-        if (null !== $this->paginationClientEnabled) {
+        if (isset($this->_usedProperties['paginationClientEnabled'])) {
             $output['pagination_client_enabled'] = $this->paginationClientEnabled;
         }
-        if (null !== $this->paginationClientItemsPerPage) {
+        if (isset($this->_usedProperties['paginationClientItemsPerPage'])) {
             $output['pagination_client_items_per_page'] = $this->paginationClientItemsPerPage;
         }
-        if (null !== $this->paginationClientPartial) {
+        if (isset($this->_usedProperties['paginationClientPartial'])) {
             $output['pagination_client_partial'] = $this->paginationClientPartial;
         }
-        if (null !== $this->paginationViaCursor) {
+        if (isset($this->_usedProperties['paginationViaCursor'])) {
             $output['pagination_via_cursor'] = $this->paginationViaCursor;
         }
-        if (null !== $this->paginationEnabled) {
+        if (isset($this->_usedProperties['paginationEnabled'])) {
             $output['pagination_enabled'] = $this->paginationEnabled;
         }
-        if (null !== $this->paginationFetchJoinCollection) {
+        if (isset($this->_usedProperties['paginationFetchJoinCollection'])) {
             $output['pagination_fetch_join_collection'] = $this->paginationFetchJoinCollection;
         }
-        if (null !== $this->paginationItemsPerPage) {
+        if (isset($this->_usedProperties['paginationItemsPerPage'])) {
             $output['pagination_items_per_page'] = $this->paginationItemsPerPage;
         }
-        if (null !== $this->paginationMaximumItemsPerPage) {
+        if (isset($this->_usedProperties['paginationMaximumItemsPerPage'])) {
             $output['pagination_maximum_items_per_page'] = $this->paginationMaximumItemsPerPage;
         }
-        if (null !== $this->paginationPartial) {
+        if (isset($this->_usedProperties['paginationPartial'])) {
             $output['pagination_partial'] = $this->paginationPartial;
         }
-        if (null !== $this->routePrefix) {
+        if (isset($this->_usedProperties['routePrefix'])) {
             $output['route_prefix'] = $this->routePrefix;
         }
-        if (null !== $this->security) {
+        if (isset($this->_usedProperties['security'])) {
             $output['security'] = $this->security;
         }
-        if (null !== $this->securityMessage) {
+        if (isset($this->_usedProperties['securityMessage'])) {
             $output['security_message'] = $this->securityMessage;
         }
-        if (null !== $this->securityPostDenormalize) {
+        if (isset($this->_usedProperties['securityPostDenormalize'])) {
             $output['security_post_denormalize'] = $this->securityPostDenormalize;
         }
-        if (null !== $this->securityPostDenormalizeMessage) {
+        if (isset($this->_usedProperties['securityPostDenormalizeMessage'])) {
             $output['security_post_denormalize_message'] = $this->securityPostDenormalizeMessage;
         }
-        if (null !== $this->stateless) {
+        if (isset($this->_usedProperties['stateless'])) {
             $output['stateless'] = $this->stateless;
         }
-        if (null !== $this->sunset) {
+        if (isset($this->_usedProperties['sunset'])) {
             $output['sunset'] = $this->sunset;
         }
-        if (null !== $this->swaggerContext) {
+        if (isset($this->_usedProperties['swaggerContext'])) {
             $output['swagger_context'] = $this->swaggerContext;
         }
-        if (null !== $this->validationGroups) {
+        if (isset($this->_usedProperties['validationGroups'])) {
             $output['validation_groups'] = $this->validationGroups;
         }
-        if (null !== $this->urlGenerationStrategy) {
+        if (isset($this->_usedProperties['urlGenerationStrategy'])) {
             $output['url_generation_strategy'] = $this->urlGenerationStrategy;
         }
-        if (null !== $this->compositeIdentifier) {
+        if (isset($this->_usedProperties['compositeIdentifier'])) {
             $output['composite_identifier'] = $this->compositeIdentifier;
         }
     
@@ -1002,11 +1091,7 @@ class DefaultsConfig
      */
     public function set(string $key, mixed $value): static
     {
-        if (null === $value) {
-            unset($this->_extraKeys[$key]);
-        } else {
-            $this->_extraKeys[$key] = $value;
-        }
+        $this->_extraKeys[$key] = $value;
     
         return $this;
     }

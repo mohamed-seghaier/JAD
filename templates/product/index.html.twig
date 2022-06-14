@@ -6,7 +6,7 @@
 {% block body %}
     <ol class="breadcrumb">
         <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
-        <li class="breadcrumb-item"><a href="{{ path('app_seller',{'seller_id': product.brand.user.id }) }}">{{ product.brand.user.firstName }} {{ product.brand.user.lastName }}</a></li>
+        <li class="breadcrumb-item"><a href="{{ path('app_client_index',{'id': product.brand.client.id }) }}">{{ product.brand.client.firstName }} {{ product.brand.client.lastName }}</a></li>
         <li class="breadcrumb-item"><a href="{{ path('app_brand',{'brand_id': product.brand.id }) }}">{{ product.brand.name }}</a></li>
         <li class="breadcrumb-item active">{{ product.name }}</li>
     </ol>
@@ -24,14 +24,24 @@
                 {{ product.Description }}
             </p>
             <p>
-                Constructeur : {{ product.brand.user.firstName }} {{ product.brand.user.lastName }}
+                Constructeur : {{ product.brand.client.firstName }} {{ product.brand.client.lastName }}
             </p>
-            <a href="#" class="btn btn-success btn-lg">
+
+            <p>
+                {% if stock > 5 %}
+                    Quantité : {{ stock }}
+                    {% elseif stock == 0 %}
+                        <b>Produit indisponible !</b>
+                    {% else %}
+                    <b> {{ stock }} Produits restants !</b>
+                {% endif %}
+            </p>
+            <a href="{{ path('app_panier_add', {'id':product.id})}}" class="btn btn-success btn-lg">
                 <i class="fas fa-shopping-cart"></i>
                 Ajouter au panier</a>
-            <a href=" {{ path('app_brand',{'brand_id': product.brand.id })}}" class="btn btn-grey ">Fiche Marque</a>
-            <a href=" {{ path('app_seller',{'seller_id': product.brand.user.id })}}" class="btn btn-grey ">Fiche Vendeur</a>
-            <a href=" {{ path('app_product_edit',{'product_id': product.id })}}" class="btn btn-grey ">Editer ce produit</a>
+            <a href=" {{ path('app_brand',{'brand_id': product.brand.id })}}" class="btn btn-light ">Fiche Marque</a>
+            <a href=" {{ path('app_seller',{'seller_id': product.brand.client.id })}}" class="btn btn-light ">Fiche Vendeur</a>
+            <a href=" {{ path('app_product_edit',{'product_id': product.id })}}" class="btn btn-light ">Editer ce produit</a>
 
         </div>
     </div>

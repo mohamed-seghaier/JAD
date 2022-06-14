@@ -29,8 +29,8 @@ class Brand
     #[ORM\OneToMany(mappedBy: 'brand', targetEntity: Product::class)]
     private $products;
 
-    #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'brands')]
-    private $user;
+    #[ORM\ManyToOne(targetEntity: Client::class, inversedBy: 'brands')]
+    private $client;
 
     public function __construct()
     {
@@ -108,14 +108,14 @@ class Brand
         return $this;
     }
 
-    public function getUser(): ?User
+    public function getClient(): ?Client
     {
-        return $this->user;
+        return $this->client;
     }
 
-    public function setUser(?User $user): self
+    public function setClient(?Client $client): self
     {
-        $this->user = $user;
+        $this->client = $client;
 
         return $this;
     }

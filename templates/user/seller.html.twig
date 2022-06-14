@@ -9,7 +9,10 @@
          <li class="breadcrumb-item active">{{ user.firstName }} {{ user.lastName }}</li>
      </ol>
      <h1> Constructeur : {{ user.firstName }} {{ user.lastName }}</h1>
-
+     <div class="col-3">
+         <a href=" {{ path('app_brand_create', {'id':
+             user.id})}}" class="btn btn-light ">Ajouter une marque</a>
+     </div>
      <h2>Liste des marques :</h2>
      <div class="row">
          {% for brand in user.brands %}
@@ -30,16 +33,6 @@
                      </div>
                  </div>
              </div>
-             {% if user_type  == "Vendeur" %}
-                 <div class="row">
-                     <div class="col-3">
-                         <a href=" {{ path('app_product_create')}}" class="btn btn-grey ">Ajouter un produit</a>
-                     </div>
-                     <div class="col-3">
-                         <a href=" {{ path('app_brand_create')}}" class="btn btn-grey ">Ajouter une marque</a>
-                     </div>
-                 </div>
-             {% endif %}
 
 
          {% endfor %}

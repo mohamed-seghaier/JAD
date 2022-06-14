@@ -67,10 +67,10 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'user'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'client'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'user'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'name', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'description', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'products', '' . "\0" . 'App\\Entity\\Brand' . "\0" . 'client'];
     }
 
     /**
@@ -106,7 +106,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
     /**
      * Forces initialization of the proxy
      */
-    public function __load()
+    public function __load(): void
     {
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__load', []);
     }
@@ -115,7 +115,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __isInitialized()
+    public function __isInitialized(): bool
     {
         return $this->__isInitialized__;
     }
@@ -124,7 +124,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __setInitialized($initialized)
+    public function __setInitialized($initialized): void
     {
         $this->__isInitialized__ = $initialized;
     }
@@ -133,7 +133,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __setInitializer(\Closure $initializer = null)
+    public function __setInitializer(\Closure $initializer = null): void
     {
         $this->__initializer__ = $initializer;
     }
@@ -142,7 +142,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __getInitializer()
+    public function __getInitializer(): ?\Closure
     {
         return $this->__initializer__;
     }
@@ -151,7 +151,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __setCloner(\Closure $cloner = null)
+    public function __setCloner(\Closure $cloner = null): void
     {
         $this->__cloner__ = $cloner;
     }
@@ -160,7 +160,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific cloning logic
      */
-    public function __getCloner()
+    public function __getCloner(): ?\Closure
     {
         return $this->__cloner__;
     }
@@ -171,7 +171,7 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
      * @deprecated no longer in use - generated code now relies on internal components rather than generated public API
      * @static
      */
-    public function __getLazyProperties()
+    public function __getLazyProperties(): array
     {
         return self::$lazyPropertiesDefaults;
     }
@@ -294,23 +294,23 @@ class Brand extends \App\Entity\Brand implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getUser(): ?\App\Entity\User
+    public function getClient(): ?\App\Entity\Client
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUser', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getClient', []);
 
-        return parent::getUser();
+        return parent::getClient();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function setUser(?\App\Entity\User $user): \App\Entity\Brand
+    public function setClient(?\App\Entity\Client $client): \App\Entity\Brand
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUser', [$user]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setClient', [$client]);
 
-        return parent::setUser($user);
+        return parent::setClient($client);
     }
 
 }

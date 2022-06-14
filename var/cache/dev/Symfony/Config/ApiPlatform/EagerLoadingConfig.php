@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class EagerLoadingConfig 
 {
@@ -16,6 +16,7 @@ class EagerLoadingConfig
     private $fetchPartial;
     private $maxJoins;
     private $forceEager;
+    private $_usedProperties = [];
     
     /**
      * @default true
@@ -24,6 +25,7 @@ class EagerLoadingConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -37,6 +39,7 @@ class EagerLoadingConfig
      */
     public function fetchPartial($value): static
     {
+        $this->_usedProperties['fetchPartial'] = true;
         $this->fetchPartial = $value;
     
         return $this;
@@ -50,6 +53,7 @@ class EagerLoadingConfig
      */
     public function maxJoins($value): static
     {
+        $this->_usedProperties['maxJoins'] = true;
         $this->maxJoins = $value;
     
         return $this;
@@ -63,6 +67,7 @@ class EagerLoadingConfig
      */
     public function forceEager($value): static
     {
+        $this->_usedProperties['forceEager'] = true;
         $this->forceEager = $value;
     
         return $this;
@@ -71,22 +76,26 @@ class EagerLoadingConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['fetch_partial'])) {
+        if (array_key_exists('fetch_partial', $value)) {
+            $this->_usedProperties['fetchPartial'] = true;
             $this->fetchPartial = $value['fetch_partial'];
             unset($value['fetch_partial']);
         }
     
-        if (isset($value['max_joins'])) {
+        if (array_key_exists('max_joins', $value)) {
+            $this->_usedProperties['maxJoins'] = true;
             $this->maxJoins = $value['max_joins'];
             unset($value['max_joins']);
         }
     
-        if (isset($value['force_eager'])) {
+        if (array_key_exists('force_eager', $value)) {
+            $this->_usedProperties['forceEager'] = true;
             $this->forceEager = $value['force_eager'];
             unset($value['force_eager']);
         }
@@ -99,16 +108,16 @@ class EagerLoadingConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->fetchPartial) {
+        if (isset($this->_usedProperties['fetchPartial'])) {
             $output['fetch_partial'] = $this->fetchPartial;
         }
-        if (null !== $this->maxJoins) {
+        if (isset($this->_usedProperties['maxJoins'])) {
             $output['max_joins'] = $this->maxJoins;
         }
-        if (null !== $this->forceEager) {
+        if (isset($this->_usedProperties['forceEager'])) {
             $output['force_eager'] = $this->forceEager;
         }
     

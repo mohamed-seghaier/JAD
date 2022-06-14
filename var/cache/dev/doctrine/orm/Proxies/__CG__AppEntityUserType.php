@@ -67,10 +67,10 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'users'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'clients'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'users'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'id', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'name', '' . "\0" . 'App\\Entity\\UserType' . "\0" . 'clients'];
     }
 
     /**
@@ -106,7 +106,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
     /**
      * Forces initialization of the proxy
      */
-    public function __load()
+    public function __load(): void
     {
         $this->__initializer__ && $this->__initializer__->__invoke($this, '__load', []);
     }
@@ -115,7 +115,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __isInitialized()
+    public function __isInitialized(): bool
     {
         return $this->__isInitialized__;
     }
@@ -124,7 +124,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __setInitialized($initialized)
+    public function __setInitialized($initialized): void
     {
         $this->__isInitialized__ = $initialized;
     }
@@ -133,7 +133,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __setInitializer(\Closure $initializer = null)
+    public function __setInitializer(\Closure $initializer = null): void
     {
         $this->__initializer__ = $initializer;
     }
@@ -142,7 +142,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __getInitializer()
+    public function __getInitializer(): ?\Closure
     {
         return $this->__initializer__;
     }
@@ -151,7 +151,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific loading logic
      */
-    public function __setCloner(\Closure $cloner = null)
+    public function __setCloner(\Closure $cloner = null): void
     {
         $this->__cloner__ = $cloner;
     }
@@ -160,7 +160,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * {@inheritDoc}
      * @internal generated method: use only when explicitly handling proxy specific cloning logic
      */
-    public function __getCloner()
+    public function __getCloner(): ?\Closure
     {
         return $this->__cloner__;
     }
@@ -171,7 +171,7 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
      * @deprecated no longer in use - generated code now relies on internal components rather than generated public API
      * @static
      */
-    public function __getLazyProperties()
+    public function __getLazyProperties(): array
     {
         return self::$lazyPropertiesDefaults;
     }
@@ -217,34 +217,34 @@ class UserType extends \App\Entity\UserType implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function getUsers(): \Doctrine\Common\Collections\Collection
+    public function getClients(): \Doctrine\Common\Collections\Collection
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getUsers', []);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getClients', []);
 
-        return parent::getUsers();
+        return parent::getClients();
     }
 
     /**
      * {@inheritDoc}
      */
-    public function addUsers(\App\Entity\User $users): \App\Entity\UserType
+    public function addClient(\App\Entity\Client $client): \App\Entity\UserType
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addUsers', [$users]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addClient', [$client]);
 
-        return parent::addUsers($users);
+        return parent::addClient($client);
     }
 
     /**
      * {@inheritDoc}
      */
-    public function removeUsers(\App\Entity\User $users): \App\Entity\UserType
+    public function removeClient(\App\Entity\Client $client): \App\Entity\UserType
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeUsers', [$users]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removeClient', [$client]);
 
-        return parent::removeUsers($users);
+        return parent::removeClient($client);
     }
 
 }

@@ -8,7 +8,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class OauthConfig 
 {
@@ -21,6 +21,7 @@ class OauthConfig
     private $authorizationUrl;
     private $refreshUrl;
     private $scopes;
+    private $_usedProperties = [];
     
     /**
      * @default false
@@ -29,6 +30,7 @@ class OauthConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -41,6 +43,7 @@ class OauthConfig
      */
     public function clientId($value): static
     {
+        $this->_usedProperties['clientId'] = true;
         $this->clientId = $value;
     
         return $this;
@@ -53,6 +56,7 @@ class OauthConfig
      */
     public function clientSecret($value): static
     {
+        $this->_usedProperties['clientSecret'] = true;
         $this->clientSecret = $value;
     
         return $this;
@@ -66,6 +70,7 @@ class OauthConfig
      */
     public function type($value): static
     {
+        $this->_usedProperties['type'] = true;
         $this->type = $value;
     
         return $this;
@@ -79,6 +84,7 @@ class OauthConfig
      */
     public function flow($value): static
     {
+        $this->_usedProperties['flow'] = true;
         $this->flow = $value;
     
         return $this;
@@ -91,6 +97,7 @@ class OauthConfig
      */
     public function tokenUrl($value): static
     {
+        $this->_usedProperties['tokenUrl'] = true;
         $this->tokenUrl = $value;
     
         return $this;
@@ -103,6 +110,7 @@ class OauthConfig
      */
     public function authorizationUrl($value): static
     {
+        $this->_usedProperties['authorizationUrl'] = true;
         $this->authorizationUrl = $value;
     
         return $this;
@@ -115,6 +123,7 @@ class OauthConfig
      */
     public function refreshUrl($value): static
     {
+        $this->_usedProperties['refreshUrl'] = true;
         $this->refreshUrl = $value;
     
         return $this;
@@ -127,6 +136,7 @@ class OauthConfig
      */
     public function scopes(ParamConfigurator|array $value): static
     {
+        $this->_usedProperties['scopes'] = true;
         $this->scopes = $value;
     
         return $this;
@@ -135,47 +145,56 @@ class OauthConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['clientId'])) {
+        if (array_key_exists('clientId', $value)) {
+            $this->_usedProperties['clientId'] = true;
             $this->clientId = $value['clientId'];
             unset($value['clientId']);
         }
     
-        if (isset($value['clientSecret'])) {
+        if (array_key_exists('clientSecret', $value)) {
+            $this->_usedProperties['clientSecret'] = true;
             $this->clientSecret = $value['clientSecret'];
             unset($value['clientSecret']);
         }
     
-        if (isset($value['type'])) {
+        if (array_key_exists('type', $value)) {
+            $this->_usedProperties['type'] = true;
             $this->type = $value['type'];
             unset($value['type']);
         }
     
-        if (isset($value['flow'])) {
+        if (array_key_exists('flow', $value)) {
+            $this->_usedProperties['flow'] = true;
             $this->flow = $value['flow'];
             unset($value['flow']);
         }
     
-        if (isset($value['tokenUrl'])) {
+        if (array_key_exists('tokenUrl', $value)) {
+            $this->_usedProperties['tokenUrl'] = true;
             $this->tokenUrl = $value['tokenUrl'];
             unset($value['tokenUrl']);
         }
     
-        if (isset($value['authorizationUrl'])) {
+        if (array_key_exists('authorizationUrl', $value)) {
+            $this->_usedProperties['authorizationUrl'] = true;
             $this->authorizationUrl = $value['authorizationUrl'];
             unset($value['authorizationUrl']);
         }
     
-        if (isset($value['refreshUrl'])) {
+        if (array_key_exists('refreshUrl', $value)) {
+            $this->_usedProperties['refreshUrl'] = true;
             $this->refreshUrl = $value['refreshUrl'];
             unset($value['refreshUrl']);
         }
     
-        if (isset($value['scopes'])) {
+        if (array_key_exists('scopes', $value)) {
+            $this->_usedProperties['scopes'] = true;
             $this->scopes = $value['scopes'];
             unset($value['scopes']);
         }
@@ -188,31 +207,31 @@ class OauthConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->clientId) {
+        if (isset($this->_usedProperties['clientId'])) {
             $output['clientId'] = $this->clientId;
         }
-        if (null !== $this->clientSecret) {
+        if (isset($this->_usedProperties['clientSecret'])) {
             $output['clientSecret'] = $this->clientSecret;
         }
-        if (null !== $this->type) {
+        if (isset($this->_usedProperties['type'])) {
             $output['type'] = $this->type;
         }
-        if (null !== $this->flow) {
+        if (isset($this->_usedProperties['flow'])) {
             $output['flow'] = $this->flow;
         }
-        if (null !== $this->tokenUrl) {
+        if (isset($this->_usedProperties['tokenUrl'])) {
             $output['tokenUrl'] = $this->tokenUrl;
         }
-        if (null !== $this->authorizationUrl) {
+        if (isset($this->_usedProperties['authorizationUrl'])) {
             $output['authorizationUrl'] = $this->authorizationUrl;
         }
-        if (null !== $this->refreshUrl) {
+        if (isset($this->_usedProperties['refreshUrl'])) {
             $output['refreshUrl'] = $this->refreshUrl;
         }
-        if (null !== $this->scopes) {
+        if (isset($this->_usedProperties['scopes'])) {
             $output['scopes'] = $this->scopes;
         }
     

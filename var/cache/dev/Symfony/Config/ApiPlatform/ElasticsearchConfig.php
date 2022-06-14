@@ -9,13 +9,14 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class ElasticsearchConfig 
 {
     private $enabled;
     private $hosts;
     private $mapping;
+    private $_usedProperties = [];
     
     /**
      * @default false
@@ -24,6 +25,7 @@ class ElasticsearchConfig
      */
     public function enabled($value): static
     {
+        $this->_usedProperties['enabled'] = true;
         $this->enabled = $value;
     
         return $this;
@@ -36,6 +38,7 @@ class ElasticsearchConfig
      */
     public function hosts(ParamConfigurator|array $value): static
     {
+        $this->_usedProperties['hosts'] = true;
         $this->hosts = $value;
     
         return $this;
@@ -44,6 +47,8 @@ class ElasticsearchConfig
     public function mapping(string $resource_class, array $value = []): \Symfony\Config\ApiPlatform\Elasticsearch\MappingConfig
     {
         if (!isset($this->mapping[$resource_class])) {
+            $this->_usedProperties['mapping'] = true;
+    
             return $this->mapping[$resource_class] = new \Symfony\Config\ApiPlatform\Elasticsearch\MappingConfig($value);
         }
         if ([] === $value) {
@@ -56,17 +61,20 @@ class ElasticsearchConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['enabled'])) {
+        if (array_key_exists('enabled', $value)) {
+            $this->_usedProperties['enabled'] = true;
             $this->enabled = $value['enabled'];
             unset($value['enabled']);
         }
     
-        if (isset($value['hosts'])) {
+        if (array_key_exists('hosts', $value)) {
+            $this->_usedProperties['hosts'] = true;
             $this->hosts = $value['hosts'];
             unset($value['hosts']);
         }
     
-        if (isset($value['mapping'])) {
+        if (array_key_exists('mapping', $value)) {
+            $this->_usedProperties['mapping'] = true;
             $this->mapping = array_map(function ($v) { return new \Symfony\Config\ApiPlatform\Elasticsearch\MappingConfig($v); }, $value['mapping']);
             unset($value['mapping']);
         }
@@ -79,13 +87,13 @@ class ElasticsearchConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->enabled) {
+        if (isset($this->_usedProperties['enabled'])) {
             $output['enabled'] = $this->enabled;
         }
-        if (null !== $this->hosts) {
+        if (isset($this->_usedProperties['hosts'])) {
             $output['hosts'] = $this->hosts;
         }
-        if (null !== $this->mapping) {
+        if (isset($this->_usedProperties['mapping'])) {
             $output['mapping'] = array_map(function ($v) { return $v->toArray(); }, $this->mapping);
         }
     

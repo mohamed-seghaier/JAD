@@ -8,13 +8,14 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class ContactConfig 
 {
     private $name;
     private $url;
     private $email;
+    private $_usedProperties = [];
     
     /**
      * The identifying name of the contact person/organization.
@@ -24,6 +25,7 @@ class ContactConfig
      */
     public function name($value): static
     {
+        $this->_usedProperties['name'] = true;
         $this->name = $value;
     
         return $this;
@@ -37,6 +39,7 @@ class ContactConfig
      */
     public function url($value): static
     {
+        $this->_usedProperties['url'] = true;
         $this->url = $value;
     
         return $this;
@@ -50,6 +53,7 @@ class ContactConfig
      */
     public function email($value): static
     {
+        $this->_usedProperties['email'] = true;
         $this->email = $value;
     
         return $this;
@@ -58,17 +62,20 @@ class ContactConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['name'])) {
+        if (array_key_exists('name', $value)) {
+            $this->_usedProperties['name'] = true;
             $this->name = $value['name'];
             unset($value['name']);
         }
     
-        if (isset($value['url'])) {
+        if (array_key_exists('url', $value)) {
+            $this->_usedProperties['url'] = true;
             $this->url = $value['url'];
             unset($value['url']);
         }
     
-        if (isset($value['email'])) {
+        if (array_key_exists('email', $value)) {
+            $this->_usedProperties['email'] = true;
             $this->email = $value['email'];
             unset($value['email']);
         }
@@ -81,13 +88,13 @@ class ContactConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->name) {
+        if (isset($this->_usedProperties['name'])) {
             $output['name'] = $this->name;
         }
-        if (null !== $this->url) {
+        if (isset($this->_usedProperties['url'])) {
             $output['url'] = $this->url;
         }
-        if (null !== $this->email) {
+        if (isset($this->_usedProperties['email'])) {
             $output['email'] = $this->email;
         }
     

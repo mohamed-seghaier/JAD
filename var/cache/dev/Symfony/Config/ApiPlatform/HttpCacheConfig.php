@@ -9,7 +9,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class HttpCacheConfig 
 {
@@ -19,6 +19,7 @@ class HttpCacheConfig
     private $vary;
     private $public;
     private $invalidation;
+    private $_usedProperties = [];
     
     /**
      * Automatically generate etags for API responses.
@@ -29,6 +30,7 @@ class HttpCacheConfig
      */
     public function etag($value): static
     {
+        $this->_usedProperties['etag'] = true;
         $this->etag = $value;
     
         return $this;
@@ -43,6 +45,7 @@ class HttpCacheConfig
      */
     public function maxAge($value): static
     {
+        $this->_usedProperties['maxAge'] = true;
         $this->maxAge = $value;
     
         return $this;
@@ -57,6 +60,7 @@ class HttpCacheConfig
      */
     public function sharedMaxAge($value): static
     {
+        $this->_usedProperties['sharedMaxAge'] = true;
         $this->sharedMaxAge = $value;
     
         return $this;
@@ -69,6 +73,7 @@ class HttpCacheConfig
      */
     public function vary(ParamConfigurator|array $value): static
     {
+        $this->_usedProperties['vary'] = true;
         $this->vary = $value;
     
         return $this;
@@ -82,6 +87,7 @@ class HttpCacheConfig
      */
     public function public($value): static
     {
+        $this->_usedProperties['public'] = true;
         $this->public = $value;
     
         return $this;
@@ -90,6 +96,7 @@ class HttpCacheConfig
     public function invalidation(array $value = []): \Symfony\Config\ApiPlatform\HttpCache\InvalidationConfig
     {
         if (null === $this->invalidation) {
+            $this->_usedProperties['invalidation'] = true;
             $this->invalidation = new \Symfony\Config\ApiPlatform\HttpCache\InvalidationConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "invalidation()" has already been initialized. You cannot pass values the second time you call invalidation().');
@@ -101,32 +108,38 @@ class HttpCacheConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['etag'])) {
+        if (array_key_exists('etag', $value)) {
+            $this->_usedProperties['etag'] = true;
             $this->etag = $value['etag'];
             unset($value['etag']);
         }
     
-        if (isset($value['max_age'])) {
+        if (array_key_exists('max_age', $value)) {
+            $this->_usedProperties['maxAge'] = true;
             $this->maxAge = $value['max_age'];
             unset($value['max_age']);
         }
     
-        if (isset($value['shared_max_age'])) {
+        if (array_key_exists('shared_max_age', $value)) {
+            $this->_usedProperties['sharedMaxAge'] = true;
             $this->sharedMaxAge = $value['shared_max_age'];
             unset($value['shared_max_age']);
         }
     
-        if (isset($value['vary'])) {
+        if (array_key_exists('vary', $value)) {
+            $this->_usedProperties['vary'] = true;
             $this->vary = $value['vary'];
             unset($value['vary']);
         }
     
-        if (isset($value['public'])) {
+        if (array_key_exists('public', $value)) {
+            $this->_usedProperties['public'] = true;
             $this->public = $value['public'];
             unset($value['public']);
         }
     
-        if (isset($value['invalidation'])) {
+        if (array_key_exists('invalidation', $value)) {
+            $this->_usedProperties['invalidation'] = true;
             $this->invalidation = new \Symfony\Config\ApiPlatform\HttpCache\InvalidationConfig($value['invalidation']);
             unset($value['invalidation']);
         }
@@ -139,22 +152,22 @@ class HttpCacheConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->etag) {
+        if (isset($this->_usedProperties['etag'])) {
             $output['etag'] = $this->etag;
         }
-        if (null !== $this->maxAge) {
+        if (isset($this->_usedProperties['maxAge'])) {
             $output['max_age'] = $this->maxAge;
         }
-        if (null !== $this->sharedMaxAge) {
+        if (isset($this->_usedProperties['sharedMaxAge'])) {
             $output['shared_max_age'] = $this->sharedMaxAge;
         }
-        if (null !== $this->vary) {
+        if (isset($this->_usedProperties['vary'])) {
             $output['vary'] = $this->vary;
         }
-        if (null !== $this->public) {
+        if (isset($this->_usedProperties['public'])) {
             $output['public'] = $this->public;
         }
-        if (null !== $this->invalidation) {
+        if (isset($this->_usedProperties['invalidation'])) {
             $output['invalidation'] = $this->invalidation->toArray();
         }
     

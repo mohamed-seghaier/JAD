@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Panier{% endblock %}
+
+{% block body %}
+
+    {% if produits|length %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Produit</th>
+            <th>Prix</th>
+            <th>Quantité</th>
+            <th>Total</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for produit in produits %}
+            <tr>
+                <td>{{ produit.product.name }}</td>
+                <td>{{ produit.product.price }}</td>
+                <td>
+                    <a href="{{ path('app_panier_decrement', {'id': produit.product.id}) }}" class="btn btn-sm btn-primary"><i class="material-icons" title="Retirer">remove</i> </a>
+                    {{ produit.qty }}
+                    <a href="{{ path('app_panier_add', {'id': produit.product.id}) }}?returnToPanier=true" class="btn btn-sm btn-primary"><i class="material-icons" title="Ajouter">add</i></a>
+
+                </td>
+                <td>{{ produit.total }}</td>
+                <td>
+                    <a href="{{ path('app_panier_del', {'id':produit.product.id}) }}" class="btn btn-sm btn-danger"><i class="material-icons" title="Supprimer">delete</i></a>
+                </td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="3">Total : </td>
+            <td>{{ total }}</td>
+        </tr>
+        </tfoot>
+    </table>
+    {% else %}
+    <h2>Votre panier est vide ! :( </h2>
+    {% endif %}
+{% endblock %}

@@ -8,12 +8,13 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class LicenseConfig 
 {
     private $name;
     private $url;
+    private $_usedProperties = [];
     
     /**
      * The license name used for the API.
@@ -23,6 +24,7 @@ class LicenseConfig
      */
     public function name($value): static
     {
+        $this->_usedProperties['name'] = true;
         $this->name = $value;
     
         return $this;
@@ -36,6 +38,7 @@ class LicenseConfig
      */
     public function url($value): static
     {
+        $this->_usedProperties['url'] = true;
         $this->url = $value;
     
         return $this;
@@ -44,12 +47,14 @@ class LicenseConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['name'])) {
+        if (array_key_exists('name', $value)) {
+            $this->_usedProperties['name'] = true;
             $this->name = $value['name'];
             unset($value['name']);
         }
     
-        if (isset($value['url'])) {
+        if (array_key_exists('url', $value)) {
+            $this->_usedProperties['url'] = true;
             $this->url = $value['url'];
             unset($value['url']);
         }
@@ -62,10 +67,10 @@ class LicenseConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->name) {
+        if (isset($this->_usedProperties['name'])) {
             $output['name'] = $this->name;
         }
-        if (null !== $this->url) {
+        if (isset($this->_usedProperties['url'])) {
             $output['url'] = $this->url;
         }
     

@@ -10,7 +10,7 @@ use Symfony\Component\Config\Loader\ParamConfigurator;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class OpenapiConfig 
 {
@@ -18,10 +18,12 @@ class OpenapiConfig
     private $backwardCompatibilityLayer;
     private $termsOfService;
     private $license;
+    private $_usedProperties = [];
     
     public function contact(array $value = []): \Symfony\Config\ApiPlatform\Openapi\ContactConfig
     {
         if (null === $this->contact) {
+            $this->_usedProperties['contact'] = true;
             $this->contact = new \Symfony\Config\ApiPlatform\Openapi\ContactConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "contact()" has already been initialized. You cannot pass values the second time you call contact().');
@@ -38,6 +40,7 @@ class OpenapiConfig
      */
     public function backwardCompatibilityLayer($value): static
     {
+        $this->_usedProperties['backwardCompatibilityLayer'] = true;
         $this->backwardCompatibilityLayer = $value;
     
         return $this;
@@ -51,6 +54,7 @@ class OpenapiConfig
      */
     public function termsOfService($value): static
     {
+        $this->_usedProperties['termsOfService'] = true;
         $this->termsOfService = $value;
     
         return $this;
@@ -59,6 +63,7 @@ class OpenapiConfig
     public function license(array $value = []): \Symfony\Config\ApiPlatform\Openapi\LicenseConfig
     {
         if (null === $this->license) {
+            $this->_usedProperties['license'] = true;
             $this->license = new \Symfony\Config\ApiPlatform\Openapi\LicenseConfig($value);
         } elseif ([] !== $value) {
             throw new InvalidConfigurationException('The node created by "license()" has already been initialized. You cannot pass values the second time you call license().');
@@ -70,22 +75,26 @@ class OpenapiConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['contact'])) {
+        if (array_key_exists('contact', $value)) {
+            $this->_usedProperties['contact'] = true;
             $this->contact = new \Symfony\Config\ApiPlatform\Openapi\ContactConfig($value['contact']);
             unset($value['contact']);
         }
     
-        if (isset($value['backward_compatibility_layer'])) {
+        if (array_key_exists('backward_compatibility_layer', $value)) {
+            $this->_usedProperties['backwardCompatibilityLayer'] = true;
             $this->backwardCompatibilityLayer = $value['backward_compatibility_layer'];
             unset($value['backward_compatibility_layer']);
         }
     
-        if (isset($value['termsOfService'])) {
+        if (array_key_exists('termsOfService', $value)) {
+            $this->_usedProperties['termsOfService'] = true;
             $this->termsOfService = $value['termsOfService'];
             unset($value['termsOfService']);
         }
     
-        if (isset($value['license'])) {
+        if (array_key_exists('license', $value)) {
+            $this->_usedProperties['license'] = true;
             $this->license = new \Symfony\Config\ApiPlatform\Openapi\LicenseConfig($value['license']);
             unset($value['license']);
         }
@@ -98,16 +107,16 @@ class OpenapiConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->contact) {
+        if (isset($this->_usedProperties['contact'])) {
             $output['contact'] = $this->contact->toArray();
         }
-        if (null !== $this->backwardCompatibilityLayer) {
+        if (isset($this->_usedProperties['backwardCompatibilityLayer'])) {
             $output['backward_compatibility_layer'] = $this->backwardCompatibilityLayer;
         }
-        if (null !== $this->termsOfService) {
+        if (isset($this->_usedProperties['termsOfService'])) {
             $output['termsOfService'] = $this->termsOfService;
         }
-        if (null !== $this->license) {
+        if (isset($this->_usedProperties['license'])) {
             $output['license'] = $this->license->toArray();
         }
     

@@ -8,11 +8,12 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 /**
- * This class is automatically generated to help creating config.
+ * This class is automatically generated to help in creating a config.
  */
 class PatchFormatsConfig 
 {
     private $mimeTypes;
+    private $_usedProperties = [];
     
     /**
      * @param ParamConfigurator|list<ParamConfigurator|mixed> $value
@@ -21,6 +22,7 @@ class PatchFormatsConfig
      */
     public function mimeTypes(ParamConfigurator|array $value): static
     {
+        $this->_usedProperties['mimeTypes'] = true;
         $this->mimeTypes = $value;
     
         return $this;
@@ -29,7 +31,8 @@ class PatchFormatsConfig
     public function __construct(array $value = [])
     {
     
-        if (isset($value['mime_types'])) {
+        if (array_key_exists('mime_types', $value)) {
+            $this->_usedProperties['mimeTypes'] = true;
             $this->mimeTypes = $value['mime_types'];
             unset($value['mime_types']);
         }
@@ -42,7 +45,7 @@ class PatchFormatsConfig
     public function toArray(): array
     {
         $output = [];
-        if (null !== $this->mimeTypes) {
+        if (isset($this->_usedProperties['mimeTypes'])) {
             $output['mime_types'] = $this->mimeTypes;
         }
     

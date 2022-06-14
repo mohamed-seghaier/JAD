@@ -19,7 +19,7 @@ class Orders
     private $id;
 
     #[ORM\Column(type: 'integer')]
-    private ?int $user_id;
+    private ?int $client_id;
 
     #[ORM\Column(type: 'date')]
     private ?\DateTimeInterface $creationDate;
@@ -43,14 +43,14 @@ class Orders
         return $this->id;
     }
 
-    public function getUserId(): ?int
+    public function getClientId(): ?int
     {
-        return $this->user_id;
+        return $this->client_id;
     }
 
-    public function setUserId(int $user): self
+    public function setClientId(int $client): self
     {
-        $this->user_id = $user;
+        $this->client_id = $client;
 
         return $this;
     }
