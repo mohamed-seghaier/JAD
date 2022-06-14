@@ -471,6 +471,6 @@ class __TwigTemplate_0697540cfc671f0d11327f5e7a05bc09 extends Template
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

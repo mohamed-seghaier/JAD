@@ -846,6 +846,6 @@ $context["answer"] === false)) {
         </div>
     {% endif %}
 {% endblock %}
-", "@ApiPlatform/DataCollector/request.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views/DataCollector/request.html.twig");
+", "@ApiPlatform/DataCollector/request.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/api-platform/core/src/Bridge/Symfony/Bundle/Resources/views/DataCollector/request.html.twig");
     }
 }

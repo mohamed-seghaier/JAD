@@ -900,6 +900,6 @@ class __TwigTemplate_0ef10bf65d0a37e794d34b9cc084fc22 extends Template
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

@@ -1349,6 +1349,6 @@ class __TwigTemplate_112eb33c5880956ce54e9112443ed4f8 extends Template
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

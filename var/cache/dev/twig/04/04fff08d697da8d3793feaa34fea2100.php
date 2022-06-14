@@ -1671,6 +1671,6 @@ class __TwigTemplate_0a149335cb5e179dd52ce80da77c0e2c extends Template
         </tbody>
     </table>
 {% endmacro %}
-", "@Doctrine/Collector/db.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
+", "@Doctrine/Collector/db.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/doctrine/doctrine-bundle/Resources/views/Collector/db.html.twig");
     }
 }

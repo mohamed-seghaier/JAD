@@ -2080,6 +2080,6 @@ class __TwigTemplate_4b2d446ca068e6110dacd2c119a7a9d9 extends Template
         {{ tree.form_tree_details(childName, childData, forms_by_hash) }}
     {% endfor %}
 {% endmacro %}
-", "@WebProfiler/Collector/form.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
+", "@WebProfiler/Collector/form.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/form.html.twig");
     }
 }

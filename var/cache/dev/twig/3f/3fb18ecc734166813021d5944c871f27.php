@@ -275,6 +275,6 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         {% endblock %}
     </head>
 </html>
-", "base.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/base.html.twig");
+", "base.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/base.html.twig");
     }
 }

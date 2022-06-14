@@ -479,6 +479,6 @@ class __TwigTemplate_058c1386dfd3efdf29409236562e87e8 extends Template
         </div>
     {% endfor %}
 {% endblock %}
-", "@WebProfiler/Collector/validator.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
+", "@WebProfiler/Collector/validator.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/vendor/symfony/web-profiler-bundle/Resources/views/Collector/validator.html.twig");
     }
 }

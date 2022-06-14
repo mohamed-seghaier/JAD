@@ -120,6 +120,6 @@ class __TwigTemplate_c34cb0dd53e212eed02b9cacb18cdd9c extends Template
 
         </div>
     </div>
-</div>", "product/_product_card.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/product/_product_card.html.twig");
+</div>", "product/_product_card.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/product/_product_card.html.twig");
     }
 }

@@ -196,6 +196,6 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
             </ul>
         </div>
     </div>
-</nav>", "shared/_navbar.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/shared/_navbar.html.twig");
+</nav>", "shared/_navbar.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/shared/_navbar.html.twig");
     }
 }

@@ -181,6 +181,6 @@ class __TwigTemplate_e27b67e7de2949808b5d3527bdf269de extends Template
         Proposé par SEGHAIER Mohamed-Ali
     </footer>
 
-{% endblock %}", "home/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/home/index.html.twig");
+{% endblock %}", "home/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/home/index.html.twig");
     }
 }
