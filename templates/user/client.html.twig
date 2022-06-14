@@ -1,0 +1,39 @@
+{% extends "base.html.twig" %}
+
+{% block title%}
+    Page profil : {{ client.firstName }} {{ client.lastName }}
+{% endblock %}
+ {% block body %}
+     <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+         <li class="breadcrumb-item active">{{ client.firstName }} {{ client.lastName }}</li>
+     </ol>
+     <h1> Profil : {{ client.firstName }} {{ client.lastName }}</h1>
+
+     <h2>Informations :</h2>
+     <div class="row">
+         <div class="col-3">
+             <p>Nom : {{ client.lastName }}</p>
+             <p>email : {{ client.mail }}</p>
+         </div>
+         <div class="col-3">
+             <p>Prenom : {{ client.firstName }}</p>
+             <p>Mot de passe : {{ client.password }}</p>
+         </div>
+     </div>
+
+     {% if user_type  == "Vendeur" %}
+         <div class="row">
+             <div class="col-3">
+                     <a href=" {{ path('app_product_create')}}" class="btn btn-light ">Ajouter un produit</a>
+             </div>
+             <div class="col-3">
+                     <a href=" {{ path('app_product_create')}}" class="btn btn-light ">Ajouter une marque</a>
+             </div>
+         </div>
+     {% endif %}
+
+
+
+
+ {% endblock %}

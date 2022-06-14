@@ -1,0 +1,28 @@
+{% extends "base.html.twig" %}
+
+{% block title%}
+    Marque : {{ brand.name }}
+{% endblock %}
+ {% block body %}
+     <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="{{ path('app_home') }}">Accueil</a></li>
+         <li class="breadcrumb-item active">{{ brand.name }}</li>
+     </ol>
+     <h1> Marque : {{ brand.name }}</h1>
+     <a href=" {{ path('app_product_create', {'id':brand.id})}}" class="btn btn-light ">Ajouter un produit</a>
+     <a href=" {{ path('app_brand_edit', {'brand_id':brand.id})}}" class="btn btn-light ">Éditer cette marque</a>
+
+
+     <div class="row">
+         {% for product in brand.products %}
+
+
+             {% include "product/_product_card.html.twig" %}
+
+
+
+         {% endfor %}
+         <div class="col-3">
+         </div>
+     </div>
+ {% endblock %}
