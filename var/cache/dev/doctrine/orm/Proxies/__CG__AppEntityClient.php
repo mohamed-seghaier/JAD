@@ -67,10 +67,10 @@ class Client extends \App\Entity\Client implements \Doctrine\ORM\Proxy\Proxy
     public function __sleep()
     {
         if ($this->__isInitialized__) {
-            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'userType', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'token', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'creationDate', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'addresses', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'ips', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'brands'];
+            return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'userType', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'token', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'creationDate', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'addresses', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'ips', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'brands', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'purchases'];
         }
 
-        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'userType', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'token', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'creationDate', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'addresses', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'ips', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'brands'];
+        return ['__isInitialized__', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'id', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'email', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'roles', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'password', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'userType', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'token', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'lastName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'firstName', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'creationDate', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'active', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'addresses', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'ips', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'brands', '' . "\0" . 'App\\Entity\\Client' . "\0" . 'purchases'];
     }
 
     /**
@@ -531,6 +531,39 @@ class Client extends \App\Entity\Client implements \Doctrine\ORM\Proxy\Proxy
         $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUserType', [$userType]);
 
         return parent::setUserType($userType);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getPurchases(): \Doctrine\Common\Collections\Collection
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'getPurchases', []);
+
+        return parent::getPurchases();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function addPurchase(\App\Entity\Purchase $purchase): \App\Entity\Client
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'addPurchase', [$purchase]);
+
+        return parent::addPurchase($purchase);
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function removePurchase(\App\Entity\Purchase $purchase): \App\Entity\Client
+    {
+
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'removePurchase', [$purchase]);
+
+        return parent::removePurchase($purchase);
     }
 
 }

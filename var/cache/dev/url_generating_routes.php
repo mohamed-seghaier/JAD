@@ -71,6 +71,7 @@ return [
     'app_product' => [['brand_id', 'product_id'], ['_controller' => 'App\\Controller\\ProductController::index'], [], [['variable', '/', '[^/]++', 'product_id', true], ['text', '/product'], ['variable', '/', '[^/]++', 'brand_id', true], ['text', '/brand']], [], [], []],
     'app_product_create' => [['id'], ['_controller' => 'App\\Controller\\ProductController::create'], [], [['text', '/product/create'], ['variable', '/', '[^/]++', 'id', true], ['text', '/admin/brand']], [], [], []],
     'app_product_edit' => [['product_id'], ['_controller' => 'App\\Controller\\ProductController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'product_id', true], ['text', '/admin/product']], [], [], []],
+    'app_purchases' => [[], ['_controller' => 'App\\Controller\\Purchase\\PurchasesListController::index'], [], [['text', '/commandes']], [], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'app_user' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user']], [], [], []],

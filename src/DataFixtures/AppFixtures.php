@@ -6,6 +6,7 @@ use App\Entity\Brand;
 use App\Entity\Client;
 use App\Entity\Ips;
 use App\Entity\Product;
+use App\Entity\Purchase;
 use App\Entity\User;
 use App\Entity\UserType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -31,6 +32,7 @@ class AppFixtures extends Fixture
 
         $usertype = new UserType();
         $usertype->setName('USER_CLIENT');
+        $users = [];
 
         for ($us = 0; $us <= 5; $us += 1) {
             $usertype->setName("Client");
@@ -39,7 +41,7 @@ class AppFixtures extends Fixture
                 ->setLastName($faker->lastName())
                 ->setPhone($faker->phoneNumber())
                 ->setEmail($faker->email())
-                ->setPassword($this->encoder->hashPassword($user, $faker->password()))
+                ->setPassword($this->encoder->hashPassword($user, "password"))
                 ->setToken($faker->linuxPlatformToken())
                 ->setCreationDate(new \DateTime())
                 ->setActive(true)
@@ -55,7 +57,7 @@ class AppFixtures extends Fixture
         $user->setFirstName($faker->firstName())
             ->setLastName($faker->lastName())
             ->setPhone($faker->phoneNumber())
-            ->setEmail($faker->email())
+            ->setEmail("test@test.test")
             ->setPassword($this->encoder->hashPassword($user, "password"))
             ->setToken($faker->linuxPlatformToken())
             ->setCreationDate(new \DateTime())
@@ -69,13 +71,13 @@ class AppFixtures extends Fixture
         $usertype = new UserType();
         $usertype->setName("Vendeur");
 
-        for ($i = 0; $i < 100; $i += 1) {
+        for ($i = 0; $i < 5; $i += 1) {
             $user = new Client();
             $user->setFirstName($faker->firstName())
                 ->setLastName($faker->lastName())
                 ->setPhone($faker->phoneNumber())
                 ->setEmail($faker->email())
-                ->setPassword($faker->password())
+                ->setPassword($this->encoder->hashPassword($user, "password"))
                 ->setToken($faker->linuxPlatformToken())
                 ->setCreationDate(new \DateTime())
                 ->setActive(true)
@@ -105,9 +107,23 @@ class AppFixtures extends Fixture
             }
             $manager->persist($brand);
             $manager->persist($user);
+            $users[] = $user;
             $manager->persist($ip);
             $manager->persist($usertype);
 
+        }
+        for ($p = 0; $p < mt_rand(20, 40); $p += 1) {
+            $purchase = new Purchase();
+            $purchase->setFullName($faker->name())
+                ->setAddress($faker->streetAddress())
+                ->setPostalCode($faker->postcode())
+                ->setCity($faker->city())
+                ->setTotal(mt_rand(2000, 3000))
+                ->setPurchasedAt(\DateTimeImmutable::createFromMutable($faker->dateTimeBetween('-6 months')))
+                ->setClient($faker->randomElement($users));
+
+            if($faker->boolean(90)) $purchase->setStatus(Purchase::STATUS_PAID);
+            $manager->persist($purchase);
         }
         $manager->flush();
     }

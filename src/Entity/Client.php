@@ -56,12 +56,16 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\OneToMany(mappedBy: 'client', targetEntity: Brand::class)]
     private $brands;
 
+    #[ORM\OneToMany(mappedBy: 'client', targetEntity: Purchase::class)]
+    private $purchases;
+
 
     public function __construct()
     {
         $this->addresses = new ArrayCollection();
         $this->ips = new ArrayCollection();
         $this->brands = new ArrayCollection();
+        $this->purchases = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -301,6 +305,36 @@ class Client implements UserInterface, PasswordAuthenticatedUserInterface
     public function setUserType(?UserType $userType): self
     {
         $this->userType = $userType;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Purchase>
+     */
+    public function getPurchases(): Collection
+    {
+        return $this->purchases;
+    }
+
+    public function addPurchase(Purchase $purchase): self
+    {
+        if (!$this->purchases->contains($purchase)) {
+            $this->purchases[] = $purchase;
+            $purchase->setClient($this);
+        }
+
+        return $this;
+    }
+
+    public function removePurchase(Purchase $purchase): self
+    {
+        if ($this->purchases->removeElement($purchase)) {
+            // set the owning side to null (unless already changed)
+            if ($purchase->getClient() === $this) {
+                $purchase->setClient(null);
+            }
+        }
 
         return $this;
     }
