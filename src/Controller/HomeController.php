@@ -16,7 +16,6 @@ class HomeController extends AbstractController
         $session = new Session();
         $session->start();
         $tmp = $products->findBy([], [], 4);
-
         return $this->render('home/index.html.twig', [
             'products' => $tmp,
         ]);
