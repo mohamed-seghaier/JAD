@@ -199,6 +199,6 @@ class __TwigTemplate_474bd2a69cd4fbc50d10728de2bc5b26 extends Template
     </button>
     {{ form_end(formView)}}
 {% endblock %}
-", "product/edit.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/product/edit.html.twig");
+", "product/edit.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/product/edit.html.twig");
     }
 }

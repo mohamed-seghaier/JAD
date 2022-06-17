@@ -213,6 +213,6 @@ class __TwigTemplate_68c47129d2fed82c605089e3d11c4c7f extends Template
          </div>
      </div>
  {% endblock %}
-", "brand/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/brand/index.html.twig");
+", "brand/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/brand/index.html.twig");
     }
 }

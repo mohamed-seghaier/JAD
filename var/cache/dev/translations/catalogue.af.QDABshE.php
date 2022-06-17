@@ -314,6 +314,8 @@ $catalogueFr = new MessageCatalogue('fr', array (
     'Invalid or expired login link.' => 'Lien de connexion invalide ou expiré.',
     'Too many failed login attempts, please try again in %minutes% minute.' => 'Plusieurs tentatives de connexion ont échoué, veuillez réessayer dans %minutes% minute.',
     'Too many failed login attempts, please try again in %minutes% minutes.' => 'Plusieurs tentatives de connexion ont échoué, veuillez réessayer dans %minutes% minutes.',
+    'Invalid credentials' => 'Mot de passe erroné.',
+    'Username could not be found' => 'Email erroné.',
   ),
 ));
 $catalogue->addFallbackCatalogue($catalogueFr);

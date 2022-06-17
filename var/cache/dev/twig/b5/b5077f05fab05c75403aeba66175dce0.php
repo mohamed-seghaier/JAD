@@ -230,6 +230,6 @@ $context["brand"], "id", [], "any", false, false, false, 32)]), "html", null, tr
      </div>
 
  {% endblock %}
-", "user/seller.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/user/seller.html.twig");
+", "user/seller.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/user/seller.html.twig");
     }
 }

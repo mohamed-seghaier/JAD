@@ -154,6 +154,6 @@ class __TwigTemplate_3406d0579a947f6e4f40bfc1dbabfe68 extends Template
     <button type=\"submit\" class=\"btn btn-success\">Connexion</button>
     {{form_end(formView)}}
 {% endblock %}
-", "security/login.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/security/login.html.twig");
+", "security/login.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/security/login.html.twig");
     }
 }

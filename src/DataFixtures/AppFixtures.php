@@ -7,6 +7,7 @@ use App\Entity\Client;
 use App\Entity\Ips;
 use App\Entity\Product;
 use App\Entity\Purchase;
+use App\Entity\PurchaseItem;
 use App\Entity\User;
 use App\Entity\UserType;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -33,6 +34,7 @@ class AppFixtures extends Fixture
         $usertype = new UserType();
         $usertype->setName('USER_CLIENT');
         $users = [];
+        $products = [];
 
         for ($us = 0; $us <= 5; $us += 1) {
             $usertype->setName("Client");
@@ -64,6 +66,7 @@ class AppFixtures extends Fixture
             ->setActive(true)
             ->setUserType($usertype)
             ->setRoles(['ROLE_ADMIN']);
+        $users[] = $user;
         $usertype->addClient($user);
         $manager->persist($usertype);
         $manager->persist($user);
@@ -103,6 +106,7 @@ class AppFixtures extends Fixture
                     ->setBrand($brand)
                     ->setStock(mt_rand(1, 50));
                 $brand->addProduct($product);
+                $products[] = $product;
                 $manager->persist($product);
             }
             $manager->persist($brand);
@@ -122,8 +126,22 @@ class AppFixtures extends Fixture
                 ->setPurchasedAt(\DateTimeImmutable::createFromMutable($faker->dateTimeBetween('-6 months')))
                 ->setClient($faker->randomElement($users));
 
+            $selectedProducts = $faker->randomElements($products, mt_rand(3, 5));
+
+            foreach ($selectedProducts as $productSelected) {
+                $purchaseItem = new PurchaseItem();
+                $purchaseItem->setProduct($product)
+                    ->setQuantity(mt_rand(1, 3))
+                    ->setProductName($productSelected->getName())
+                    ->setProductPrice($productSelected->getPrice())
+                    ->setTotal($purchaseItem->getProductPrice() * $purchaseItem->getQuantity())
+                    ->setPurchase($purchase);
+                $manager->persist($purchaseItem);
+            }
+
             if($faker->boolean(90)) $purchase->setStatus(Purchase::STATUS_PAID);
             $manager->persist($purchase);
+
         }
         $manager->flush();
     }

@@ -93,36 +93,60 @@ class __TwigTemplate_eb92d3e809696ff539b6f4f163f9277c extends Template
             <th>Numéro</th>
             <th>Adresse</th>
             <th>Date de commande</th>
+            <th>Produits</th>
             <th>Total</th>
         </tr>
         </thead>
         <tbody>
         ";
-        // line 18
+        // line 19
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["purchases"]) || array_key_exists("purchases", $context) ? $context["purchases"] : (function () { throw new RuntimeError('Variable "purchases" does not exist.', 18, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["purchases"]) || array_key_exists("purchases", $context) ? $context["purchases"] : (function () { throw new RuntimeError('Variable "purchases" does not exist.', 19, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["purchase"]) {
-            // line 19
+            // line 20
             echo "            <tr>
                 <td>";
-            // line 20
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "id", [], "any", false, false, false, 20), "html", null, true);
-            echo "</td>
-                <td>";
             // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "address", [], "any", false, false, false, 21), "html", null, true);
-            echo "<br>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "postalCode", [], "any", false, false, false, 21), "html", null, true);
-            echo ", ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "city", [], "any", false, false, false, 21), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "id", [], "any", false, false, false, 21), "html", null, true);
             echo "</td>
                 <td>";
             // line 22
-            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "purchasedAt", [], "any", false, false, false, 22), "d/m/y H:i"), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "address", [], "any", false, false, false, 22), "html", null, true);
+            echo "<br>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "postalCode", [], "any", false, false, false, 22), "html", null, true);
+            echo ", ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "city", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
-            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["purchase"], "total", [], "any", false, false, false, 23) / 100), "html", null, true);
+            echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["purchase"], "purchasedAt", [], "any", false, false, false, 23), "d/m/y H:i"), "html", null, true);
+            echo "</td>
+                <td>
+                    <ul>
+                        ";
+            // line 26
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["purchase"], "purchaseItems", [], "any", false, false, false, 26));
+            foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
+                // line 27
+                echo "                        <li> ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "quantity", [], "any", false, false, false, 27), "html", null, true);
+                echo " x ";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["product"], "productName", [], "any", false, false, false, 27), "html", null, true);
+                echo " (";
+                echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["product"], "total", [], "any", false, false, false, 27) / 100), "html", null, true);
+                echo " €)</li>
+                        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 29
+            echo "                    </ul>
+                </td>
+                <td>";
+            // line 31
+            echo twig_escape_filter($this->env, (twig_get_attribute($this->env, $this->source, $context["purchase"], "total", [], "any", false, false, false, 31) / 100), "html", null, true);
             echo " €</td>
             </tr>
 
@@ -131,7 +155,7 @@ class __TwigTemplate_eb92d3e809696ff539b6f4f163f9277c extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['purchase'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 27
+        // line 35
         echo "        </tbody>
     </table>
 ";
@@ -155,7 +179,7 @@ class __TwigTemplate_eb92d3e809696ff539b6f4f163f9277c extends Template
 
     public function getDebugInfo()
     {
-        return array (  135 => 27,  125 => 23,  121 => 22,  113 => 21,  109 => 20,  106 => 19,  102 => 18,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  159 => 35,  149 => 31,  145 => 29,  132 => 27,  128 => 26,  122 => 23,  114 => 22,  110 => 21,  107 => 20,  103 => 19,  90 => 8,  80 => 7,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -173,6 +197,7 @@ Mes commandes
             <th>Numéro</th>
             <th>Adresse</th>
             <th>Date de commande</th>
+            <th>Produits</th>
             <th>Total</th>
         </tr>
         </thead>
@@ -182,12 +207,19 @@ Mes commandes
                 <td>{{ purchase.id }}</td>
                 <td>{{ purchase.address }}<br>{{ purchase.postalCode }}, {{ purchase.city }}</td>
                 <td>{{ purchase.purchasedAt | date('d/m/y H:i') }}</td>
+                <td>
+                    <ul>
+                        {% for product in purchase.purchaseItems %}
+                        <li> {{ product.quantity }} x {{ product.productName }} ({{ product.total / 100}} €)</li>
+                        {% endfor %}
+                    </ul>
+                </td>
                 <td>{{ purchase.total / 100  }} €</td>
             </tr>
 
         {% endfor %}
         </tbody>
     </table>
-{% endblock %}", "purchase/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/JAD/templates/purchase/index.html.twig");
+{% endblock %}", "purchase/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/purchase/index.html.twig");
     }
 }

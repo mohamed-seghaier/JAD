@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Form\PanierConfirmationType;
 use App\Panier\PanierItem;
 use App\Panier\PanierService;
 use App\Repository\ProductRepository;
@@ -48,6 +49,7 @@ class PanierController extends AbstractController
 
     #[Route('/panier/show', name: 'app_panier')]
     public function show(SessionInterface $session, ProductRepository $productRepository): Response {
+        $form = $this->createForm(PanierConfirmationType::class);
         $detail = [];
 
         $total = 0;
@@ -60,7 +62,8 @@ class PanierController extends AbstractController
         }
         return $this->render('panier/index.html.twig', [
             'produits' => $detail,
-            'total' => $total
+            'total' => $total,
+            'formview' => $form->createView()
         ]);
     }
 

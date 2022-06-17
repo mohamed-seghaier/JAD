@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% form_theme formview 'bootstrap_4_layout.html.twig' %}
 
 {% block title %}Panier{% endblock %}
 
@@ -40,6 +41,11 @@
         </tr>
         </tfoot>
     </table>
+        <h2>Confirmez votre commande</h2>
+        {{ form_start(formview, {'action': path('app_panier_confirm')}) }}
+        {{ form_widget(formview) }}
+            <button type="submit" class="btn btn-success">Confirmer la commande</button>
+        {{ form_end(formview) }}
     {% else %}
     <h2>Votre panier est vide ! :( </h2>
     {% endif %}
