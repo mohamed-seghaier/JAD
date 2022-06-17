@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8066e92673581819342a1347204ac035134a40fd',
+        'reference' => 'e1243bbc5cb24e9c442de0b91c1abc15be2ec3fc',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8066e92673581819342a1347204ac035134a40fd',
+            'reference' => 'e1243bbc5cb24e9c442de0b91c1abc15be2ec3fc',
             'dev_requirement' => false,
         ),
         'api-platform/core' => array(

@@ -1,3 +1,0 @@
-<?php //App%255CEntity%255CIps%2523getBlackList
-
-return [PHP_INT_MAX, []];

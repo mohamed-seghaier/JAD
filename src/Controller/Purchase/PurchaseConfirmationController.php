@@ -16,6 +16,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Exception\AccessDeniedException;
 
+
 class PurchaseConfirmationController extends AbstractController
 {
     protected PanierService $panierService;
