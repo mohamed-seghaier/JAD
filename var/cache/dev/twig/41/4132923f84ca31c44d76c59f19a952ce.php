@@ -129,11 +129,6 @@ class __TwigTemplate_e27b67e7de2949808b5d3527bdf269de extends Template
         // line 15
         echo "
     </div>
-    <hr>
-    <footer>
-        Proposé par SEGHAIER Mohamed-Ali
-    </footer>
-
 ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
@@ -176,11 +171,6 @@ class __TwigTemplate_e27b67e7de2949808b5d3527bdf269de extends Template
         {% endfor %}
 
     </div>
-    <hr>
-    <footer>
-        Proposé par SEGHAIER Mohamed-Ali
-    </footer>
-
 {% endblock %}", "home/index.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/home/index.html.twig");
     }
 }

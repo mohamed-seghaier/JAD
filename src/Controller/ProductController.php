@@ -24,7 +24,7 @@ class ProductController extends AbstractController
         if (!$product || $product->getBrand()->getId() != $brand_id)
             throw $this->createNotFoundException("Ce produit n'existe pas ou n'appartient pas à cette catégorie.");
         $panier = $session->get('panier');
-        if ($panier[$product_id]) $stock = $product->getStock() - $panier[$product_id];
+        if (is_array($panier) && array_key_exists($product_id, $panier)) $stock = $product->getStock() - $panier[$product_id];
         else $stock = $product->getStock();
         return $this->render('product/index.html.twig', [
             'product' => $product,

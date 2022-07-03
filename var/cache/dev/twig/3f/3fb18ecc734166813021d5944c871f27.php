@@ -52,23 +52,22 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         $this->loadTemplate("shared/_navbar.html.twig", "base.html.twig", 4)->display($context);
         // line 5
         echo "
-
 <div class=\"container pt-5\">
     ";
-        // line 8
+        // line 7
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 8, $this->source); })()), "flashes", [], "any", false, false, false, 8));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 7, $this->source); })()), "flashes", [], "any", false, false, false, 7));
         foreach ($context['_seq'] as $context["rubrique"] => $context["messages"]) {
-            // line 9
+            // line 8
             echo "        <div class=\"alert alert-";
             echo twig_escape_filter($this->env, $context["rubrique"], "html", null, true);
             echo "\">
             ";
-            // line 10
+            // line 9
             $context['_parent'] = $context;
             $context['_seq'] = twig_ensure_traversable($context["messages"]);
             foreach ($context['_seq'] as $context["_key"] => $context["message"]) {
-                // line 11
+                // line 10
                 echo "                ";
                 echo twig_escape_filter($this->env, $context["message"], "html", null, true);
                 echo "
@@ -77,22 +76,27 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['message'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 13
+            // line 12
             echo "        </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['rubrique'], $context['messages'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 15
+        // line 14
         $this->displayBlock('body', $context, $blocks);
-        // line 16
-        echo "</div>
+        // line 15
+        echo "    <hr>
+    <footer>
+        Proposé par SEGHAIER Mohamed-Ali
+    </footer>
+
+</div>
 </body>
 <head>
     <meta charset=\"UTF-8\">
         <title>";
-        // line 20
+        // line 24
         $this->displayBlock('title', $context, $blocks);
         echo "</title>
     <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/icon?family=Material+Icons\">
@@ -100,15 +104,13 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
     <script src=\"https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js\" integrity=\"sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p\" crossorigin=\"anonymous\"></script>
     <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>\">
     ";
-        // line 26
+        // line 30
         echo "
     ";
-        // line 27
+        // line 31
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 30
-        echo "    <link rel=\"stylesheet\" href=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/perso.css"), "html", null, true);
-        echo "\">
+        // line 34
+        echo "
     <!-- css.gg -->
     <link href='https://css.gg/css' rel='stylesheet'>
     <script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js\"></script>
@@ -117,10 +119,14 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     <!-- JSDelivr -->
     <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
-        ";
-        // line 39
+    <link rel=\"stylesheet\" href=\"";
+        // line 43
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/perso.css"), "html", null, true);
+        echo "\">
+    ";
+        // line 44
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 42
+        // line 47
         echo "    </head>
 </html>
 ";
@@ -132,7 +138,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 15
+    // line 14
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -150,7 +156,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 20
+    // line 24
     public function block_title($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -169,7 +175,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 27
+    // line 31
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -179,7 +185,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 28
+        // line 32
         echo "        ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_link_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
@@ -192,7 +198,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 39
+    // line 44
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -202,7 +208,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 40
+        // line 45
         echo "            ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_script_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
@@ -227,7 +233,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  206 => 40,  196 => 39,  183 => 28,  173 => 27,  154 => 20,  136 => 15,  124 => 42,  122 => 39,  109 => 30,  107 => 27,  104 => 26,  96 => 20,  90 => 16,  88 => 15,  81 => 13,  72 => 11,  68 => 10,  63 => 9,  59 => 8,  54 => 5,  52 => 4,  47 => 1,);
+        return array (  212 => 45,  202 => 44,  189 => 32,  179 => 31,  160 => 24,  142 => 14,  130 => 47,  128 => 44,  124 => 43,  113 => 34,  111 => 31,  108 => 30,  100 => 24,  89 => 15,  87 => 14,  80 => 12,  71 => 10,  67 => 9,  62 => 8,  58 => 7,  54 => 5,  52 => 4,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -236,7 +242,6 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 <html lang=\"FR\">
 <body style=\"background-color: #e4e1e1;\">
 {% include\"shared/_navbar.html.twig\" %}
-
 
 <div class=\"container pt-5\">
     {% for rubrique, messages in app.flashes  %}
@@ -247,6 +252,11 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         </div>
     {% endfor %}
 {% block body %}{% endblock %}
+    <hr>
+    <footer>
+        Proposé par SEGHAIER Mohamed-Ali
+    </footer>
+
 </div>
 </body>
 <head>
@@ -261,7 +271,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
     {% block stylesheets %}
         {{ encore_entry_link_tags('app') }}
     {% endblock %}
-    <link rel=\"stylesheet\" href=\"{{ asset('css/perso.css') }}\">
+
     <!-- css.gg -->
     <link href='https://css.gg/css' rel='stylesheet'>
     <script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js\"></script>
@@ -270,7 +280,8 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     <!-- JSDelivr -->
     <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
-        {% block javascripts %}
+    <link rel=\"stylesheet\" href=\"{{ asset('css/perso.css') }}\">
+    {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>

@@ -94,30 +94,44 @@ class __TwigTemplate_68c47129d2fed82c605089e3d11c4c7f extends Template
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
         echo "\">Accueil</a></li>
-         <li class=\"breadcrumb-item active\">";
+         <li class=\"breadcrumb-item active\"><a href=\"";
         // line 9
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 9, $this->source); })()), "name", [], "any", false, false, false, 9), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_seller", ["seller_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 9, $this->source); })()), "client", [], "any", false, false, false, 9), "id", [], "any", false, false, false, 9)]), "html", null, true);
+        echo "\">";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 9, $this->source); })()), "client", [], "any", false, false, false, 9), "firstName", [], "any", false, false, false, 9), "html", null, true);
+        echo " ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 9, $this->source); })()), "client", [], "any", false, false, false, 9), "lastName", [], "any", false, false, false, 9), "html", null, true);
+        echo "</a></li>
+         <li class=\"breadcrumb-item active\">";
+        // line 10
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 10, $this->source); })()), "name", [], "any", false, false, false, 10), "html", null, true);
         echo "</li>
      </ol>
      <h1> Marque : ";
-        // line 11
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 11, $this->source); })()), "name", [], "any", false, false, false, 11), "html", null, true);
-        echo "</h1>
-     <a href=\" ";
         // line 12
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_create", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12)]), "html", null, true);
-        echo "\" class=\"btn btn-light \">Ajouter un produit</a>
-     <a href=\" ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 12, $this->source); })()), "name", [], "any", false, false, false, 12), "html", null, true);
+        echo "</h1><br>
+     ";
         // line 13
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand_edit", ["brand_id" => twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 13, $this->source); })()), "id", [], "any", false, false, false, 13)]), "html", null, true);
-        echo "\" class=\"btn btn-light \">Éditer cette marque</a>
-
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 13, $this->source); })()), "user", [], "any", false, false, false, 13), "id", [], "any", false, false, false, 13) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 13, $this->source); })()), "client", [], "any", false, false, false, 13), "id", [], "any", false, false, false, 13))) {
+            // line 14
+            echo "         <a href=\" ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_create", ["id" => twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 14, $this->source); })()), "id", [], "any", false, false, false, 14)]), "html", null, true);
+            echo "\" class=\"btn btn-light \">Ajouter un produit</a>
+         <a href=\" ";
+            // line 15
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand_edit", ["brand_id" => twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15)]), "html", null, true);
+            echo "\" class=\"btn btn-light \">Éditer cette marque</a>
+    ";
+        }
+        // line 17
+        echo "     <hr>
 
      <div class=\"row\">
          ";
-        // line 17
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 17, $this->source); })()), "products", [], "any", false, false, false, 17));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["brand"]) || array_key_exists("brand", $context) ? $context["brand"] : (function () { throw new RuntimeError('Variable "brand" does not exist.', 20, $this->source); })()), "products", [], "any", false, false, false, 20));
         $context['loop'] = [
           'parent' => $context['_parent'],
           'index0' => 0,
@@ -132,13 +146,13 @@ class __TwigTemplate_68c47129d2fed82c605089e3d11c4c7f extends Template
             $context['loop']['last'] = 1 === $length;
         }
         foreach ($context['_seq'] as $context["_key"] => $context["product"]) {
-            // line 18
+            // line 21
             echo "
 
              ";
-            // line 20
-            $this->loadTemplate("product/_product_card.html.twig", "brand/index.html.twig", 20)->display($context);
-            // line 21
+            // line 23
+            $this->loadTemplate("product/_product_card.html.twig", "brand/index.html.twig", 23)->display($context);
+            // line 24
             echo "
 
 
@@ -155,7 +169,7 @@ class __TwigTemplate_68c47129d2fed82c605089e3d11c4c7f extends Template
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['product'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 25
+        // line 28
         echo "         <div class=\"col-3\">
          </div>
      </div>
@@ -180,7 +194,7 @@ class __TwigTemplate_68c47129d2fed82c605089e3d11c4c7f extends Template
 
     public function getDebugInfo()
     {
-        return array (  159 => 25,  142 => 21,  140 => 20,  136 => 18,  119 => 17,  112 => 13,  108 => 12,  104 => 11,  99 => 9,  95 => 8,  92 => 7,  82 => 6,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  173 => 28,  156 => 24,  154 => 23,  150 => 21,  133 => 20,  128 => 17,  123 => 15,  118 => 14,  116 => 13,  112 => 12,  107 => 10,  99 => 9,  95 => 8,  92 => 7,  82 => 6,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -193,12 +207,15 @@ class __TwigTemplate_68c47129d2fed82c605089e3d11c4c7f extends Template
  {% block body %}
      <ol class=\"breadcrumb\">
          <li class=\"breadcrumb-item\"><a href=\"{{ path('app_home') }}\">Accueil</a></li>
+         <li class=\"breadcrumb-item active\"><a href=\"{{ path('app_seller', {'seller_id':brand.client.id})}}\">{{ brand.client.firstName }} {{ brand.client.lastName }}</a></li>
          <li class=\"breadcrumb-item active\">{{ brand.name }}</li>
      </ol>
-     <h1> Marque : {{ brand.name }}</h1>
-     <a href=\" {{ path('app_product_create', {'id':brand.id})}}\" class=\"btn btn-light \">Ajouter un produit</a>
-     <a href=\" {{ path('app_brand_edit', {'brand_id':brand.id})}}\" class=\"btn btn-light \">Éditer cette marque</a>
-
+     <h1> Marque : {{ brand.name }}</h1><br>
+     {% if app.user.id == brand.client.id %}
+         <a href=\" {{ path('app_product_create', {'id':brand.id})}}\" class=\"btn btn-light \">Ajouter un produit</a>
+         <a href=\" {{ path('app_brand_edit', {'brand_id':brand.id})}}\" class=\"btn btn-light \">Éditer cette marque</a>
+    {% endif %}
+     <hr>
 
      <div class=\"row\">
          {% for product in brand.products %}

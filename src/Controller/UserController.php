@@ -37,7 +37,7 @@ class UserController extends AbstractController
     }
 
 
-    #[Route('/user/{id}', name:'app_client_index')]
+    #[Route('/user/profil/{id}', name:'app_client_index')]
     public function client_index($id, ClientRepository $userRepository, Session $session) : Response {
         $user = $userRepository->findOneBy([
             'id' => $id

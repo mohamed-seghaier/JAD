@@ -109,46 +109,53 @@ class __TwigTemplate_2d91352ed0b206f729977958000602b9 extends Template
         echo " ";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 11, $this->source); })()), "lastName", [], "any", false, false, false, 11), "html", null, true);
         echo "</h1>
-     <div class=\"col-3\">
+     ";
+        // line 12
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 12, $this->source); })()), "user", [], "any", false, false, false, 12), "id", [], "any", false, false, false, 12) == twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 12, $this->source); })()), "id", [], "any", false, false, false, 12))) {
+            // line 13
+            echo "     <div class=\"col-3\">
          <a href=\" ";
-        // line 13
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand_create", ["id" => twig_get_attribute($this->env, $this->source,         // line 14
-(isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 14, $this->source); })()), "id", [], "any", false, false, false, 14)]), "html", null, true);
-        echo "\" class=\"btn btn-light \">Ajouter une marque</a>
+            // line 14
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand_create", ["id" => twig_get_attribute($this->env, $this->source,             // line 15
+(isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 15, $this->source); })()), "id", [], "any", false, false, false, 15)]), "html", null, true);
+            echo "\" class=\"btn btn-light \">Ajouter une marque</a>
      </div>
-     <h2>Liste des marques :</h2>
+     ";
+        }
+        // line 18
+        echo "     <h2>Liste des marques :</h2>
      <div class=\"row\">
          ";
-        // line 18
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 18, $this->source); })()), "brands", [], "any", false, false, false, 18));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["user"]) || array_key_exists("user", $context) ? $context["user"] : (function () { throw new RuntimeError('Variable "user" does not exist.', 20, $this->source); })()), "brands", [], "any", false, false, false, 20));
         foreach ($context['_seq'] as $context["_key"] => $context["brand"]) {
-            // line 19
+            // line 21
             echo "
 
              <div class=\"col-3\">
                  <div class=\"card\">
                      <div class=\"card-body\">
                          <h4 class=\"card-title\">";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "getName", [], "any", false, false, false, 24), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "getName", [], "any", false, false, false, 26), "html", null, true);
             echo " </h4>
                          <span class=\"badge badge-info\">
                             ";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "getName", [], "any", false, false, false, 26), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "getName", [], "any", false, false, false, 28), "html", null, true);
             echo "
                         </span>
                          <p class=\"card-text\">
                              ";
-            // line 29
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "getDescription", [], "any", false, false, false, 29), "html", null, true);
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["brand"], "getDescription", [], "any", false, false, false, 31), "html", null, true);
             echo "
                          </p>
                          <a href=\"";
-            // line 31
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand", ["brand_id" => twig_get_attribute($this->env, $this->source,             // line 32
-$context["brand"], "id", [], "any", false, false, false, 32)]), "html", null, true);
+            // line 33
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_brand", ["brand_id" => twig_get_attribute($this->env, $this->source,             // line 34
+$context["brand"], "id", [], "any", false, false, false, 34)]), "html", null, true);
             echo "\" class=\"btn btn-primary btn-sm\">Détail</a>
                      </div>
                  </div>
@@ -160,7 +167,7 @@ $context["brand"], "id", [], "any", false, false, false, 32)]), "html", null, tr
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['brand'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 39
+        // line 41
         echo "     </div>
 
  ";
@@ -184,7 +191,7 @@ $context["brand"], "id", [], "any", false, false, false, 32)]), "html", null, tr
 
     public function getDebugInfo()
     {
-        return array (  164 => 39,  151 => 32,  150 => 31,  145 => 29,  139 => 26,  134 => 24,  127 => 19,  123 => 18,  116 => 14,  115 => 13,  108 => 11,  101 => 9,  97 => 8,  94 => 7,  84 => 6,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  171 => 41,  158 => 34,  157 => 33,  152 => 31,  146 => 28,  141 => 26,  134 => 21,  130 => 20,  126 => 18,  120 => 15,  119 => 14,  116 => 13,  114 => 12,  108 => 11,  101 => 9,  97 => 8,  94 => 7,  84 => 6,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -200,10 +207,12 @@ $context["brand"], "id", [], "any", false, false, false, 32)]), "html", null, tr
          <li class=\"breadcrumb-item active\">{{ user.firstName }} {{ user.lastName }}</li>
      </ol>
      <h1> Constructeur : {{ user.firstName }} {{ user.lastName }}</h1>
+     {% if app.user.id == user.id %}
      <div class=\"col-3\">
          <a href=\" {{ path('app_brand_create', {'id':
              user.id})}}\" class=\"btn btn-light \">Ajouter une marque</a>
      </div>
+     {% endif %}
      <h2>Liste des marques :</h2>
      <div class=\"row\">
          {% for brand in user.brands %}

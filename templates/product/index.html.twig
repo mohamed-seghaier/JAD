@@ -41,7 +41,9 @@
                 Ajouter au panier</a>
             <a href=" {{ path('app_brand',{'brand_id': product.brand.id })}}" class="btn btn-light ">Fiche Marque</a>
             <a href=" {{ path('app_seller',{'seller_id': product.brand.client.id })}}" class="btn btn-light ">Fiche Vendeur</a>
-            <a href=" {{ path('app_product_edit',{'product_id': product.id })}}" class="btn btn-light ">Editer ce produit</a>
+            {% if app.user.id == product.brand.client.id %}
+                <a href=" {{ path('app_product_edit',{'product_id': product.id })}}" class="btn btn-light ">Editer ce produit</a>
+            {% endif %}
 
         </div>
     </div>
