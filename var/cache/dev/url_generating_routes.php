@@ -77,6 +77,6 @@ return [
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], [], []],
     'app_user' => [[], ['_controller' => 'App\\Controller\\UserController::index'], [], [['text', '/user']], [], [], []],
     'app_seller' => [['seller_id'], ['_controller' => 'App\\Controller\\UserController::user'], [], [['variable', '/', '[^/]++', 'seller_id', true], ['text', '/user']], [], [], []],
-    'app_client_index' => [['id'], ['_controller' => 'App\\Controller\\UserController::client_index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user']], [], [], []],
+    'app_client_index' => [['id'], ['_controller' => 'App\\Controller\\UserController::client_index'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/user/profil']], [], [], []],
     'app_vendeur_index' => [['id'], ['_controller' => 'App\\Controller\\UserController::vendeur_index'], [], [['text', '/index'], ['variable', '/', '[^/]++', 'id', true], ['text', '/vendeur']], [], [], []],
 ];

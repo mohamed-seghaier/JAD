@@ -9,10 +9,12 @@
          <li class="breadcrumb-item active">{{ user.firstName }} {{ user.lastName }}</li>
      </ol>
      <h1> Constructeur : {{ user.firstName }} {{ user.lastName }}</h1>
+     {% if app.user.id == user.id %}
      <div class="col-3">
          <a href=" {{ path('app_brand_create', {'id':
              user.id})}}" class="btn btn-light ">Ajouter une marque</a>
      </div>
+     {% endif %}
      <h2>Liste des marques :</h2>
      <div class="row">
          {% for brand in user.brands %}

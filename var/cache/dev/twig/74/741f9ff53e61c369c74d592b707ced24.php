@@ -119,7 +119,7 @@ class __TwigTemplate_a50f33237754fdc9608527e08086c506 extends Template
         echo "</p>
              <p>email : ";
         // line 17
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new RuntimeError('Variable "client" does not exist.', 17, $this->source); })()), "mail", [], "any", false, false, false, 17), "html", null, true);
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new RuntimeError('Variable "client" does not exist.', 17, $this->source); })()), "email", [], "any", false, false, false, 17), "html", null, true);
         echo "</p>
          </div>
          <div class=\"col-3\">
@@ -127,39 +127,42 @@ class __TwigTemplate_a50f33237754fdc9608527e08086c506 extends Template
         // line 20
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new RuntimeError('Variable "client" does not exist.', 20, $this->source); })()), "firstName", [], "any", false, false, false, 20), "html", null, true);
         echo "</p>
-             <p>Mot de passe : ";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new RuntimeError('Variable "client" does not exist.', 21, $this->source); })()), "password", [], "any", false, false, false, 21), "html", null, true);
-        echo "</p>
          </div>
      </div>
 
      ";
-        // line 25
-        if (((isset($context["user_type"]) || array_key_exists("user_type", $context) ? $context["user_type"] : (function () { throw new RuntimeError('Variable "user_type" does not exist.', 25, $this->source); })()) == "Vendeur")) {
-            // line 26
-            echo "         <div class=\"row\">
-             <div class=\"col-3\">
+        // line 24
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["client"]) || array_key_exists("client", $context) ? $context["client"] : (function () { throw new RuntimeError('Variable "client" does not exist.', 24, $this->source); })()), "roles", [], "any", false, false, false, 24));
+        foreach ($context['_seq'] as $context["_key"] => $context["usertype"]) {
+            // line 25
+            echo "         ";
+            if (($context["usertype"] == "ROLE_VENDEUR")) {
+                // line 26
+                echo "             <div class=\"row\">
+                 <div class=\"col-3\">
                      <a href=\" ";
-            // line 28
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_create");
-            echo "\" class=\"btn btn-light \">Ajouter un produit</a>
-             </div>
-             <div class=\"col-3\">
+                // line 28
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_create");
+                echo "\" class=\"btn btn-light \">Ajouter un produit</a>
+                 </div>
+                 <div class=\"col-3\">
                      <a href=\" ";
-            // line 31
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_create");
-            echo "\" class=\"btn btn-light \">Ajouter une marque</a>
+                // line 31
+                echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_create");
+                echo "\" class=\"btn btn-light \">Ajouter une marque</a>
+                 </div>
              </div>
-         </div>
-     ";
+         ";
+            }
+            // line 35
+            echo "     ";
         }
-        // line 35
-        echo "
-
-
-
- ";
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['usertype'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 36
+        echo " ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -180,7 +183,7 @@ class __TwigTemplate_a50f33237754fdc9608527e08086c506 extends Template
 
     public function getDebugInfo()
     {
-        return array (  158 => 35,  151 => 31,  145 => 28,  141 => 26,  139 => 25,  132 => 21,  128 => 20,  122 => 17,  118 => 16,  108 => 11,  101 => 9,  97 => 8,  94 => 7,  84 => 6,  69 => 4,  59 => 3,  36 => 1,);
+        return array (  165 => 36,  159 => 35,  152 => 31,  146 => 28,  142 => 26,  139 => 25,  135 => 24,  128 => 20,  122 => 17,  118 => 16,  108 => 11,  101 => 9,  97 => 8,  94 => 7,  84 => 6,  69 => 4,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -201,28 +204,25 @@ class __TwigTemplate_a50f33237754fdc9608527e08086c506 extends Template
      <div class=\"row\">
          <div class=\"col-3\">
              <p>Nom : {{ client.lastName }}</p>
-             <p>email : {{ client.mail }}</p>
+             <p>email : {{ client.email }}</p>
          </div>
          <div class=\"col-3\">
              <p>Prenom : {{ client.firstName }}</p>
-             <p>Mot de passe : {{ client.password }}</p>
          </div>
      </div>
 
-     {% if user_type  == \"Vendeur\" %}
-         <div class=\"row\">
-             <div class=\"col-3\">
+     {% for usertype in client.roles %}
+         {% if usertype == \"ROLE_VENDEUR\" %}
+             <div class=\"row\">
+                 <div class=\"col-3\">
                      <a href=\" {{ path('app_product_create')}}\" class=\"btn btn-light \">Ajouter un produit</a>
-             </div>
-             <div class=\"col-3\">
+                 </div>
+                 <div class=\"col-3\">
                      <a href=\" {{ path('app_product_create')}}\" class=\"btn btn-light \">Ajouter une marque</a>
+                 </div>
              </div>
-         </div>
-     {% endif %}
-
-
-
-
+         {% endif %}
+     {% endfor %}
  {% endblock %}
 ", "user/client.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/user/client.html.twig");
     }

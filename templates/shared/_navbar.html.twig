@@ -21,7 +21,9 @@
                 <li class="nav-item">
                     <a href="{{ path('app_purchases') }}" class="nav-link">Mes commandes</a>
                 </li>
-                <li class="nav-item"><span class="nav-link">{{ app.user.firstName}} {{app.user.lastname}} &nbsp;</span></li>
+                <li class="nav-item"><span class="nav-link">
+                        <a href="{{ path('app_client_index', {'id': app.user.id}) }}">
+                        {{ app.user.firstName}} {{app.user.lastname}} </a>&nbsp;</span></li>
                 </ul>
             {% endif %}
             <ul class="navbar-nav">

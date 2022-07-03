@@ -189,11 +189,17 @@ class __TwigTemplate_f845e442c5254733e2f63a44f23d5e2f extends Template
         // line 43
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_seller", ["seller_id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 43, $this->source); })()), "brand", [], "any", false, false, false, 43), "client", [], "any", false, false, false, 43), "id", [], "any", false, false, false, 43)]), "html", null, true);
         echo "\" class=\"btn btn-light \">Fiche Vendeur</a>
-            <a href=\" ";
+            ";
         // line 44
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["product_id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 44, $this->source); })()), "id", [], "any", false, false, false, 44)]), "html", null, true);
-        echo "\" class=\"btn btn-light \">Editer ce produit</a>
-
+        if ((twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 44, $this->source); })()), "user", [], "any", false, false, false, 44), "id", [], "any", false, false, false, 44) == twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 44, $this->source); })()), "brand", [], "any", false, false, false, 44), "client", [], "any", false, false, false, 44), "id", [], "any", false, false, false, 44))) {
+            // line 45
+            echo "                <a href=\" ";
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_product_edit", ["product_id" => twig_get_attribute($this->env, $this->source, (isset($context["product"]) || array_key_exists("product", $context) ? $context["product"] : (function () { throw new RuntimeError('Variable "product" does not exist.', 45, $this->source); })()), "id", [], "any", false, false, false, 45)]), "html", null, true);
+            echo "\" class=\"btn btn-light \">Editer ce produit</a>
+            ";
+        }
+        // line 47
+        echo "
         </div>
     </div>
 
@@ -218,7 +224,7 @@ class __TwigTemplate_f845e442c5254733e2f63a44f23d5e2f extends Template
 
     public function getDebugInfo()
     {
-        return array (  194 => 44,  190 => 43,  186 => 42,  180 => 39,  177 => 38,  171 => 36,  167 => 34,  165 => 33,  160 => 32,  158 => 31,  149 => 27,  143 => 24,  138 => 22,  130 => 19,  123 => 15,  119 => 14,  113 => 11,  107 => 10,  99 => 9,  95 => 8,  92 => 7,  82 => 6,  69 => 3,  59 => 2,  36 => 1,);
+        return array (  202 => 47,  196 => 45,  194 => 44,  190 => 43,  186 => 42,  180 => 39,  177 => 38,  171 => 36,  167 => 34,  165 => 33,  160 => 32,  158 => 31,  149 => 27,  143 => 24,  138 => 22,  130 => 19,  123 => 15,  119 => 14,  113 => 11,  107 => 10,  99 => 9,  95 => 8,  92 => 7,  82 => 6,  69 => 3,  59 => 2,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -266,7 +272,9 @@ class __TwigTemplate_f845e442c5254733e2f63a44f23d5e2f extends Template
                 Ajouter au panier</a>
             <a href=\" {{ path('app_brand',{'brand_id': product.brand.id })}}\" class=\"btn btn-light \">Fiche Marque</a>
             <a href=\" {{ path('app_seller',{'seller_id': product.brand.client.id })}}\" class=\"btn btn-light \">Fiche Vendeur</a>
-            <a href=\" {{ path('app_product_edit',{'product_id': product.id })}}\" class=\"btn btn-light \">Editer ce produit</a>
+            {% if app.user.id == product.brand.client.id %}
+                <a href=\" {{ path('app_product_edit',{'product_id': product.id })}}\" class=\"btn btn-light \">Editer ce produit</a>
+            {% endif %}
 
         </div>
     </div>

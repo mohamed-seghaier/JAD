@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => 'e1243bbc5cb24e9c442de0b91c1abc15be2ec3fc',
+        'reference' => '93f747539b82f59937c946aec8504a057a685682',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => 'e1243bbc5cb24e9c442de0b91c1abc15be2ec3fc',
+            'reference' => '93f747539b82f59937c946aec8504a057a685682',
             'dev_requirement' => false,
         ),
         'api-platform/core' => array(
@@ -843,12 +843,12 @@
             ),
         ),
         'symfony/twig-bridge' => array(
-            'pretty_version' => 'v6.0.8',
-            'version' => '6.0.8.0',
+            'pretty_version' => 'v6.0.10',
+            'version' => '6.0.10.0',
             'type' => 'symfony-bridge',
             'install_path' => __DIR__ . '/../symfony/twig-bridge',
             'aliases' => array(),
-            'reference' => 'c0dc7766aaa59b9191930f722532454e5df4d203',
+            'reference' => '4eae2e2a08d737bdd293fb4fa53239a655c4ea80',
             'dev_requirement' => false,
         ),
         'symfony/twig-bundle' => array(

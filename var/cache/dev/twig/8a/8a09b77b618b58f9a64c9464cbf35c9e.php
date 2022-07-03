@@ -88,44 +88,49 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_purchases");
             echo "\" class=\"nav-link\">Mes commandes</a>
                 </li>
-                <li class=\"nav-item\"><span class=\"nav-link\">";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24), "firstName", [], "any", false, false, false, 24), "html", null, true);
+                <li class=\"nav-item\"><span class=\"nav-link\">
+                        <a href=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_client_index", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 25, $this->source); })()), "user", [], "any", false, false, false, 25), "id", [], "any", false, false, false, 25)]), "html", null, true);
+            echo "\">
+                        ";
+            // line 26
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "firstName", [], "any", false, false, false, 26), "html", null, true);
             echo " ";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 24, $this->source); })()), "user", [], "any", false, false, false, 24), "lastname", [], "any", false, false, false, 24), "html", null, true);
-            echo " &nbsp;</span></li>
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 26, $this->source); })()), "user", [], "any", false, false, false, 26), "lastname", [], "any", false, false, false, 26), "html", null, true);
+            echo " </a>&nbsp;</span></li>
                 </ul>
             ";
         }
-        // line 27
+        // line 29
         echo "            <ul class=\"navbar-nav\">
                 <li class=\"nav-item\">
                     <a class=\"nav-link\" href=\"";
-        // line 29
+        // line 31
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_panier");
         echo "\" title=\"Panier\"><i class=\"material-icons\">shopping_cart</i></a>
                 </li>
                 ";
-        // line 31
-        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 31, $this->source); })()), "user", [], "any", false, false, false, 31)) {
-            // line 32
+        // line 33
+        if (twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 33, $this->source); })()), "user", [], "any", false, false, false, 33)) {
+            // line 34
             echo "                    <li class=\"nav-item\">
                         <a href=\"";
-            // line 33
+            // line 35
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn btn-danger\">Deconnexion</a>
                     </li>
                 ";
         } else {
-            // line 36
+            // line 38
             echo "                    <li class=\"nav-item\"><a href=\"#\" class=\"nav-link\">Inscription</a></li>
                     <li class=\"nav-item\"><a href=\"";
-            // line 37
+            // line 39
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-success\">Connexion</a></li>
                 ";
         }
-        // line 39
+        // line 41
         echo "            </ul>
         </div>
     </div>
@@ -150,7 +155,7 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
 
     public function getDebugInfo()
     {
-        return array (  129 => 39,  124 => 37,  121 => 36,  115 => 33,  112 => 32,  110 => 31,  105 => 29,  101 => 27,  93 => 24,  88 => 22,  84 => 20,  82 => 19,  77 => 16,  66 => 14,  62 => 13,  47 => 3,  43 => 1,);
+        return array (  134 => 41,  129 => 39,  126 => 38,  120 => 35,  117 => 34,  115 => 33,  110 => 31,  106 => 29,  98 => 26,  94 => 25,  88 => 22,  84 => 20,  82 => 19,  77 => 16,  66 => 14,  62 => 13,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -178,7 +183,9 @@ class __TwigTemplate_20935b7dd23abfee42f7bf8fa52a2c1d extends Template
                 <li class=\"nav-item\">
                     <a href=\"{{ path('app_purchases') }}\" class=\"nav-link\">Mes commandes</a>
                 </li>
-                <li class=\"nav-item\"><span class=\"nav-link\">{{ app.user.firstName}} {{app.user.lastname}} &nbsp;</span></li>
+                <li class=\"nav-item\"><span class=\"nav-link\">
+                        <a href=\"{{ path('app_client_index', {'id': app.user.id}) }}\">
+                        {{ app.user.firstName}} {{app.user.lastname}} </a>&nbsp;</span></li>
                 </ul>
             {% endif %}
             <ul class=\"navbar-nav\">
