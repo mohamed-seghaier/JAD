@@ -67,10 +67,15 @@ class PurchaseConfirmationController extends AbstractController
                 ->setProductPrice($item->product->getPrice());
             $total += $item->getTotal();
             $this->em->persist($purchaseItem);
+
         }
         $purchase->setTotal($total);
         $this->em->persist($purchase);
         $this->em->flush();
-        return $this->redirectToRoute('app_home');
+//        $this->addFlash("success", "Commande confirmée");
+//        $session->remove('panier');
+        return $this->redirectToRoute('app_payment_card', [
+            'id' => $purchase->getId()
+        ]);
     }
 }

@@ -84,7 +84,14 @@ class ProductController extends AbstractController
         ]);
     }
 
-
+    #[Route("/product/all", name: "app_product_all")]
+    public function allProducts(ProductRepository $products): Response
+    {
+        $tmp = $products->findAll();
+        return $this->render('product/allProducts.html.twig', [
+            'products' => $tmp,
+        ]);
+    }
 
 
 }

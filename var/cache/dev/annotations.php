@@ -94,6 +94,10 @@ return [[
 '[C]App%5CController%5CPurchase%5CPurchaseConfirmationController%24panierService' => 1,
 'App%5CController%5CPurchase%5CPurchaseConfirmationController%24em' => 0,
 '[C]App%5CController%5CPurchase%5CPurchaseConfirmationController%24em' => 1,
+'App%5CController%5CPurchase%5CPurchasePaymentController' => 0,
+'[C]App%5CController%5CPurchase%5CPurchasePaymentController' => 1,
+'App%5CController%5CPurchase%5CPurchasePaymentController%23showCardForm' => 0,
+'[C]App%5CController%5CPurchase%5CPurchasePaymentController%23showCardForm' => 1,
 'App%5CController%5CPurchase%5CPurchasesListController' => 0,
 '[C]App%5CController%5CPurchase%5CPurchasesListController' => 1,
 'App%5CController%5CPurchase%5CPurchasesListController%23index' => 0,
@@ -1166,6 +1170,6 @@ return [[
 ], [
 
 0 => [],
-1 => 1656809903,
+1 => 1656979162,
 
 ]];

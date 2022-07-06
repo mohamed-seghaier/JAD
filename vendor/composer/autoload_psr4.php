@@ -61,6 +61,7 @@ return array(
     'Symfony\\Bridge\\Twig\\' => array($vendorDir . '/symfony/twig-bridge'),
     'Symfony\\Bridge\\ProxyManager\\' => array($vendorDir . '/symfony/proxy-manager-bridge'),
     'Symfony\\Bridge\\Doctrine\\' => array($vendorDir . '/symfony/doctrine-bridge'),
+    'Stripe\\' => array($vendorDir . '/stripe/stripe-php/lib'),
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Link\\' => array($vendorDir . '/psr/link/src'),
     'Psr\\EventDispatcher\\' => array($vendorDir . '/psr/event-dispatcher/src'),

@@ -13,8 +13,10 @@ return [
         '/_profiler/search_bar' => [[['_route' => '_profiler_search_bar', '_controller' => 'web_profiler.controller.profiler::searchBarAction'], null, null, null, false, false, null]],
         '/_profiler/phpinfo' => [[['_route' => '_profiler_phpinfo', '_controller' => 'web_profiler.controller.profiler::phpinfoAction'], null, null, null, false, false, null]],
         '/_profiler/open' => [[['_route' => '_profiler_open_file', '_controller' => 'web_profiler.controller.profiler::openAction'], null, null, null, false, false, null]],
+        '/brand/all/brands' => [[['_route' => 'app_brand_all', '_controller' => 'App\\Controller\\BrandController::allBrands'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'app_home', '_controller' => 'App\\Controller\\HomeController::index'], null, null, null, false, false, null]],
         '/panier/show' => [[['_route' => 'app_panier', '_controller' => 'App\\Controller\\PanierController::show'], null, null, null, false, false, null]],
+        '/product/all' => [[['_route' => 'app_product_all', '_controller' => 'App\\Controller\\ProductController::allProducts'], null, null, null, false, false, null]],
         '/panier/confirm' => [[['_route' => 'app_panier_confirm', '_controller' => 'App\\Controller\\Purchase\\PurchaseConfirmationController::confirm'], null, null, null, false, false, null]],
         '/commandes' => [[['_route' => 'app_purchases', '_controller' => 'App\\Controller\\Purchase\\PurchasesListController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
@@ -115,18 +117,24 @@ return [
                     .'|(*:970)'
                     .'|/product/([^/]++)(*:995)'
                 .')'
-                .'|/panier/(?'
-                    .'|add/(\\d+)(*:1024)'
-                    .'|de(?'
-                        .'|lete/(\\d+)(*:1048)'
-                        .'|crement/(\\d+)(*:1070)'
+                .'|/p(?'
+                    .'|anier/(?'
+                        .'|add/(\\d+)(*:1027)'
+                        .'|de(?'
+                            .'|lete/(\\d+)(*:1051)'
+                            .'|crement/(\\d+)(*:1073)'
+                        .')'
+                    .')'
+                    .'|urchase/pay/(?'
+                        .'|([^/]++)(*:1107)'
+                        .'|success/([^/]++)(*:1132)'
                     .')'
                 .')'
                 .'|/user/(?'
-                    .'|([^/]++)(*:1098)'
-                    .'|profil/([^/]++)(*:1122)'
+                    .'|([^/]++)(*:1160)'
+                    .'|profil/([^/]++)(*:1184)'
                 .')'
-                .'|/vendeur/([^/]++)/index(*:1155)'
+                .'|/vendeur/([^/]++)/index(*:1217)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -216,12 +224,14 @@ return [
         942 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
         970 => [[['_route' => 'app_brand', '_controller' => 'App\\Controller\\BrandController::index'], ['brand_id'], null, null, false, true, null]],
         995 => [[['_route' => 'app_product', '_controller' => 'App\\Controller\\ProductController::index'], ['brand_id', 'product_id'], null, null, false, true, null]],
-        1024 => [[['_route' => 'app_panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
-        1048 => [[['_route' => 'app_panier_del', '_controller' => 'App\\Controller\\PanierController::delete'], ['id'], null, null, false, true, null]],
-        1070 => [[['_route' => 'app_panier_decrement', '_controller' => 'App\\Controller\\PanierController::decrement'], ['id'], null, null, false, true, null]],
-        1098 => [[['_route' => 'app_seller', '_controller' => 'App\\Controller\\UserController::user'], ['seller_id'], null, null, false, true, null]],
-        1122 => [[['_route' => 'app_client_index', '_controller' => 'App\\Controller\\UserController::client_index'], ['id'], null, null, false, true, null]],
-        1155 => [
+        1027 => [[['_route' => 'app_panier_add', '_controller' => 'App\\Controller\\PanierController::add'], ['id'], null, null, false, true, null]],
+        1051 => [[['_route' => 'app_panier_del', '_controller' => 'App\\Controller\\PanierController::delete'], ['id'], null, null, false, true, null]],
+        1073 => [[['_route' => 'app_panier_decrement', '_controller' => 'App\\Controller\\PanierController::decrement'], ['id'], null, null, false, true, null]],
+        1107 => [[['_route' => 'app_payment_card', '_controller' => 'App\\Controller\\Purchase\\PurchasePaymentController::showCardForm'], ['id'], null, null, false, true, null]],
+        1132 => [[['_route' => 'app_payment_success', '_controller' => 'App\\Controller\\Purchase\\PurchasePaymentController::paymentSuccess'], ['id'], null, null, false, true, null]],
+        1160 => [[['_route' => 'app_seller', '_controller' => 'App\\Controller\\UserController::user'], ['seller_id'], null, null, false, true, null]],
+        1184 => [[['_route' => 'app_client_index', '_controller' => 'App\\Controller\\UserController::client_index'], ['id'], null, null, false, true, null]],
+        1217 => [
             [['_route' => 'app_vendeur_index', '_controller' => 'App\\Controller\\UserController::vendeur_index'], ['id'], null, null, false, false, null],
             [null, null, null, null, false, false, 0],
         ],
