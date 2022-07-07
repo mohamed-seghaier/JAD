@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    Marques
+{% endblock %}
+
+{% block body %}
+    <h1>Toutes les marques</h1>
+    <hr>
+    <div class="row">
+        {% for brand in brands %}
+
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">{{ brand.getName }} </h4>
+                    <span class="badge badge-info">
+                            {{ brand.getName }}
+                        </span>
+                    <p class="card-text">
+                        {{ brand.getDescription }}
+                    </p>
+                    <a href="{{ path('app_brand', {'brand_id':
+                        brand.id}) }}" class="btn btn-primary btn-sm">Détail</a>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+{% endblock %}

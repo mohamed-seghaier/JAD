@@ -114,19 +114,22 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
     <!-- css.gg -->
     <link href='https://css.gg/css' rel='stylesheet'>
     <script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js\"></script>
+";
+        // line 39
+        echo "
     <!-- UNPKG -->
     <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
 
     <!-- JSDelivr -->
     <link href='https://cdn.jsdelivr.net/npm/css.gg/icons/all.css' rel='stylesheet'>
     <link rel=\"stylesheet\" href=\"";
-        // line 43
+        // line 45
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/perso.css"), "html", null, true);
         echo "\">
     ";
-        // line 44
+        // line 46
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 47
+        // line 51
         echo "    </head>
 </html>
 ";
@@ -198,7 +201,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     }
 
-    // line 44
+    // line 46
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -208,11 +211,13 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 45
+        // line 47
         echo "            ";
         echo twig_escape_filter($this->env, call_user_func_array($this->env->getFunction('encore_entry_script_tags')->getCallable(), ["app"]), "html", null, true);
         echo "
-        ";
+        <script src=\"https://js.stripe.com/v3/\"></script>
+
+    ";
         
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->leave($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof);
 
@@ -233,7 +238,7 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
 
     public function getDebugInfo()
     {
-        return array (  212 => 45,  202 => 44,  189 => 32,  179 => 31,  160 => 24,  142 => 14,  130 => 47,  128 => 44,  124 => 43,  113 => 34,  111 => 31,  108 => 30,  100 => 24,  89 => 15,  87 => 14,  80 => 12,  71 => 10,  67 => 9,  62 => 8,  58 => 7,  54 => 5,  52 => 4,  47 => 1,);
+        return array (  215 => 47,  205 => 46,  192 => 32,  182 => 31,  163 => 24,  145 => 14,  133 => 51,  131 => 46,  127 => 45,  119 => 39,  113 => 34,  111 => 31,  108 => 30,  100 => 24,  89 => 15,  87 => 14,  80 => 12,  71 => 10,  67 => 9,  62 => 8,  58 => 7,  54 => 5,  52 => 4,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -275,6 +280,8 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
     <!-- css.gg -->
     <link href='https://css.gg/css' rel='stylesheet'>
     <script src=\"//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js\"></script>
+{#    <script src=\"https://js.stripe.com/v3/\"></script>#}
+
     <!-- UNPKG -->
     <link href='https://unpkg.com/css.gg/icons/all.css' rel='stylesheet'>
 
@@ -283,7 +290,9 @@ class __TwigTemplate_15b25d8103f88ad1592e95ba35dec4b5 extends Template
     <link rel=\"stylesheet\" href=\"{{ asset('css/perso.css') }}\">
     {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-        {% endblock %}
+        <script src=\"https://js.stripe.com/v3/\"></script>
+
+    {% endblock %}
     </head>
 </html>
 ", "base.html.twig", "/Users/dali/PhpstormProjects/JAD_Shopping/github/JAD/templates/base.html.twig");

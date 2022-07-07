@@ -1,0 +1,16 @@
+{% extends "base.html.twig" %}
+{% block title %}
+    Tous les véhicules
+{% endblock %}
+
+{% block body %}
+    <h1>Tous les véhicules</h1>
+    <hr>
+    <div class="row">
+        {% for product in products %}
+            {% include "product/_product_card.html.twig" %}
+
+        {% endfor %}
+
+    </div>
+{% endblock %}

@@ -7,14 +7,20 @@
 
         <div class="collapse navbar-collapse" id="navbarColor03">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Marques</a>
-                    <div class="dropdown-menu">
-                        {% for brand in brands.findAll %}
-                            <a class="nav-link" href="{{ path('app_brand',{'brand_id': brand.id })}}">{{brand.name}}</a>
-                        {% endfor %}
-                    </div>
+                <li class="nav-item">
+                    <a href="{{ path('app_brand_all') }}" class="nav-link">Marques</a>
                 </li>
+                <li class="nav-item">
+                    <a href="{{ path('app_product_all') }}" class="nav-link">Véhicules</a>
+                </li>
+{#                <li class="nav-item dropdown">#}
+{#                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Marques</a>#}
+{#                    <div class="dropdown-menu">#}
+{#                        {% for brand in brands.findAll %}#}
+{#                            <a class="nav-link" href="{{ path('app_brand',{'brand_id': brand.id })}}">{{brand.name}}</a>#}
+{#                        {% endfor %}#}
+{#                    </div>#}
+{#                </li>#}
             </ul>
             {% if app.user %}
                 <ul class="navbar-nav">

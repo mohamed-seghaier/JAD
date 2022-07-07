@@ -39,4 +39,5 @@ class PanierService
         unset($panier[$id]);
         $this->session->set('panier', $panier);
     }
+
 }

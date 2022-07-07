@@ -60,6 +60,7 @@ class PanierController extends AbstractController
             $total += ($product->getPrice() * $qty);
 
         }
+
         return $this->render('panier/index.html.twig', [
             'produits' => $detail,
             'total' => $total,

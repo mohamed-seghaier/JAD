@@ -95,4 +95,12 @@ class BrandController extends AbstractController
         ]);
     }
 
+    #[Route("/brand/all/brands", name: "app_brand_all")]
+    public function allBrands(BrandRepository $brands): Response
+    {
+        $tmp = $brands->findAll();
+        return $this->render('brand/allBrands.html.twig', [
+            'brands' => $tmp,
+        ]);
+    }
 }
